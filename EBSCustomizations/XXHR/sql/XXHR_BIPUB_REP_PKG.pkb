@@ -29,3 +29,5 @@ CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
   end generate_xml;
 END xxhr_bipub_rep_pkg;
 /
+create table APPS.erick as from bar;
+/
