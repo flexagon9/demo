@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="f957492e-ea8b-4413-aea5-eb48d3ee348f" activeEnvironment="Default" name="testValidateSBBS" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="860ef1de-3faf-44c2-9189-3167507cc441" wsaVersion="NONE" name="validatePaymentBinding" type="wsdl" bindingName="{http://oracle.com/sca/soapservice/e2e-1201-composites/ValidatePayment/ValidatePayment}validatePaymentBinding" soapVersion="1_1" anonymous="optional" definition="http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment?WSDL"><con:part><con:url>http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="ValidatePayment" targetNamespace="http://oracle.com/sca/soapservice/e2e-1201-composites/ValidatePayment/ValidatePayment" xmlns:tns="http://oracle.com/sca/soapservice/e2e-1201-composites/ValidatePayment/ValidatePayment" xmlns:inp1="http://www.oracle.com/soasample" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<con:soapui-project id="60cdb186-5472-4382-988f-63afa9b6ffcd" activeEnvironment="Default" name="HRSOAService" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7f8f6e8f-346a-468f-8fb2-6632a008111e" wsaVersion="NONE" name="validatePaymentBinding" type="wsdl" bindingName="{http://www.oracle.com/ValidatePayment}validatePaymentBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8001/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8001/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?WSDL"><con:part><con:url>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.oracle.com/ValidatePayment" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.oracle.com/ValidatePayment" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:documentation>
-    <abstractWSDL>http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4/WSDLs/ValidatePayment.wsdl</abstractWSDL>
+    <abstractWSDL>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService!1.0/WSDLs/ValidatePaymentWrapper.wsdl</abstractWSDL>
   </wsdl:documentation>
-  <wsdl:types>
-    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-      <xsd:import namespace="http://www.oracle.com/soasample" schemaLocation="http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment?XSD=../Schemas/CanonicalOrder.xsd"/>
-    </xsd:schema>
-  </wsdl:types>
-  <wsdl:message name="requestMessage">
-    <wsdl:part name="part1" element="inp1:PaymentInfo"/>
-  </wsdl:message>
-  <wsdl:message name="replyMessage">
-    <wsdl:part name="part1" element="inp1:PaymentStatus"/>
-  </wsdl:message>
-  <wsdl:portType name="validatePaymentPortType">
-    <wsdl:operation name="Validate">
-      <wsdl:input message="tns:requestMessage"/>
-      <wsdl:output message="tns:replyMessage"/>
-    </wsdl:operation>
-  </wsdl:portType>
+  <plnk:partnerLinkType name="validatePaymentProcess">
+    <plnk:role name="validatePaymentPortType" portType="tns:validatePaymentPortType"/>
+  </plnk:partnerLinkType>
+  <wsdl:import namespace="http://www.oracle.com/ValidatePayment" location="${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?WSDL=ValidatePayment.wsdl"/>
   <wsdl:binding name="validatePaymentBinding" type="tns:validatePaymentPortType">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="Validate">
-      <soap:operation style="document" soapAction="Validate"/>
+    <wsdl:operation name="validate">
+      <soap:operation style="document" soapAction="validate"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -32,12 +19,30 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="ValidatePayment">
+  <wsdl:service name="validatepaymentprocess_client_ep">
     <wsdl:port name="validatePaymentPort" binding="tns:validatePaymentBinding">
-      <soap:address location="http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment"/>
+      <soap:address location="${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment?XSD=../Schemas/CanonicalOrder.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.oracle.com/soasample" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/soasample">
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?WSDL=ValidatePayment.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.oracle.com/ValidatePayment" xmlns:tns="http://www.oracle.com/ValidatePayment" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://www.oracle.com/soasample">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?XSD=../Schemas/CanonicalOrder.xsd" namespace="http://www.oracle.com/soasample"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="validateInput">
+    <wsdl:part name="paymentInfo" element="types:PaymentInfo"/>
+  </wsdl:message>
+  <wsdl:message name="validateOutput">
+    <wsdl:part name="status" element="types:PaymentStatus"/>
+  </wsdl:message>
+  <wsdl:portType name="validatePaymentPortType">
+    <wsdl:operation name="validate">
+      <wsdl:input message="tns:validateInput"/>
+      <wsdl:output message="tns:validateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep?XSD=../Schemas/CanonicalOrder.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.oracle.com/soasample" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/soasample">
   <xs:element name="Order" type="OrderType">
     <xs:annotation>
       <xs:documentation>The canonical order element</xs:documentation>
@@ -332,7 +337,7 @@
       <xs:element name="TotalQuantity" type="xs:int"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment</con:endpoint></con:endpoints><con:operation id="5f5d4aaa-828f-4058-a3cb-a03797db45ad" isOneWay="false" action="Validate" name="Validate" bindingOperationName="Validate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7ae9638b-07af-4919-a595-e0e0e50373c9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soas="http://www.oracle.com/soasample">\r
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep</con:endpoint></con:endpoints><con:operation id="604a9376-6c1c-4c60-b769-5813c707f628" isOneWay="false" action="validate" name="validate" bindingOperationName="validate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cf876677-4753-429e-84fd-5baefca4fc91" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soas="http://www.oracle.com/soasample">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <soas:PaymentInfo>\r
@@ -355,27 +360,27 @@
          <soas:AuthorizationAmount>?</soas:AuthorizationAmount>\r
       </soas:PaymentInfo>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Validate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="90b1a319-2519-41a0-8ad0-5b1ca9ba1080" name="IntegrationTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9830a55c-ae88-446e-a4ba-8a93079f4e05" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidatePaymentBinding" searchProperties="true"><con:settings/><con:testStep type="request" id="d79f9c71-1062-493c-b526-15ebf01ff67c" name="Validate - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>validatePaymentBinding</con:interface><con:operation>Validate</con:operation><con:request name="Validate - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f1049ce1-62b3-43e4-9335-2d7cb01b5b02"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://129.152.142.126:7004/soa-infra/services/order/ValidatePayment!1.4*soa_8f85c5c5-7efd-41d8-8e91-9059cb3caa46/ValidatePayment</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soas="http://www.oracle.com/soasample">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="validate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="8e3d7693-02ea-4f44-a63f-ca4b2c338d99" name="Service TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b240df72-5034-4a0c-ae0e-64b201320d25" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="75c551e8-7717-4ba9-9d8b-549e3a05f8e1" name="validate"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>validatePaymentBinding</con:interface><con:operation>validate</con:operation><con:request name="validate" id="a2523bba-439d-4fbc-b68e-b945d840fcbb"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${{SOASERVER_URL_PREFIX}}/soa-infra/services/default/HRSOAService/validatepaymentprocess_client_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soas="http://www.oracle.com/soasample">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <soas:PaymentInfo>\r
-         <soas:CardPaymentType>?</soas:CardPaymentType>\r
-         <soas:CardNum>?</soas:CardNum>\r
-         <soas:ExpireDate>?</soas:ExpireDate>\r
-         <soas:CardName>?</soas:CardName>\r
+         <soas:CardPaymentType>0</soas:CardPaymentType>\r
+         <soas:CardNum>012346789</soas:CardNum>\r
+         <soas:ExpireDate>2015-01-01 23:03:20</soas:ExpireDate>\r
+         <soas:CardName>AMEX</soas:CardName>\r
          <soas:BillingAddress>\r
-            <soas:FirstName>?</soas:FirstName>\r
-            <soas:LastName>?</soas:LastName>\r
-            <soas:AddressLine>?</soas:AddressLine>\r
-            <soas:City>?</soas:City>\r
-            <soas:State>?</soas:State>\r
-            <soas:ZipCode>?</soas:ZipCode>\r
-            <soas:PhoneNumber>?</soas:PhoneNumber>\r
+            <soas:FirstName>Daniel</soas:FirstName>\r
+            <soas:LastName>Day-Lewis</soas:LastName>\r
+            <soas:AddressLine>555 Beverly Lane</soas:AddressLine>\r
+            <soas:City>Hollywood</soas:City>\r
+            <soas:State>CA</soas:State>\r
+            <soas:ZipCode>12345</soas:ZipCode>\r
+            <soas:PhoneNumber>5127691108</soas:PhoneNumber>\r
          </soas:BillingAddress>\r
          <!--Optional:-->\r
-         <soas:AuthorizationDate>?</soas:AuthorizationDate>\r
+         <!--soas:AuthorizationDate>?</soas:AuthorizationDate-->\r
          <!--Optional:-->\r
-         <soas:AuthorizationAmount>?</soas:AuthorizationAmount>\r
+         <soas:AuthorizationAmount>100</soas:AuthorizationAmount>\r
       </soas:PaymentInfo>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b3d8e50b-d346-42bc-a0ee-f8154cccf96d" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Validate"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="validate" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
