@@ -1,5 +1,5 @@
 --
---XXHR_BIPUB_REP_PKG.pkb comment updated on 1/14/2019 10 PM
+--XXHR_BIPUB_REP_PKG.pkb comment updated on 1/15/2019 10 AM
 CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
 
   PROCEDURE generate_xml( p_errbuf  OUT VARCHAR2
@@ -13,6 +13,7 @@ CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
       FND_FILE.put_line(fnd_file.output, '  <Tuesday>Emily</Tuesday>');
       FND_FILE.put_line(fnd_file.output, '  <Wednesday>Annie</Wednesday>');
       FND_FILE.put_line(fnd_file.output, '  <Thursday>James</Thursday>');
+      
       FND_FILE.put_line(fnd_file.output, '  <Friday>Gordon</Friday>');
       FND_FILE.put_line(fnd_file.output, '  <Saturday>Rosie</Saturday>');
       FND_FILE.put_line(fnd_file.output, '  <Sunday>Henry</Sunday>');
