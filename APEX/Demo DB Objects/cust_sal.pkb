@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE BODY cust_sal AS  
+CREATE OR REPLACE PACKAGE BODY hr.cust_sal AS  
 -----------------------------------------------------------------------------------------------------          
 --
 --            NAME:   cust_sal
@@ -18,13 +18,13 @@ CREATE OR REPLACE PACKAGE BODY cust_sal AS
 --     1.0      2/11/2019    Chandresh Patel      N/A       Initial Version
 -----------------------------------------------------------------------------------------------------
    
-    PROCEDURE find_sal(c_id customers.id%TYPE) IS 
-    c_sal customers.salary%TYPE; 
+    PROCEDURE find_sal(e_id NUMBER) IS 
+    e_sal NUMBER; 
     BEGIN 
-        SELECT salary INTO c_sal 
-        FROM customers 
-        WHERE id = c_id; 
-        dbms_output.put_line('Salary: '|| c_sal); 
+        SELECT salary INTO e_sal 
+        FROM HR.employees 
+        WHERE employee_id = e_id; 
+        dbms_output.put_line('Salary: '|| e_sal); 
     END find_sal; 
 END cust_sal; 
 /

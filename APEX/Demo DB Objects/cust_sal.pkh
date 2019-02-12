@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE cust_sal AS 
+CREATE OR REPLACE PACKAGE hr.cust_sal AS 
 -----------------------------------------------------------------------------------------------------          
 --
 --            NAME:   cust_sal
@@ -18,6 +18,6 @@ CREATE OR REPLACE PACKAGE cust_sal AS
 --     1.0      2/11/2019    Chandresh Patel      N/A       Initial Version
 -----------------------------------------------------------------------------------------------------
 
-    PROCEDURE find_sal(c_id customers.id%type); 
+    PROCEDURE find_sal(e_id NUMBER); 
 END cust_sal; 
 /
