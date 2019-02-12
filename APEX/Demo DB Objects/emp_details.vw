@@ -1,4 +1,4 @@
--- Comment 2/11/2019 6:51 PM Need this change for performance
+-- Comment 2/11/2019 6:51 PM ASW demo
 CREATE OR REPLACE VIEW HR.EMP_DETAILS_VIEW AS 
 SELECT
   e.employee_id,
