@@ -1,4 +1,4 @@
--- Comment 2/11/2019 6:51 PM making a change again
+-- Comment 2/11/2019 6:51 PM Making a change
 CREATE OR REPLACE VIEW HR.EMP_DETAILS_VIEW AS 
 SELECT
   e.employee_id,
