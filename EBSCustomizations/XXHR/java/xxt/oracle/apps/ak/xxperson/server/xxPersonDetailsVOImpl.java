@@ -12,6 +12,5 @@ public class xxPersonDetailsVOImpl extends OAViewObjectImpl
    */
   public xxPersonDetailsVOImpl()
   {
-  
   }
 }
