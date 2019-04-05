@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/PaymentInformation" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/PaymentInformation" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-   <xs:element name="PaymentinfoCollection1" type="PaymentinfoCollection"/>
+   <xs:element name="PaymentinfoCollection" type="PaymentinfoCollection"/>
    <xs:complexType name="PaymentinfoCollection">
       <xs:sequence>
          <xs:element name="Paymentinfo" type="Paymentinfo" minOccurs="0" maxOccurs="unbounded"/>
