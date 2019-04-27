@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "TEST",
+            "name": "test",
             "policies": [
                 {
                     "name": "Assign-Message-1.xml",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "name": "PROD",
+            "name": "prod",
             "policies": [
                 {
                     "name": "Assign-Message-1.xml",
