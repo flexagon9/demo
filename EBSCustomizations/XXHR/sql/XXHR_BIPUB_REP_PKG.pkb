@@ -28,6 +28,16 @@ CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
       FND_FILE.put_line(fnd_file.output, '  <Saturday>Edward</Saturday>');
       FND_FILE.put_line(fnd_file.output, '  <Sunday>Trevor</Sunday>');
       FND_FILE.put_line(fnd_file.output, ' </Week>');
+	  FND_FILE.put_line(fnd_file.output, ' <Week>');
+      FND_FILE.put_line(fnd_file.output, '  <WeekNo>3</WeekNo>');
+      FND_FILE.put_line(fnd_file.output, '  <Monday>Jim</Monday>');
+      FND_FILE.put_line(fnd_file.output, '  <Tuesday>Matt</Tuesday>');
+      FND_FILE.put_line(fnd_file.output, '  <Wednesday>Mo</Wednesday>');
+      FND_FILE.put_line(fnd_file.output, '  <Thursday>Trevor</Thursday>');
+      FND_FILE.put_line(fnd_file.output, '  <Friday>John</Friday>');
+      FND_FILE.put_line(fnd_file.output, '  <Saturday>Danaerys</Saturday>');
+      FND_FILE.put_line(fnd_file.output, '  <Sunday>Michael</Sunday>');
+      FND_FILE.put_line(fnd_file.output, ' </Week>');
       FND_FILE.put_line(fnd_file.output, '</Roster>');
   end generate_xml;
 END xxhr_bipub_rep_pkg;
