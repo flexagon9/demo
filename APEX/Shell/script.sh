@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "Nederlandse kaas is lekker!"
+echo "Nederlandse kaas is echt lekker!"
