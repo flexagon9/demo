@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Target createdBy="weblogic" id="tgt_b543fa03-a709-49ae-8559-f3d07b850751" lastModifiedBy="weblogic" name="AAAOutput" responseMode="Async" xmlns="http://xmlns.oracle.com/mft/target">
+   <TargetType>
+      <SourceTargetCategory xmlns="http://xmlns.oracle.com/mft/category">
+         <Technology>
+            <TechnologyBinding secure="false" type="File" xmlns="http://xmlns.oracle.com/mft/binding">
+               <File append="false" eventBased="false" eventSecurityEnabled="false" folder="/var/tmp/AAAOutput" minimumAge="0" overwrite="true" pollingBased="true" pollingFrequency="60" recursive="false" renameOnCompletion="false">
+                  <PerformanceAttributes/>
+               </File>
+            </TechnologyBinding>
+         </Technology>
+      </SourceTargetCategory>
+   </TargetType>
+</Target>

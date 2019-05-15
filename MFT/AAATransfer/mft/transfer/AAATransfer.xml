@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Transfer createdBy="weblogic" id="xfer_cd98efe5-79f4-49ce-992b-589ed72c1099" lastModifiedBy="weblogic" name="AAATransfer" priority="medium" xmlns="http://xmlns.oracle.com/mft/transfer">
+   <Source>
+      <SourceRef id="soRef_8894b228-31b9-4ec9-b22a-6e17e7d16314" sourceRef="/mft/source/so_f6bd8a98-053a-4456-bdd9-9c2411afc48b.xml#so_f6bd8a98-053a-4456-bdd9-9c2411afc48b"/>
+   </Source>
+   <ContentFilters/>
+   <Targets>
+      <Target id="xfer_tgt_ec86f92c-3f9d-4785-8dd8-d27f8def06d5">
+         <TargetRef id="tgtRef_f656b459-285f-413f-848a-ff4676f43017" targetRef="/mft/target/tgt_b543fa03-a709-49ae-8559-f3d07b850751.xml#tgt_b543fa03-a709-49ae-8559-f3d07b850751"/>
+      </Target>
+   </Targets>
+</Transfer>

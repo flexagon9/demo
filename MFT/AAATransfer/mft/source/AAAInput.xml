@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Source createdBy="weblogic" id="so_f6bd8a98-053a-4456-bdd9-9c2411afc48b" listening="true" name="AAAInput" xmlns="http://xmlns.oracle.com/mft/source">
+   <SourceType>
+      <SourceTargetCategory xmlns="http://xmlns.oracle.com/mft/category">
+         <Technology>
+            <TechnologyBinding secure="false" type="File" xmlns="http://xmlns.oracle.com/mft/binding">
+               <File append="false" eventBased="false" eventSecurityEnabled="false" folder="/var/tmp/AAAInput" minimumAge="0" overwrite="true" pollingBased="true" pollingFrequency="3" recursive="false" renameOnCompletion="false">
+                  <ActionCommon type="delete"/>
+                  <PerformanceAttributes/>
+               </File>
+            </TechnologyBinding>
+         </Technology>
+      </SourceTargetCategory>
+   </SourceType>
+</Source>
