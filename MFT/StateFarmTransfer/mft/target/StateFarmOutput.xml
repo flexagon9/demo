@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Target createdBy="weblogic" id="tgt_6b9f1a93-70f6-4611-aee2-17236163f589" lastModifiedBy="weblogic" name="StateFarmOutput" responseMode="Async" xmlns="http://xmlns.oracle.com/mft/target">
+   <TargetType>
+      <SourceTargetCategory xmlns="http://xmlns.oracle.com/mft/category">
+         <Technology>
+            <TechnologyBinding secure="false" type="File" xmlns="http://xmlns.oracle.com/mft/binding">
+               <File append="false" eventBased="false" eventSecurityEnabled="false" folder="/var/tmp/StateFarmOutput" minimumAge="0" overwrite="true" pollingBased="true" pollingFrequency="60" recursive="false" renameOnCompletion="false">
+                  <PerformanceAttributes/>
+               </File>
+            </TechnologyBinding>
+         </Technology>
+      </SourceTargetCategory>
+   </TargetType>
+</Target>

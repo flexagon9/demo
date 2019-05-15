@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Source createdBy="weblogic" id="so_f52a9561-e761-46c3-b602-31e29cb46fe4" listening="true" name="StateFarmInput" xmlns="http://xmlns.oracle.com/mft/source">
+   <SourceType>
+      <SourceTargetCategory xmlns="http://xmlns.oracle.com/mft/category">
+         <Technology>
+            <TechnologyBinding secure="false" type="File" xmlns="http://xmlns.oracle.com/mft/binding">
+               <File append="false" eventBased="false" eventSecurityEnabled="false" folder="/var/tmp/StateFarmInput" minimumAge="0" overwrite="true" pollingBased="true" pollingFrequency="3" recursive="false" renameOnCompletion="false">
+                  <ActionCommon type="delete"/>
+                  <PerformanceAttributes/>
+               </File>
+            </TechnologyBinding>
+         </Technology>
+      </SourceTargetCategory>
+   </SourceType>
+</Source>
