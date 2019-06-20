@@ -1574,17 +1574,6 @@ wwv_flow_api.create_template_option(
 ,p_template_types=>'REGION'
 );
 wwv_flow_api.create_template_option(
- p_id=>wwv_flow_api.id(781873476947883206)
-,p_theme_id=>42
-,p_name=>'STICKY_HEADER_ON_MOBILE'
-,p_display_name=>'Sticky Header on Mobile'
-,p_display_sequence=>100
-,p_page_template_id=>wwv_flow_api.id(1225655852966288293)
-,p_css_classes=>'js-pageStickyMobileHeader'
-,p_template_types=>'PAGE'
-,p_help_text=>'This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens.'
-);
-wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(781882610322883211)
 ,p_theme_id=>42
 ,p_name=>'STICKY_HEADER_ON_MOBILE'
@@ -1959,9 +1948,6 @@ wwv_flow_api.create_template_option(
 ,p_help_text=>'Show a warning alert.'
 ,p_is_advanced=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(1735599048924413574)
 ,p_theme_id=>42
@@ -1988,6 +1974,9 @@ wwv_flow_api.create_template_option(
 ,p_help_text=>'Show an error or danger alert.'
 ,p_is_advanced=>'N'
 );
+end;
+/
+begin
 wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(1735600240758413575)
 ,p_theme_id=>42
@@ -2960,9 +2949,6 @@ wwv_flow_api.create_template_option(
 ,p_help_text=>'Show badge to right of link (requires Attribute 1 to be populated)'
 ,p_is_advanced=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(1735694237857413702)
 ,p_theme_id=>42
@@ -2988,6 +2974,9 @@ wwv_flow_api.create_template_option(
 ,p_template_types=>'LIST'
 ,p_help_text=>'Render as actions to be placed on the right side column.'
 );
+end;
+/
+begin
 wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(1735695448249413702)
 ,p_theme_id=>42
@@ -3954,9 +3943,6 @@ wwv_flow_api.create_template_option(
 ,p_group_id=>wwv_flow_api.id(517082183233598677)
 ,p_template_types=>'REPORT'
 );
-end;
-/
-begin
 wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(1817594557265538038)
 ,p_theme_id=>42
@@ -3990,6 +3976,9 @@ wwv_flow_api.create_template_option(
 ,p_group_id=>wwv_flow_api.id(517082183233598677)
 ,p_template_types=>'REPORT'
 );
+end;
+/
+begin
 wwv_flow_api.create_template_option(
  p_id=>wwv_flow_api.id(1817596341611538039)
 ,p_theme_id=>42

@@ -64,8 +64,7 @@ wwv_flow_api.create_page(
 ||'pdated, along with a free form description of the bug.</p>',
 '<p>You can customize the values for standard attributes, insuring that your Bug Tracker application will fit your particular needs. An administrator can specify products and their versions, categories, and codes for status, priority and severity.</p>',
 '<p>Bug Tracker gives all users an easy way to view bugs, based on a variety of selection filters.</p>'))
-,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20190604215530'
+,p_last_upd_yyyymmddhh24miss=>'20180223141500'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(1017380228487077965)
