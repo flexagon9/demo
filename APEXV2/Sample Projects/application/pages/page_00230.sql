@@ -10,7 +10,6 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_overwrite_navigation_list=>'Y'
 ,p_navigation_list_position=>'TOP'
-,p_navigation_list_id=>wwv_flow_api.id(455034182148612163)
 ,p_navigation_list_template_id=>wwv_flow_api.id(39211003846943661)
 ,p_nav_list_template_options=>'#DEFAULT#:t-NavTabs--inlineLabels-lg:t-NavTabs--displayLabels-sm'
 ,p_last_upd_yyyymmddhh24miss=>'20180301143825'
