@@ -1,0 +1,6 @@
+<html>
+<body>
+<p>Hello <strong><span style="color: #2925BF;">{name},</span></strong></p>
+<p><span style="color: #298022;"><strong>Welcome to Oracle Integration Cloud!</strong></span></p>
+</body>
+</html>

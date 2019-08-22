@@ -1,0 +1,212 @@
+{
+	"vanityName": "joel",
+	"updatedBy": "wenzje07@hotmail.com",
+	"implementation": {
+		"executions": {
+			"request": ["1",
+			"5",
+			"2"],
+			"response": ["3",
+			"4"]
+		},
+		"policies": [{
+			"schemaVersion": "1",
+			"draft": false,
+			"id": "1",
+			"type": "o:ApiRequest",
+			"version": "1.0",
+			"config": {
+				"protocols": ["HTTP",
+				"HTTPS"],
+				"url": "warrantyclaim\/1"
+			}
+		},
+		{
+			"schemaVersion": "3",
+			"draft": false,
+			"id": "2",
+			"type": "o:ServiceRequest",
+			"version": "1.0",
+			"config": {
+				"headerConfig": {
+					"action": "PASS-THROUGH"
+				},
+				"serviceAccount": "100",
+				"useProxy": false,
+				"url": "https:\/\/testoic-flexagonoraclecloud.integration.ocp.oraclecloud.com:443\/ic\/api\/integration\/v1\/flows\/rest\/WARRANTY_CLAIM\/1.0"
+			}
+		},
+		{
+			"schemaVersion": "1",
+			"id": "3",
+			"type": "o:ServiceResponse",
+			"version": "1.0",
+			"config": {
+				
+			}
+		},
+		{
+			"schemaVersion": "1",
+			"id": "4",
+			"type": "o:ApiResponse",
+			"version": "1.0",
+			"config": {
+				
+			}
+		},
+		{
+			"schemaVersion": "1",
+			"comments": "",
+			"draft": false,
+			"id": "5",
+			"type": "o:BasicAuth",
+			"version": "1.0",
+			"config": {
+				"conditions": [{
+					"members": "ALL"
+				}]
+			}
+		}]
+	},
+	"version": "2.0",
+	"stateUpdatedBy": "wenzje07@hotmail.com",
+	"createdAt": "2019-04-17T22:32:34+0000",
+	"stateUpdatedAt": "2019-04-18T15:40:33+0000",
+	"createdBy": "wenzje07@hotmail.com",
+	"publication": {
+		"visibility": "PROTECTED",
+		"state": "UNPUBLISHED"
+	},
+	"name": "Warranty Claim",
+	"details": {
+		"overview": {
+			"data": "hello",
+			"docType": "markdown",
+			"dataType": "text"
+		},
+		"documentation": {
+			"data": "documentation",
+			"docType": "markdown",
+			"dataType": "text"
+		}
+	},
+	"links": [{
+		"templated": "true",
+		"method": "GET",
+		"rel": "self",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "canonical",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "iteration",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/iterations\/10"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "history",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/history"
+	},
+	{
+		"templated": "true",
+		"method": "PUT",
+		"rel": "edit",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109"
+	},
+	{
+		"templated": "true",
+		"method": "PUT",
+		"rel": "rename",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/identity"
+	},
+	{
+		"templated": "true",
+		"method": "POST",
+		"rel": "validate",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/validation"
+	},
+	{
+		"templated": "true",
+		"method": "PUT",
+		"rel": "lifecycle",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/state"
+	},
+	{
+		"templated": "true",
+		"method": "PUT",
+		"rel": "publish",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/publication"
+	},
+	{
+		"templated": "true",
+		"method": "PUT",
+		"rel": "unpublish",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/publication"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "references",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/references"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "references.applications",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/references\/applications"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "references.gateways",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/references\/gateways"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "references.services",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/references\/services"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "references.serviceaccounts",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/references\/serviceaccounts"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "entitlements",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/entitlements"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "deployments",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/deployments"
+	},
+	{
+		"templated": "true",
+		"method": "GET",
+		"rel": "grants",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/grants"
+	},
+	{
+		"templated": "true",
+		"method": "POST",
+		"rel": "compact",
+		"href": "https:\/\/flexapi2-flexapi.apiplatform.ocp.oraclecloud.com:443\/apiplatform\/management\/v1\/apis\/109\/compact"
+	}],
+	"state": "RELEASED",
+	"id": "109",
+	"iterationId": "10",
+	"updatedAt": "2019-05-01T15:54:13+0000",
+	"artifacts": []
+}

@@ -1,0 +1,29 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST/types" name="helloWorld_REQUESTPortType" adapter="rest" wsdlLocation="helloWorld_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.rest.RestAdapterConnectionFactory">
+      <property name="securityPolicy" value="BASIC_AUTH"/>
+      <property name="cloud.adapter.sdk.version" value="17.2.3"/>
+      <property name="cloud.adapter.plugin.version" value="17.2.3"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="helloWorld_REQUESTPortType" operation="execute">
+    <activation-spec className="oracle.tip.adapter.cloud.CloudActivationSpec">
+      <property name="targetOperation" value="execute"/>
+      <property name="operationPath" value="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST/execute"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld/types"/>
+      <property name="ResourceURI" value="/names/{name}"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="responseJsonTopLevelArray" value="false"/>
+      <property name="HttpVerb" value="GET"/>
+      <property name="ResponseElementName" value="response-wrapper"/>
+      <property name="activationSpecClass" value="oracle.tip.adapter.cloud.CloudActivationSpec"/>
+      <property name="postQueryParamsAsContent" value="false"/>
+      <property name="ResponseSample" value="{ &quot;Hello&quot;:&quot;Name&quot;, &quot;Message&quot;:&quot;Email Sent&quot;, &quot;Email&quot;:&quot;EmailAddress&quot; }"/>
+      <property name="ResponseMediaType" value="application/json"/>
+      <property name="targetOperation" value="execute"/>
+      <property name="operationPath" value="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST/execute"/>
+      <property name="HTTPHeadersAdded" value="true"/>
+      <property name="QueryParameters" value="email, flowid"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>

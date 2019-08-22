@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "f7409dad-f844-45a0-86a5-5443f0333f4f",
+		"name": "WarrantyClaim",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WarrantyClaim_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "927c4beb-ccff-400e-b828-eddc375a3f71",
+						"exec": [
+							"pm.test(\"Body Contains Hello\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hello\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "weblogic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://${{APIPLATFORM:ORACLE_API_NODE_HOST}}:8011/warrantyclaim/1/names/${{FD_PROJECT_VERSION}}",
+					"protocol": "http",
+					"host": [
+						"${{APIPLATFORM:ORACLE_API_NODE_HOST}}"
+					],
+					"port": "8011",
+					"path": [
+						"warrantyclaim",
+						"1",
+						"names",
+						"${{FD_PROJECT_VERSION}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f0c4f8c7-708c-469f-bba7-56bcd284e69e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "11ab1bd4-16f1-4b82-93cb-421ae8532e55",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
