@@ -1,0 +1,137 @@
+prompt --application/shared_components/logic/application_items
+begin
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(102025092156862447)
+,p_name=>'BADGE_CLASS_HELLO'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(102029184709906104)
+,p_name=>'BADGE_CLASS_NOTIFICATIONS'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(100952594587577667)
+,p_name=>'EDIT_HELP'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(21188594591225215)
+,p_name=>'G_ACTUAL_PAGE'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(21188826661227660)
+,p_name=>'G_CALLING_PAGE'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(22704636224553473)
+,p_name=>'G_CURRENT_LOCATION_FORMATTED'
+,p_protection_level=>'I'
+,p_item_comment=>'contains user''s current location plant code and name.'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(23954896205111876)
+,p_name=>'G_DEFAULT_BRAND_ID'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(23957886378027668)
+,p_name=>'G_DEFAULT_DIVISION_ID'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(16030046139370717)
+,p_name=>'G_DEFAULT_LOCATION_ID'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(16029620490363150)
+,p_name=>'G_DEFAULT_LOC_CODE'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(23955058399115461)
+,p_name=>'G_DEFAULT_MODEL_ID'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(20952648878645647)
+,p_name=>'G_DEFAULT_PLANT_ID'
+,p_protection_level=>'I'
+,p_item_comment=>'Holds User''s Default QCIS Plant ID'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(21618636313143901)
+,p_name=>'G_FILE_ID'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(25508596432826799)
+,p_name=>'G_MARINE_DIVISION_TYPE'
+,p_protection_level=>'N'
+,p_item_comment=>'Indicates if the Plant is a BBG or BME Plant'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(26919649515609019)
+,p_name=>'G_NAV_BAR_SELECTION'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(21255392449485373)
+,p_name=>'G_REFRESH_HOME'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(27784644442287198)
+,p_name=>'G_SFM_FLAG'
+,p_protection_level=>'N'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(16029817174368116)
+,p_name=>'G_SUPER_USER'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(22976215443125912)
+,p_name=>'G_TT_BACK_BUTT'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(22975835956123171)
+,p_name=>'G_TT_CAN_BUTT'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(22976788827134591)
+,p_name=>'G_TT_SAVE_BUTT'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(16029196358357582)
+,p_name=>'G_USER_ID'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(16029365439360212)
+,p_name=>'G_USER_OID'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(101396891779452486)
+,p_name=>'HOT'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(101397086724453367)
+,p_name=>'NEUTRAL'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(91949488528306303)
+,p_name=>'NOTIFICATIONS'
+,p_protection_level=>'I'
+);
+end;
+/
