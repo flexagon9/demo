@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/report/badge_list
 begin
 wwv_flow_api.create_row_template(
- p_id=>wwv_flow_api.id(90720993945242468)
+ p_id=>wwv_flow_api.id(79429645549908484)
 ,p_row_template_name=>'Badge List'
 ,p_internal_name=>'BADGE_LIST'
 ,p_row_template1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -39,7 +39,6 @@ wwv_flow_api.create_row_template(
 ,p_theme_class_id=>6
 ,p_default_template_options=>'t-BadgeList--responsive'
 ,p_preset_template_options=>'t-BadgeList--large:t-BadgeList--fixed'
-,p_reference_id=>74994583959745717
 ,p_translate_this_template=>'N'
 );
 end;

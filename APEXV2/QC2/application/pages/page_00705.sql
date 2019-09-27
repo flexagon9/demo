@@ -2,7 +2,7 @@ prompt --application/pages/page_00705
 begin
 wwv_flow_api.create_page(
  p_id=>705
-,p_user_interface_id=>wwv_flow_api.id(90742613879242702)
+,p_user_interface_id=>wwv_flow_api.id(79451265483908718)
 ,p_name=>'System Message Logging'
 ,p_step_title=>'System Message Logging'
 ,p_autocomplete_on_off=>'OFF'
@@ -11,10 +11,10 @@ wwv_flow_api.create_page(
 ,p_last_upd_yyyymmddhh24miss=>'20190815143403'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(22502380148543076)
+ p_id=>wwv_flow_api.id(11211031753209092)
 ,p_plug_name=>'System Message Logging'
 ,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(90709385417242440)
+,p_plug_template=>wwv_flow_api.id(79418037021908456)
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
@@ -33,7 +33,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_api.create_worksheet(
- p_id=>wwv_flow_api.id(22502532680543076)
+ p_id=>wwv_flow_api.id(11211184285209092)
 ,p_name=>'System Message Logging'
 ,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
 ,p_no_data_found_message=>'No data found.'
@@ -47,7 +47,7 @@ wwv_flow_api.create_worksheet(
 ,p_internal_uid=>11211184285209092
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22502910042543079)
+ p_id=>wwv_flow_api.id(11211561647209095)
 ,p_db_column_name=>'LOG_ID'
 ,p_display_order=>1
 ,p_column_identifier=>'A'
@@ -58,7 +58,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22503295897543079)
+ p_id=>wwv_flow_api.id(11211947502209095)
 ,p_db_column_name=>'MSG_DATA_SOURCE'
 ,p_display_order=>2
 ,p_column_identifier=>'B'
@@ -68,7 +68,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22503676605543079)
+ p_id=>wwv_flow_api.id(11212328210209095)
 ,p_db_column_name=>'MSG_SOURCE_ID'
 ,p_display_order=>3
 ,p_column_identifier=>'C'
@@ -79,7 +79,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22504056156543080)
+ p_id=>wwv_flow_api.id(11212707761209096)
 ,p_db_column_name=>'SOURCE_PROCESS'
 ,p_display_order=>4
 ,p_column_identifier=>'D'
@@ -89,7 +89,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22504466137543080)
+ p_id=>wwv_flow_api.id(11213117742209096)
 ,p_db_column_name=>'LOG_MESSAGE'
 ,p_display_order=>5
 ,p_column_identifier=>'E'
@@ -99,7 +99,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22504895154543080)
+ p_id=>wwv_flow_api.id(11213546759209096)
 ,p_db_column_name=>'LOG_TYPE'
 ,p_display_order=>6
 ,p_column_identifier=>'F'
@@ -109,7 +109,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22505329966543080)
+ p_id=>wwv_flow_api.id(11213981571209096)
 ,p_db_column_name=>'CREATE_DATE'
 ,p_display_order=>7
 ,p_column_identifier=>'G'
@@ -120,7 +120,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(22505684572543081)
+ p_id=>wwv_flow_api.id(11214336177209097)
 ,p_db_column_name=>'CREATED_BY'
 ,p_display_order=>8
 ,p_column_identifier=>'H'
@@ -130,7 +130,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_rpt(
- p_id=>wwv_flow_api.id(22506077098546783)
+ p_id=>wwv_flow_api.id(11214728703212799)
 ,p_application_user=>'APXWS_DEFAULT'
 ,p_report_seq=>10
 ,p_report_alias=>'112148'

@@ -35,14 +35,14 @@ prompt APPLICATION 102 - QC2
 --
 
 -- Application Statistics:
---   Pages:                     98
---     Items:                  674
---     Computations:            10
---     Validations:             51
---     Processes:              213
---     Regions:                300
---     Buttons:                269
---     Dynamic Actions:        177
+--   Pages:                    104
+--     Items:                  872
+--     Computations:            21
+--     Validations:             65
+--     Processes:              264
+--     Regions:                330
+--     Buttons:                318
+--     Dynamic Actions:        191
 --   Shared Components:
 --     Logic:
 --       Items:                 26
@@ -66,7 +66,7 @@ prompt APPLICATION 102 - QC2
 --         Breadcrumb:           1
 --         Button:              10
 --         Report:              10
---       LOVs:                  23
+--       LOVs:                  34
 --       Shortcuts:              1
 --       Plug-ins:               3
 --     Globalization:

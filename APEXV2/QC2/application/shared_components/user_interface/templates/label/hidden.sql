@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/label/hidden
 begin
 wwv_flow_api.create_field_template(
- p_id=>wwv_flow_api.id(90736865129242511)
+ p_id=>wwv_flow_api.id(79445516733908527)
 ,p_template_name=>'Hidden'
 ,p_internal_name=>'HIDDEN'
 ,p_template_body1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -19,7 +19,6 @@ wwv_flow_api.create_field_template(
 ,p_error_template=>'<span class="t-Form-error">#ERROR_MESSAGE#</span>'
 ,p_theme_id=>42
 ,p_theme_class_id=>13
-,p_reference_id=>75010455143745760
 ,p_translate_this_template=>'N'
 );
 end;

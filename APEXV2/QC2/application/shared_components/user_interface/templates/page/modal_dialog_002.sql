@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/page/modal_dialog_002
 begin
 wwv_flow_api.create_template(
- p_id=>wwv_flow_api.id(90704752091242393)
+ p_id=>wwv_flow_api.id(79413403695908409)
 ,p_theme_id=>42
 ,p_name=>'Modal Dialog'
 ,p_internal_name=>'MODAL_DIALOG'
@@ -145,12 +145,11 @@ wwv_flow_api.create_template(
 ,p_dialog_max_width=>'960'
 ,p_dialog_css_classes=>'t-Dialog--standard'
 ,p_dialog_browser_frame=>'MODAL'
-,p_reference_id=>74978342105745642
 ,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17910123004203977)
-,p_page_template_id=>wwv_flow_api.id(90704752091242393)
+ p_id=>wwv_flow_api.id(6618774608869993)
+,p_page_template_id=>wwv_flow_api.id(79413403695908409)
 ,p_name=>'Content Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
@@ -158,16 +157,16 @@ wwv_flow_api.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>12
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17910559116203978)
-,p_page_template_id=>wwv_flow_api.id(90704752091242393)
+ p_id=>wwv_flow_api.id(6619210720869994)
+,p_page_template_id=>wwv_flow_api.id(79413403695908409)
 ,p_name=>'Dialog Header'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false
 ,p_glv_new_row=>true
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17911115747203978)
-,p_page_template_id=>wwv_flow_api.id(90704752091242393)
+ p_id=>wwv_flow_api.id(6619767351869994)
+,p_page_template_id=>wwv_flow_api.id(79413403695908409)
 ,p_name=>'Dialog Footer'
 ,p_placeholder=>'REGION_POSITION_03'
 ,p_has_grid_support=>false

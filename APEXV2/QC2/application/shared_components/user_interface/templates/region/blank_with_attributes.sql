@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/region/blank_with_attributes
 begin
 wwv_flow_api.create_plug_template(
- p_id=>wwv_flow_api.id(90708365363242438)
+ p_id=>wwv_flow_api.id(79417016967908454)
 ,p_layout=>'TABLE'
 ,p_template=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div id="#REGION_STATIC_ID#" #REGION_ATTRIBUTES# class="#REGION_CSS_CLASSES#"> ',
@@ -13,7 +13,6 @@ wwv_flow_api.create_plug_template(
 ,p_theme_class_id=>7
 ,p_default_label_alignment=>'RIGHT'
 ,p_default_field_alignment=>'LEFT'
-,p_reference_id=>74981955377745687
 ,p_translate_this_template=>'N'
 );
 end;

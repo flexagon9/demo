@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/button/text_with_icon_007
 begin
 wwv_flow_api.create_button_templates(
- p_id=>wwv_flow_api.id(24123808068497238)
+ p_id=>wwv_flow_api.id(12832459673163254)
 ,p_template_name=>'BBG Create And Another Button'
 ,p_internal_name=>'TEXT_WITH_ICON'
 ,p_template=>'<button class="t-Button t-Button--icon t-Button--hot t-Button--iconLeft" onclick="#JAVASCRIPT#" TITLE="Press To Create This Record And Create Another Record" type="button"><span class="t-Icon t-Icon--left fa fa-plus-circle" aria-hidden="true"></span>'

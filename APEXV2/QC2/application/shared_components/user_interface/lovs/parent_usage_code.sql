@@ -1,24 +1,24 @@
 prompt --application/shared_components/user_interface/lovs/parent_usage_code
 begin
 wwv_flow_api.create_list_of_values(
- p_id=>wwv_flow_api.id(21782523689685517)
+ p_id=>wwv_flow_api.id(10491175294351533)
 ,p_lov_name=>'PARENT_USAGE_CODE'
-,p_lov_query=>'.'||wwv_flow_api.id(21782523689685517)||'.'
+,p_lov_query=>'.'||wwv_flow_api.id(10491175294351533)||'.'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(21782786011685522)
+ p_id=>wwv_flow_api.id(10491437616351538)
 ,p_lov_disp_sequence=>1
 ,p_lov_disp_value=>'QCIS'
 ,p_lov_return_value=>'Q'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(21783199127685523)
+ p_id=>wwv_flow_api.id(10491850732351539)
 ,p_lov_disp_sequence=>2
 ,p_lov_disp_value=>'SFM'
 ,p_lov_return_value=>'S'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(21783554484685524)
+ p_id=>wwv_flow_api.id(10492206089351540)
 ,p_lov_disp_sequence=>3
 ,p_lov_disp_value=>'Both'
 ,p_lov_return_value=>'B'

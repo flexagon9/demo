@@ -1,7 +1,7 @@
 prompt --application/shared_components/security/authorizations/isinspector
 begin
 wwv_flow_api.create_security_scheme(
- p_id=>wwv_flow_api.id(15902303599215300)
+ p_id=>wwv_flow_api.id(4610955203881316)
 ,p_name=>'isInspector'
 ,p_scheme_type=>'NATIVE_EXISTS'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(

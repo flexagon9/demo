@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/list/side_navigation_menu
 begin
 wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(90736099348242505)
+ p_id=>wwv_flow_api.id(79444750952908521)
 ,p_list_template_current=>'<li data-current="true" data-id="#A01#" data-disabled="#A02#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_noncurrent=>'<li data-id="#A01#" data-disabled="#A02#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_name=>'Side Navigation Menu'
@@ -27,7 +27,6 @@ wwv_flow_api.create_list_template(
 ,p_a01_label=>'ID Attribute'
 ,p_a02_label=>'Disabled True/False'
 ,p_a04_label=>'Title'
-,p_reference_id=>75009689362745754
 );
 end;
 /

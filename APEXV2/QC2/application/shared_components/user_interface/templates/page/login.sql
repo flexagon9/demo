@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/page/login
 begin
 wwv_flow_api.create_template(
- p_id=>wwv_flow_api.id(90702675954242391)
+ p_id=>wwv_flow_api.id(79411327558908407)
 ,p_theme_id=>42
 ,p_name=>'Login'
 ,p_internal_name=>'LOGIN'
@@ -138,12 +138,11 @@ wwv_flow_api.create_template(
 ,p_dialog_js_close_code=>'apex.navigation.dialog.close(#IS_MODAL#,#TARGET#);'
 ,p_dialog_js_cancel_code=>'apex.navigation.dialog.cancel(#IS_MODAL#);'
 ,p_dialog_browser_frame=>'MODAL'
-,p_reference_id=>74976265968745640
 ,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17892603173203961)
-,p_page_template_id=>wwv_flow_api.id(90702675954242391)
+ p_id=>wwv_flow_api.id(6601254777869977)
+,p_page_template_id=>wwv_flow_api.id(79411327558908407)
 ,p_name=>'Content Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
@@ -151,8 +150,8 @@ wwv_flow_api.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>12
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17893076240203961)
-,p_page_template_id=>wwv_flow_api.id(90702675954242391)
+ p_id=>wwv_flow_api.id(6601727844869977)
+,p_page_template_id=>wwv_flow_api.id(79411327558908407)
 ,p_name=>'Body Header'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false

@@ -1,7 +1,7 @@
 prompt --application/shared_components/reports/report_queries/customer_component_list
 begin
 wwv_flow_api.create_shared_query(
- p_id=>wwv_flow_api.id(38002941296330782)
+ p_id=>wwv_flow_api.id(26711592900996798)
 ,p_name=>'CUSTOMER_COMPONENT_LIST'
 ,p_query_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '-- Query 1 use boat masster id 290344 for testing */',
@@ -40,14 +40,14 @@ wwv_flow_api.create_shared_query(
 '  FROM qcis_boat_master_HIST bm, qcis_brand_master br',
 ' WHERE     bm.boat_master_id = :P26_BOAT_MASTER_ID',
 '       AND br.qcis_brand_master_id = bm.brand_id'))
-,p_report_layout_id=>wwv_flow_api.id(38002745654329642)
+,p_report_layout_id=>wwv_flow_api.id(26711397258995658)
 ,p_format=>'PDF'
 ,p_output_file_name=>'CUSTOMER_COMPONENT_LIST'
 ,p_content_disposition=>'ATTACHMENT'
 );
 wwv_flow_api.create_shared_query_stmnt(
- p_id=>wwv_flow_api.id(38008684018632678)
-,p_shared_query_id=>wwv_flow_api.id(38002941296330782)
+ p_id=>wwv_flow_api.id(26717335623298694)
+,p_shared_query_id=>wwv_flow_api.id(26711592900996798)
 ,p_sql_statement=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '-- Query 1 use boat masster id 290344 for testing */',
 'SELECT    br.brand_name',
@@ -87,8 +87,8 @@ wwv_flow_api.create_shared_query_stmnt(
 '       AND br.qcis_brand_master_id = bm.brand_id'))
 );
 wwv_flow_api.create_shared_query_stmnt(
- p_id=>wwv_flow_api.id(38008895626632678)
-,p_shared_query_id=>wwv_flow_api.id(38002941296330782)
+ p_id=>wwv_flow_api.id(26717547231298694)
+,p_shared_query_id=>wwv_flow_api.id(26711592900996798)
 ,p_sql_statement=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '	   ',
 '/* query 2 */',
@@ -142,8 +142,8 @@ wwv_flow_api.create_shared_query_stmnt(
 '       AND DECODE (vdd.variable_data_value, NULL, 0, 1) = 1'))
 );
 wwv_flow_api.create_shared_query_stmnt(
- p_id=>wwv_flow_api.id(38009077387632678)
-,p_shared_query_id=>wwv_flow_api.id(38002941296330782)
+ p_id=>wwv_flow_api.id(26717728992298694)
+,p_shared_query_id=>wwv_flow_api.id(26711592900996798)
 ,p_sql_statement=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '/* query 3 */',
 'SELECT NVL (SUM (NVL (LENGTH (vdd.brand_value), 0)), 0) product_brand,',

@@ -1,7 +1,7 @@
 prompt --application/shared_components/security/authentications/master_sso_oam
 begin
 wwv_flow_api.create_authentication(
- p_id=>wwv_flow_api.id(90744885685258528)
+ p_id=>wwv_flow_api.id(79453537289924544)
 ,p_name=>'MASTER - SSO - OAM'
 ,p_scheme_type=>'NATIVE_HTTP_HEADER_VARIABLE'
 ,p_attribute_01=>'OAM_REMOTE_USER'

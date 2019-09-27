@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/list/badge_list
 begin
 wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(90728632446242486)
+ p_id=>wwv_flow_api.id(79437284050908502)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-BadgeList-item #A02#">',
 '  <span class="t-BadgeList-label">#TEXT#</span>',
@@ -25,7 +25,6 @@ wwv_flow_api.create_list_template(
 ,p_a01_label=>'Value'
 ,p_a02_label=>'List item CSS Classes'
 ,p_a03_label=>'Link Attributes'
-,p_reference_id=>75002222460745735
 ,p_list_template_comment=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'A01: Large Number',
 'A02: List Item Classes',

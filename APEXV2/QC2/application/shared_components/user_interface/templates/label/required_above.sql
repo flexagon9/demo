@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/label/required_above
 begin
 wwv_flow_api.create_field_template(
- p_id=>wwv_flow_api.id(90737306743242521)
+ p_id=>wwv_flow_api.id(79445958347908537)
 ,p_template_name=>'Required - Above'
 ,p_internal_name=>'REQUIRED_ABOVE'
 ,p_template_body1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -19,7 +19,6 @@ wwv_flow_api.create_field_template(
 ,p_error_template=>'<span class="t-Form-error">#ERROR_MESSAGE#</span>'
 ,p_theme_id=>42
 ,p_theme_class_id=>4
-,p_reference_id=>75010896757745770
 ,p_translate_this_template=>'N'
 );
 end;

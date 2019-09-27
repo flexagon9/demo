@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/list/top_navigation_menu
 begin
 wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(90736390652242506)
+ p_id=>wwv_flow_api.id(79445042256908522)
 ,p_list_template_current=>'<li data-current="true" data-id="#A01#" data-disabled="#A02#" data-hide="#A03#" data-shortcut="#A05#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_noncurrent=>'<li data-id="#A01#" data-disabled="#A02#" data-hide="#A03#" data-shortcut="#A05#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_name=>'Top Navigation Menu'
@@ -40,7 +40,6 @@ wwv_flow_api.create_list_template(
 ,p_a03_label=>'Hide'
 ,p_a04_label=>'Title Attribute'
 ,p_a05_label=>'Shortcut Key'
-,p_reference_id=>75009980666745755
 );
 end;
 /

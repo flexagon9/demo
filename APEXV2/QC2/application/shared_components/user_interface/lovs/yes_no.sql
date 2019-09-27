@@ -1,18 +1,18 @@
 prompt --application/shared_components/user_interface/lovs/yes_no
 begin
 wwv_flow_api.create_list_of_values(
- p_id=>wwv_flow_api.id(15976633719645764)
+ p_id=>wwv_flow_api.id(4685285324311780)
 ,p_lov_name=>'YES_NO'
-,p_lov_query=>'.'||wwv_flow_api.id(15976633719645764)||'.'
+,p_lov_query=>'.'||wwv_flow_api.id(4685285324311780)||'.'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(15977043549645769)
+ p_id=>wwv_flow_api.id(4685695154311785)
 ,p_lov_disp_sequence=>1
 ,p_lov_disp_value=>'Yes'
 ,p_lov_return_value=>'Y'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(15977418711645772)
+ p_id=>wwv_flow_api.id(4686070316311788)
 ,p_lov_disp_sequence=>2
 ,p_lov_disp_value=>'No'
 ,p_lov_return_value=>'N'

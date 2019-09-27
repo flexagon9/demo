@@ -1,7 +1,7 @@
 prompt --application/shared_components/security/authorizations/isshipping
 begin
 wwv_flow_api.create_security_scheme(
- p_id=>wwv_flow_api.id(15902637381215300)
+ p_id=>wwv_flow_api.id(4611288985881316)
 ,p_name=>'isShipping'
 ,p_scheme_type=>'NATIVE_EXISTS'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(

@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/report/cards
 begin
 wwv_flow_api.create_row_template(
- p_id=>wwv_flow_api.id(90722692821242475)
+ p_id=>wwv_flow_api.id(79431344425908491)
 ,p_row_template_name=>'Cards'
 ,p_internal_name=>'CARDS'
 ,p_row_template1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -46,7 +46,6 @@ wwv_flow_api.create_row_template(
 ,p_theme_id=>42
 ,p_theme_class_id=>7
 ,p_preset_template_options=>'t-Cards--3cols:t-Cards--featured'
-,p_reference_id=>74996282835745724
 ,p_translate_this_template=>'N'
 );
 end;

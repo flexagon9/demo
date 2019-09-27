@@ -1,7 +1,7 @@
 prompt --application/shared_components/security/authorizations/issuperuseroradmin
 begin
 wwv_flow_api.create_security_scheme(
- p_id=>wwv_flow_api.id(21410904546253985)
+ p_id=>wwv_flow_api.id(10119556150920001)
 ,p_name=>'isSuperUserOrAdmin'
 ,p_scheme_type=>'NATIVE_EXISTS'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(

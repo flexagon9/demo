@@ -1,24 +1,24 @@
 prompt --application/shared_components/user_interface/lovs/active_inactive_both
 begin
 wwv_flow_api.create_list_of_values(
- p_id=>wwv_flow_api.id(37124492645572918)
+ p_id=>wwv_flow_api.id(25833144250238934)
 ,p_lov_name=>'ACTIVE_INACTIVE_BOTH'
-,p_lov_query=>'.'||wwv_flow_api.id(37124492645572918)||'.'
+,p_lov_query=>'.'||wwv_flow_api.id(25833144250238934)||'.'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(37124765101572920)
+ p_id=>wwv_flow_api.id(25833416706238936)
 ,p_lov_disp_sequence=>1
 ,p_lov_disp_value=>'Active'
 ,p_lov_return_value=>'A'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(37125171528572922)
+ p_id=>wwv_flow_api.id(25833823133238938)
 ,p_lov_disp_sequence=>2
 ,p_lov_disp_value=>'Inactive'
 ,p_lov_return_value=>'I'
 );
 wwv_flow_api.create_static_lov_data(
- p_id=>wwv_flow_api.id(37125593554572922)
+ p_id=>wwv_flow_api.id(25834245159238938)
 ,p_lov_disp_sequence=>3
 ,p_lov_disp_value=>'Both'
 ,p_lov_return_value=>'B'

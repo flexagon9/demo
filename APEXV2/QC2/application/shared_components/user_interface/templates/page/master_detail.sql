@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/page/master_detail
 begin
 wwv_flow_api.create_template(
- p_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(79411563619908407)
 ,p_theme_id=>42
 ,p_name=>'Master Detail'
 ,p_internal_name=>'MASTER_DETAIL'
@@ -194,12 +194,11 @@ wwv_flow_api.create_template(
 ,p_dialog_js_close_code=>'apex.navigation.dialog.close(#IS_MODAL#,#TARGET#);'
 ,p_dialog_js_cancel_code=>'apex.navigation.dialog.cancel(#IS_MODAL#);'
 ,p_dialog_browser_frame=>'MODAL'
-,p_reference_id=>74976502029745640
 ,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17897469744203965)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6606121348869981)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Content Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
@@ -207,24 +206,24 @@ wwv_flow_api.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>8
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17897983616203966)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6606635220869982)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Breadcrumb Bar'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false
 ,p_glv_new_row=>true
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17898541545203966)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6607193149869982)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Master Detail'
 ,p_placeholder=>'REGION_POSITION_02'
 ,p_has_grid_support=>false
 ,p_glv_new_row=>true
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17899021752203967)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6607673356869983)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Right Side Column'
 ,p_placeholder=>'REGION_POSITION_03'
 ,p_has_grid_support=>false
@@ -232,8 +231,8 @@ wwv_flow_api.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>4
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17899507922203967)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6608159526869983)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Inline Dialogs'
 ,p_placeholder=>'REGION_POSITION_04'
 ,p_has_grid_support=>true
@@ -241,8 +240,8 @@ wwv_flow_api.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>12
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17900031106203968)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6608682710869984)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Footer'
 ,p_placeholder=>'REGION_POSITION_05'
 ,p_has_grid_support=>true
@@ -250,24 +249,24 @@ wwv_flow_api.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>8
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17900464776203968)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6609116380869984)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Page Navigation'
 ,p_placeholder=>'REGION_POSITION_06'
 ,p_has_grid_support=>false
 ,p_glv_new_row=>true
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17900958233203969)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6609609837869985)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Page Header'
 ,p_placeholder=>'REGION_POSITION_07'
 ,p_has_grid_support=>false
 ,p_glv_new_row=>true
 );
 wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(17901469327203969)
-,p_page_template_id=>wwv_flow_api.id(90702912015242391)
+ p_id=>wwv_flow_api.id(6610120931869985)
+,p_page_template_id=>wwv_flow_api.id(79411563619908407)
 ,p_name=>'Before Navigation Bar'
 ,p_placeholder=>'REGION_POSITION_08'
 ,p_has_grid_support=>false

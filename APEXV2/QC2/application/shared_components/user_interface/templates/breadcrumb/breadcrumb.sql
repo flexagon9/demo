@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/breadcrumb/breadcrumb
 begin
 wwv_flow_api.create_menu_template(
- p_id=>wwv_flow_api.id(90737983207242537)
+ p_id=>wwv_flow_api.id(79446634811908553)
 ,p_name=>'Breadcrumb'
 ,p_internal_name=>'BREADCRUMB'
 ,p_before_first=>'<ul class="t-Breadcrumb #COMPONENT_CSS_CLASSES#">'
@@ -12,7 +12,6 @@ wwv_flow_api.create_menu_template(
 ,p_start_with_node=>'PARENT_TO_LEAF'
 ,p_theme_id=>42
 ,p_theme_class_id=>1
-,p_reference_id=>75011573221745786
 ,p_translate_this_template=>'N'
 );
 end;

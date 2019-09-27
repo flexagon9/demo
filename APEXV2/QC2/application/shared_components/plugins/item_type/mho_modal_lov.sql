@@ -1,7 +1,7 @@
 prompt --application/shared_components/plugins/item_type/mho_modal_lov
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49573826204618369036)
 ,p_plugin_type=>'ITEM TYPE'
 ,p_name=>'MHO.MODAL_LOV'
 ,p_display_name=>'Modal LOV'
@@ -708,8 +708,8 @@ wwv_flow_api.create_plugin(
 ,p_files_version=>460
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(34223672317252496416)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(34212380968857162432)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -730,8 +730,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_comment=>'https://github.com/mennooo/orclapex-modal-lov/issues/7'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49589305232375892539)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49578013883980558555)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -743,8 +743,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Number of rows to display in the Modal LOV'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(34243011307558523392)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(34231719959163189408)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -755,8 +755,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49589818029940901054)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49578526681545567070)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
@@ -781,8 +781,8 @@ wwv_flow_api.create_plugin_attribute(
 'For the example the display column name is: d'))
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49589827952384904804)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49578536603989570820)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
@@ -804,8 +804,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Hide or show column headers in the modal LOV. The column headers can look much nicer if you use case sensitive names like the example.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49589811253847332612)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49578519905451998628)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
@@ -817,8 +817,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'The title of the Modal LOV.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49589850429016913681)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49578559080621579697)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
@@ -830,8 +830,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'The message to display when the builtin validation error occurs.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49590336137140923239)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49579044788745589255)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>80
@@ -843,8 +843,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Text to display as placeholder for the search item in the Modal LOV.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49590339540424926290)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49579048192029592306)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>9
 ,p_display_sequence=>90
@@ -856,8 +856,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Text to display as no-data-found message when the Modal LOV is empty.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(49590389752425930019)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49579098404030596035)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>10
 ,p_display_sequence=>100
@@ -869,8 +869,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'By default, the report rows cannot grow in size, if you want them to grow, make sure set this feature to yes.'
 );
 wwv_flow_api.create_plugin_std_attribute(
- p_id=>wwv_flow_api.id(49585117760461703022)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49573826412066369038)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_name=>'LOV'
 ,p_sql_min_column_count=>2
 ,p_sql_max_column_count=>999
@@ -902,8 +902,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(49588456832404292178)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49577165484008958194)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_file_name=>'modal-lov.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -2918,8 +2918,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(49588457042070292179)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49577165693674958195)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_file_name=>'modal-lov.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -2948,8 +2948,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(49588457501014292181)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49577166152618958197)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_file_name=>'modal-lov.min.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -3321,8 +3321,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(49588457865727292181)
-,p_plugin_id=>wwv_flow_api.id(49585117553013703020)
+ p_id=>wwv_flow_api.id(49577166517331958197)
+,p_plugin_id=>wwv_flow_api.id(49573826204618369036)
 ,p_file_name=>'modal-lov.min.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'

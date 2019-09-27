@@ -2,7 +2,7 @@ prompt --application/pages/page_00220
 begin
 wwv_flow_api.create_page(
  p_id=>220
-,p_user_interface_id=>wwv_flow_api.id(90742613879242702)
+,p_user_interface_id=>wwv_flow_api.id(79451265483908718)
 ,p_name=>'Image Display'
 ,p_page_mode=>'NON_MODAL'
 ,p_step_title=>'Image Display'
@@ -16,10 +16,10 @@ wwv_flow_api.create_page(
 ,p_last_upd_yyyymmddhh24miss=>'20190703135841'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(41701819383270170)
+ p_id=>wwv_flow_api.id(30410470987936186)
 ,p_plug_name=>'ITEM CONTAINER'
 ,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(90708365363242438)
+,p_plug_template=>wwv_flow_api.id(79417016967908454)
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'BODY'

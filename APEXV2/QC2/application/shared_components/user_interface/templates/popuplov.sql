@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/popuplov
 begin
 wwv_flow_api.create_popup_lov_template(
- p_id=>wwv_flow_api.id(90738125109242561)
+ p_id=>wwv_flow_api.id(79446776713908577)
 ,p_page_name=>'winlov'
 ,p_page_title=>'Search Dialog'
 ,p_page_html_head=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -40,7 +40,6 @@ wwv_flow_api.create_popup_lov_template(
 ,p_before_result_set=>'<div class="t-PopupLOV-links">'
 ,p_theme_id=>42
 ,p_theme_class_id=>1
-,p_reference_id=>75011715123745810
 ,p_translate_this_template=>'N'
 ,p_after_result_set=>'</div>'
 );

@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/list/cards
 begin
 wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(90730313294242499)
+ p_id=>wwv_flow_api.id(79438964898908515)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-Cards-item #A04#">',
 '  <div class="t-Card">',
@@ -39,7 +39,6 @@ wwv_flow_api.create_list_template(
 ,p_a02_label=>'Secondary Information'
 ,p_a03_label=>'Initials'
 ,p_a04_label=>'List Item CSS Classes'
-,p_reference_id=>75003903308745748
 );
 end;
 /

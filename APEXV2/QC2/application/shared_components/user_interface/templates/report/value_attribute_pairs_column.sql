@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/report/value_attribute_pairs_column
 begin
 wwv_flow_api.create_row_template(
- p_id=>wwv_flow_api.id(90724801427242476)
+ p_id=>wwv_flow_api.id(79433453031908492)
 ,p_row_template_name=>'Value Attribute Pairs - Column'
 ,p_internal_name=>'VALUE_ATTRIBUTE_PAIRS_COLUMN'
 ,p_row_template1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -40,7 +40,6 @@ wwv_flow_api.create_row_template(
 ,p_theme_id=>42
 ,p_theme_class_id=>6
 ,p_preset_template_options=>'t-AVPList--leftAligned'
-,p_reference_id=>74998391441745725
 ,p_translate_this_template=>'N'
 );
 end;

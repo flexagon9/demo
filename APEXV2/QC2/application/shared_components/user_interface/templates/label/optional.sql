@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/label/optional
 begin
 wwv_flow_api.create_field_template(
- p_id=>wwv_flow_api.id(90736939652242519)
+ p_id=>wwv_flow_api.id(79445591256908535)
 ,p_template_name=>'Optional'
 ,p_internal_name=>'OPTIONAL'
 ,p_template_body1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -20,7 +20,6 @@ wwv_flow_api.create_field_template(
 ,p_error_template=>'<span class="t-Form-error">#ERROR_MESSAGE#</span>'
 ,p_theme_id=>42
 ,p_theme_class_id=>3
-,p_reference_id=>75010529666745768
 ,p_translate_this_template=>'N'
 );
 end;

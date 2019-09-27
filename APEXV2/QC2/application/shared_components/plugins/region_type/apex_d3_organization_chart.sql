@@ -1,7 +1,7 @@
 prompt --application/shared_components/plugins/region_type/apex_d3_organization_chart
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(17242187087268363451)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'APEX.D3.ORGANIZATION.CHART'
 ,p_display_name=>'APEX D3 Organization Chart'
@@ -69,8 +69,8 @@ wwv_flow_api.create_plugin(
 ,p_files_version=>1171
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(17253478625719697438)
-,p_plugin_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(17242187277324363454)
+,p_plugin_id=>wwv_flow_api.id(17242187087268363451)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -146,8 +146,8 @@ wwv_flow_api.create_plugin_attribute(
 '  <dd>color of the node text</dd>'))
 );
 wwv_flow_api.create_plugin_std_attribute(
- p_id=>wwv_flow_api.id(17253479356144697446)
-,p_plugin_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(17242188007749363462)
+,p_plugin_id=>wwv_flow_api.id(17242187087268363451)
 ,p_name=>'SOURCE_SQL'
 ,p_default_value=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'SELECT',
@@ -219,8 +219,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(17253479756481697450)
-,p_plugin_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(17242188408086363466)
+,p_plugin_id=>wwv_flow_api.id(17242187087268363451)
 ,p_file_name=>'LICENSE'
 ,p_mime_type=>'application/octet-stream'
 ,p_file_charset=>'utf-8'
@@ -237,8 +237,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(31934299857750705005)
-,p_plugin_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(31923008509355371021)
+,p_plugin_id=>wwv_flow_api.id(17242187087268363451)
 ,p_file_name=>'d3orgchart.pkgd.min.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -1891,8 +1891,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(31934300117711705007)
-,p_plugin_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(31923008769316371023)
+,p_plugin_id=>wwv_flow_api.id(17242187087268363451)
 ,p_file_name=>'d3orgchart.pkgd.min.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -1955,8 +1955,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(31993606097852271077)
-,p_plugin_id=>wwv_flow_api.id(17253478435663697435)
+ p_id=>wwv_flow_api.id(31982314749456937093)
+,p_plugin_id=>wwv_flow_api.id(17242187087268363451)
 ,p_file_name=>'LICENSE4LIBS'
 ,p_mime_type=>'application/octet-stream'
 ,p_file_charset=>'utf-8'

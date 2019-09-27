@@ -1,7 +1,7 @@
 prompt --application/shared_components/security/authorizations/isadmin
 begin
 wwv_flow_api.create_security_scheme(
- p_id=>wwv_flow_api.id(15901823723215299)
+ p_id=>wwv_flow_api.id(4610475327881315)
 ,p_name=>'isAdmin'
 ,p_scheme_type=>'NATIVE_EXISTS'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(

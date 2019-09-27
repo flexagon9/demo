@@ -314,7 +314,7 @@ begin
 '</xsl:template>'||wwv_flow.LF||
 '</xsl:transform>';
 wwv_flow_api.create_report_layout(
- p_id=>wwv_flow_api.id(38002745654329642)
+ p_id=>wwv_flow_api.id(26711397258995658)
 ,p_report_layout_name=>'CUSTOMER_COMPONENT_LIST'
 ,p_report_layout_type=>'RTF_FILE'
 ,p_varchar2_table=>wwv_flow_api.g_varchar2_table

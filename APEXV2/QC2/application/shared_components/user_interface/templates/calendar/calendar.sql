@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/calendar/calendar
 begin
 wwv_flow_api.create_calendar_template(
- p_id=>wwv_flow_api.id(90738102925242551)
+ p_id=>wwv_flow_api.id(79446754529908567)
 ,p_cal_template_name=>'Calendar'
 ,p_internal_name=>'CALENDAR'
 ,p_day_of_week_format=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -146,7 +146,6 @@ wwv_flow_api.create_calendar_template(
 ,p_month_data_entry_format=>'<span class="t-ClassicCalendar-event">#DATA#</span>'
 ,p_theme_id=>42
 ,p_theme_class_id=>1
-,p_reference_id=>75011692939745800
 );
 end;
 /

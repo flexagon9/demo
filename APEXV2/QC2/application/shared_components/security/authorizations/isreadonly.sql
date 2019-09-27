@@ -1,7 +1,7 @@
 prompt --application/shared_components/security/authorizations/isreadonly
 begin
 wwv_flow_api.create_security_scheme(
- p_id=>wwv_flow_api.id(15902004468215300)
+ p_id=>wwv_flow_api.id(4610656072881316)
 ,p_name=>'isReadOnly'
 ,p_scheme_type=>'NATIVE_EXISTS'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(

@@ -2,7 +2,7 @@ prompt --application/pages/page_00128
 begin
 wwv_flow_api.create_page(
  p_id=>128
-,p_user_interface_id=>wwv_flow_api.id(90742613879242702)
+,p_user_interface_id=>wwv_flow_api.id(79451265483908718)
 ,p_name=>'Redirect Tags'
 ,p_step_title=>'Redirect Tags'
 ,p_reload_on_submit=>'A'
@@ -13,11 +13,11 @@ wwv_flow_api.create_page(
 ,p_last_upd_yyyymmddhh24miss=>'20190919180435'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(26137268635387393)
+ p_id=>wwv_flow_api.id(14845920240053409)
 ,p_plug_name=>'Redirect Data'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(90709385417242440)
+,p_plug_template=>wwv_flow_api.id(79418037021908456)
 ,p_plug_display_sequence=>10
 ,p_plug_new_grid_row=>false
 ,p_plug_new_grid_column=>false
@@ -33,7 +33,7 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_03=>'N'
 );
 wwv_flow_api.create_page_branch(
- p_id=>wwv_flow_api.id(14304722872490773)
+ p_id=>wwv_flow_api.id(3013374477156789)
 ,p_branch_name=>'Redirect to 24 for Green Tags'
 ,p_branch_action=>'f?p=&APP_ID.:24:&SESSION.::&DEBUG.::P24_BOAT_MASTER_ID,P24_BOAT_STATUS,P24_ORDER_NUMBER,P24_PAGE_BACK_TO:&P128_BOAT_MASTER_ID.,&128_BOAT_STATUS.,&128_ORDER_NUMBER.,INSPECTIONS_LIST#'
 ,p_branch_point=>'BEFORE_HEADER'
@@ -45,7 +45,7 @@ wwv_flow_api.create_page_branch(
 ,p_branch_comment=>'Created 25-APR-2013 by DBI'
 );
 wwv_flow_api.create_page_branch(
- p_id=>wwv_flow_api.id(14305110287490773)
+ p_id=>wwv_flow_api.id(3013761892156789)
 ,p_branch_name=>'Redirect to 23 for Red Tags'
 ,p_branch_action=>'f?p=&APP_ID.:23:&SESSION.::&DEBUG.::P23_BOAT_MASTER_ID,P23_BOAT_STATUS,P23_ORDER_NUMBER,P23_PAGE_BACK_TO:&P128_BOAT_MASTER_ID.,&P128_BOAT_STATUS.,&P128_ORDER_NUMBER.,&P128_PAGE_BACK_TO.'
 ,p_branch_point=>'BEFORE_HEADER'
@@ -58,10 +58,10 @@ wwv_flow_api.create_page_branch(
 ,p_branch_comment=>'Created 25-APR-2013 by DBI'
 );
 wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(14303384554490771)
+ p_id=>wwv_flow_api.id(3012036159156787)
 ,p_name=>'P128_BOAT_MASTER_ID'
 ,p_item_sequence=>30
-,p_item_plug_id=>wwv_flow_api.id(26137268635387393)
+,p_item_plug_id=>wwv_flow_api.id(14845920240053409)
 ,p_use_cache_before_default=>'NO'
 ,p_prompt=>'Boat Master ID'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
@@ -73,7 +73,7 @@ wwv_flow_api.create_page_item(
 ,p_rowspan=>1
 ,p_label_alignment=>'RIGHT'
 ,p_field_alignment=>'LEFT-CENTER'
-,p_field_template=>wwv_flow_api.id(90736865129242511)
+,p_field_template=>wwv_flow_api.id(79445516733908527)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'YES'
 ,p_attribute_01=>'N'
@@ -82,10 +82,10 @@ wwv_flow_api.create_page_item(
 ,p_attribute_05=>'NONE'
 );
 wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(14303775347490772)
+ p_id=>wwv_flow_api.id(3012426952156788)
 ,p_name=>'P128_BOAT_STATUS'
 ,p_item_sequence=>40
-,p_item_plug_id=>wwv_flow_api.id(26137268635387393)
+,p_item_plug_id=>wwv_flow_api.id(14845920240053409)
 ,p_use_cache_before_default=>'NO'
 ,p_prompt=>'Boat Status'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
@@ -97,7 +97,7 @@ wwv_flow_api.create_page_item(
 ,p_rowspan=>1
 ,p_label_alignment=>'RIGHT'
 ,p_field_alignment=>'LEFT-CENTER'
-,p_field_template=>wwv_flow_api.id(90736865129242511)
+,p_field_template=>wwv_flow_api.id(79445516733908527)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'YES'
 ,p_attribute_01=>'N'
@@ -106,10 +106,10 @@ wwv_flow_api.create_page_item(
 ,p_attribute_05=>'NONE'
 );
 wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(14304186043490772)
+ p_id=>wwv_flow_api.id(3012837648156788)
 ,p_name=>'P128_ORDER_NUMBER'
 ,p_item_sequence=>50
-,p_item_plug_id=>wwv_flow_api.id(26137268635387393)
+,p_item_plug_id=>wwv_flow_api.id(14845920240053409)
 ,p_use_cache_before_default=>'NO'
 ,p_prompt=>'Order Number'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
@@ -121,7 +121,7 @@ wwv_flow_api.create_page_item(
 ,p_rowspan=>1
 ,p_label_alignment=>'RIGHT'
 ,p_field_alignment=>'LEFT-CENTER'
-,p_field_template=>wwv_flow_api.id(90736865129242511)
+,p_field_template=>wwv_flow_api.id(79445516733908527)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -129,10 +129,10 @@ wwv_flow_api.create_page_item(
 ,p_attribute_05=>'NONE'
 );
 wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(14313964728954298)
+ p_id=>wwv_flow_api.id(3022616333620314)
 ,p_name=>'P128_PAGE_BACK_TO'
 ,p_item_sequence=>60
-,p_item_plug_id=>wwv_flow_api.id(26137268635387393)
+,p_item_plug_id=>wwv_flow_api.id(14845920240053409)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'N'
 );

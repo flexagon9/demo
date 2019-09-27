@@ -1,7 +1,7 @@
 prompt --application/shared_components/user_interface/templates/list/media_list
 begin
 wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(90735149050242504)
+ p_id=>wwv_flow_api.id(79443800654908520)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-MediaList-item is-active #A04#">',
 '    <a href="#LINK#" class="t-MediaList-itemWrap" #A03#>',
@@ -43,7 +43,6 @@ wwv_flow_api.create_list_template(
 ,p_a02_label=>'Badge Value'
 ,p_a03_label=>'Link Attributes'
 ,p_a04_label=>'List Item CSS Classes'
-,p_reference_id=>75008739064745753
 );
 end;
 /
