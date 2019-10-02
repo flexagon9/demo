@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE BODY hr.cust_sal AS  
+CREATE OR REPLACE PACKAGE BODY nice.cust_sal AS  
 -----------------------------------------------------------------------------------------------------          
 --
 --            NAME:   cust_sal
@@ -21,9 +21,8 @@ CREATE OR REPLACE PACKAGE BODY hr.cust_sal AS
     PROCEDURE find_sal(e_id NUMBER) IS 
     e_sal NUMBER; 
     BEGIN 
-        SELECT salary INTO e_sal 
-        FROM HR.employees 
-        WHERE employee_id = e_id; 
+        SELECT 1 INTO e_sal 
+        FROM dual; 
         dbms_output.put_line('Salary: '|| e_sal); 
     END find_sal; 
 END cust_sal; 
