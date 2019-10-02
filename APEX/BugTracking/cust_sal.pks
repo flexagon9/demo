@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE hr.cust_sal AS 
+CREATE OR REPLACE PACKAGE nice.cust_sal AS 
 -----------------------------------------------------------------------------------------------------          
 --
 --            NAME:   cust_sal
