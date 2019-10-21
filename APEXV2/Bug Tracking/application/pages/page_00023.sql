@@ -568,7 +568,6 @@ wwv_flow_api.create_worksheet_rpt(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(10624973776903908539)
 ,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CREATE_BUG'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#'
@@ -584,7 +583,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(37955916907064875)
 ,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'SYNC'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:t-Button--iconLeft'
@@ -599,7 +597,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(1051964589084326898)
 ,p_button_sequence=>5
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'ALL_PRODUCTS'
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'
@@ -612,7 +609,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(1350248403837273291)
 ,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'SELECT_PRODUCT'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#'

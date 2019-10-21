@@ -33,7 +33,6 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(5497437891779365924)
 ,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CANCEL'
 ,p_button_static_id=>'CANCEL'
 ,p_button_action=>'SUBMIT'
@@ -47,7 +46,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(5497437693696365923)
 ,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'SUBMIT'
 ,p_button_static_id=>'SUBMIT'
 ,p_button_action=>'SUBMIT'
