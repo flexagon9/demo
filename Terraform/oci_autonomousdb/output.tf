@@ -1,5 +1,5 @@
 output "output1" {
-  value = "${join("-",[db_url])}" 
+  value = "${db_url}" 
 }
 
 output "db_url" {
