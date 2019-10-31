@@ -1,3 +1,7 @@
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
 variable "compartment_ocid" {default="ocid1.compartment.oc1..aaaaaaaaose23kfto7ito35t7mkowbjxgeqxshssjk4gejgfydqygbgfacja"}
 variable "region" {default="us-ashburn-1"}
 variable "autonomous_database_cpu_core_count" {default=1}
