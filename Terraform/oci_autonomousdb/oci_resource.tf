@@ -22,7 +22,3 @@ data "consul_keys" "autonomous_db" {
     path    = "cloud/oci/database/autonomous/user/admin"
   }
 }
-
-variable "db_url" {
-  value = "${oci_database_autonomous_database.flex_autonomous_database.connection_strings}"
-}
