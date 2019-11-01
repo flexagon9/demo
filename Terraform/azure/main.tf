@@ -129,17 +129,13 @@ resource "azurerm_virtual_machine" "myterraformvm" {
     }
 
     os_profile {
-        computer_name  = "myvm"
-        admin_username = "azureuser"
-    }
-
-    os_profile_linux_config {
-        disable_password_authentication = true
-        ssh_keys {
-            path     = "/home/azureuser/.ssh/authorized_keys"
-            key_data = "${file("/home/oracle/.ssh/id_rsa_nopass.pub")}"
-        }
-    }
+	  computer_name  = "hostname"
+	  admin_username = "flexuser"
+	  admin_password = "sMQgf3BDxyS8dYT"
+	}
+	os_profile_linux_config {
+	  disable_password_authentication = false
+	}
 
     boot_diagnostics {
         enabled = "true"
@@ -149,4 +145,9 @@ resource "azurerm_virtual_machine" "myterraformvm" {
     tags = {
         environment = "Terraform Demo"
     }
+}
+
+data "azurerm_public_ip" "test" {
+  name                = "${azurerm_public_ip.myterraformpublicip.name}"
+  resource_group_name = "${azurerm_virtual_machine.myterraformvm.resource_group_name}"
 }

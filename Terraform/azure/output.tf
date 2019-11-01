@@ -1,3 +1,4 @@
-output "output1" {
-  value = "${azurerm_public_ip.myterraformpublicip.id}"
+
+output "public_ip_address" {
+  value = "${data.azurerm_public_ip.test.ip_address}"
 }
