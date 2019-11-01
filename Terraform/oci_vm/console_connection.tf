@@ -72,7 +72,7 @@ resource "oci_core_instance" "test_instance" {
   }
 
   metadata = {
-    ssh_authorized_keys = "${file("/home/oracle/.ssh/id_rsa_nopass.pub")}"
+    ssh_authorized_keys = "${file("/home/oracle/.ssh/id_rsa_oci.pub")}"
   }
 
   timeouts {
@@ -83,7 +83,7 @@ resource "oci_core_instance" "test_instance" {
 resource "oci_core_instance_console_connection" "test_instance_console_connection" {
   #Required
   instance_id = "${oci_core_instance.test_instance.id}"
-  public_key  = "${file("/home/oracle/.ssh/id_rsa_nopass.pub")}"
+  public_key  = "${file("/home/oracle/.ssh/id_rsa_oci.pub")}"
 }
 
 data "oci_identity_availability_domain" "ad" {
