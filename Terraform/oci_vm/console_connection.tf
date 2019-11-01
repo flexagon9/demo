@@ -68,7 +68,7 @@ resource "oci_core_instance" "test_instance" {
 
   source_details {
     source_type = "image"
-    source_id   = "ocid1.image.oc1.iad.aaaaaaaas4rje5udqcbicsqkmnssbs4bqveylq3jsrqsb4vnbzwlijqxjqgq"
+    source_id   = "ocid1.image.oc1.iad.aaaaaaaahqfv2inssrwfu6arffox3zubxm4swql4hht6t5fk4m5ilfzomgda"
   }
 
   metadata = {
