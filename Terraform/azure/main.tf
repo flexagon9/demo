@@ -133,7 +133,7 @@ resource "azurerm_virtual_machine" "myterraformvm" {
 
     os_profile {
 	  computer_name  = "hostname"
-	  admin_username = "flexuser"
+	  admin_username = "ubuntu"
 	  admin_password = "sMQgf3BDxyS8dYT"
 	}
 	os_profile_linux_config {
