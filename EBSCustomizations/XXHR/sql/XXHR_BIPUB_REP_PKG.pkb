@@ -12,7 +12,7 @@ CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
       FND_FILE.put_line(fnd_file.output, '  <Monday>Thomas</Monday>');
       FND_FILE.put_line(fnd_file.output, '  <Tuesday>Emily</Tuesday>');
       FND_FILE.put_line(fnd_file.output, '  <Wednesday>Annie</Wednesday>');
-      FND_FILE.put_line(fnd_file.output, '  <Thursday>demo</Thursday>');
+      FND_FILE.put_line(fnd_file.output, '  <Thursday>Chandresh</Thursday>');
       
       FND_FILE.put_line(fnd_file.output, '  <Friday>Gordon</Friday>');
       FND_FILE.put_line(fnd_file.output, '  <Saturday>Rosie</Saturday>');
