@@ -183,6 +183,7 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(1534560821154373428)
 ,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'RESET_PAGE'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
