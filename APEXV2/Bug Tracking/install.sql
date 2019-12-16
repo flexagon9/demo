@@ -1,4 +1,4 @@
-prompt --install
+prompt --install prod
 @application/set_environment.sql
 @application/delete_application.sql
 @application/create_application.sql
