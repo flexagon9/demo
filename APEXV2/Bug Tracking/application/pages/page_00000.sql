@@ -4,8 +4,8 @@ wwv_flow_api.create_page(
  p_id=>0
 ,p_user_interface_id=>wwv_flow_api.id(2333082129878819730)
 ,p_tab_set=>'TS2'
-,p_name=>'Default Page'
-,p_step_title=>'Default Page'
+,p_name=>'Default Page2'
+,p_step_title=>'Default Page2s'
 ,p_reload_on_submit=>'A'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'ON'
