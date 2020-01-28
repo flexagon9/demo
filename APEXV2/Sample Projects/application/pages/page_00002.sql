@@ -17,7 +17,8 @@ wwv_flow_api.create_page(
 '}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_help_text=>'No help is available for this page.'
-,p_last_upd_yyyymmddhh24miss=>'20180228143921'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20191209142309'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(44535709008470353158)

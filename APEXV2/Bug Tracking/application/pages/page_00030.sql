@@ -149,6 +149,7 @@ wwv_flow_api.create_report_columns(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(2723100759928610818)
 ,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CANCEL'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#'
@@ -161,6 +162,7 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(2723100927649610818)
 ,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CREATE'
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'

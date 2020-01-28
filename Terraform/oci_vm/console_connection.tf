@@ -68,11 +68,11 @@ resource "oci_core_instance" "test_instance" {
 
   source_details {
     source_type = "image"
-    source_id   = "ocid1.image.oc1.iad.aaaaaaaawufnve5jxze4xf7orejupw5iq3pms6cuadzjc7klojix6vmk42va"
+    source_id   = "ocid1.image.oc1.iad.aaaaaaaaazvqm5qnt4c7dbjn5tztubhbrsl7x34x2vxsvtns5bf63y6s2btq"
   }
 
   metadata = {
-    ssh_authorized_keys = "${file("/home/oracle/.ssh/id_rsa_nopass.pub")}"
+    ssh_authorized_keys = "${file("/home/oracle/.ssh/id_rsa_oci.pub")}"
   }
 
   timeouts {
@@ -83,7 +83,7 @@ resource "oci_core_instance" "test_instance" {
 resource "oci_core_instance_console_connection" "test_instance_console_connection" {
   #Required
   instance_id = "${oci_core_instance.test_instance.id}"
-  public_key  = "${file("/home/oracle/.ssh/id_rsa_nopass.pub")}"
+  public_key  = "${file("/home/oracle/.ssh/id_rsa_oci.pub")}"
 }
 
 data "oci_identity_availability_domain" "ad" {

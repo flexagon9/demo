@@ -639,6 +639,7 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(2509223243404365825)
 ,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'ADD_DEVELOPER'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
@@ -654,6 +655,7 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(71218607307269714)
 ,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'SYNC'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:t-Button--iconLeft'
@@ -668,6 +670,7 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(2509223059072351471)
 ,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'RESET_REPORT'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:t-Button--iconLeft'
