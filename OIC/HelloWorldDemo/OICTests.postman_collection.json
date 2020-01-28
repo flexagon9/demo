@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "aa6b94c5-a25b-4f68-a5f4-7be50ee9e4fe",
+		"name": "OICTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validate Hello World",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d915ba94-9e14-4de4-9f0f-fc563d308ea4",
+						"exec": [
+							"pm.test(\"Claim Valid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Welcome\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://testOIC-flexagonoraclecloud.integration.ocp.oraclecloud.com:443/ic/api/integration/v1/flows/rest/HELLO_WORLD/1.0/names/metadata",
+					"protocol": "https",
+					"host": [
+						"testOIC-flexagonoraclecloud",
+						"integration",
+						"ocp",
+						"oraclecloud",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"ic",
+						"api",
+						"integration",
+						"v1",
+						"flows",
+						"rest",
+						"HELLO_WORLD",
+						"1.0",
+						"names",
+						"metadata"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "QH7jDJsyAyyYX3k",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "joel.wenzel@flexagon.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cd8ceb2b-058d-44ef-ba1b-48997a6f5edf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9af10bfc-ba58-46f9-a8f5-5eb8e0c27778",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
