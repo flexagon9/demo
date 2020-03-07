@@ -9,7 +9,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     DESCRIPTION:
 --
 --        This package specification is to define the public pl/sql procedures and functions for
---        BI Publisher Reports.
+--        BI Publisher Reports
 --
 --
 --  CHANGE HISTORY:
