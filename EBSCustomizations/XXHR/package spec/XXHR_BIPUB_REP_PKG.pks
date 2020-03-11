@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --            NAME:   XXHR_BIPUB_REP_PKG
 --            TYPE:   Package Specification
 -- ORIGINAL AUTHOR:   Joe Anderson
---            DATE:   3/8/2020
+--            DATE:   3/7/2020
 --
 --     DESCRIPTION:
 --
@@ -16,7 +16,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --
 --     VERSION  DATE          AUTHOR              LABEL     DESCRIPTION
 --     -------  -----------   ----------------    --------  --------------------------------------------
---     1.0      03/07/2020    Brian Badenhorst    N/A       Initial Version
+--     1.0      03/07/2020    Joe Anderson        N/A       Initial Version
 --     2.0      03/11/2020    Dan Goerdt          N/A       Inject the issue/failure
 -----------------------------------------------------------------------------------------------------
 --prod
