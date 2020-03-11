@@ -1,4 +1,4 @@
-CREATEe OR REPLACE PACKAGE BODY nice.cust_sal AS  
+CREATEee OR REPLACE PACKAGE BODY nice.cust_sal AS  
 -----------------------------------------------------------------------------------------------------          
 --
 --            NAME:   cust_sal
