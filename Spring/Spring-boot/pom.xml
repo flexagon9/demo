@@ -4,10 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.flexagon.springboot</groupId>
-	<artifactId>poc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>springboot</artifactId>
+	<version>0.0.1</version>
 	<name>Spring-boot</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 
    <parent>
 		<groupId>org.springframework.boot</groupId>
