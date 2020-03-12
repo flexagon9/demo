@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --            NAME:   XXHR_BIPUB_REP_PKG
 --            TYPE:   Package Specification
 -- ORIGINAL AUTHOR:   Brian Badenhorst
---            DATE:   25/07/2012 
+--            DATE:   03/10/20 
 --
 --     DESCRIPTION:
 --
@@ -16,8 +16,8 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --
 --     VERSION  DATE          AUTHOR              LABEL     DESCRIPTION
 --     -------  -----------   ----------------    --------  --------------------------------------------
---     1.0      25/07/2012    Brian Badenhorst    N/A       Initial Version
---     2.0      9/8/2019      Dan Goerdt          N/A       Demo
+--     1.0      03/09/20      Joe Anderson        N/A       Initial Version
+--     2.0      03/10/20      Dan Goerdt          N/A       Demo
 -----------------------------------------------------------------------------------------------------
 
                        
