@@ -17,7 +17,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     VERSION  DATE          AUTHOR              LABEL     DESCRIPTION
 --     -------  -----------   ----------------    --------  --------------------------------------------
 --     1.0      03/07/2020    Joe Anderson        N/A       Initial Version
---     2.0      03/11/2020    Dan Goerdt          N/A       Inject the issue/failure
+--     2.0      03/12/2020    Dan Goerdt          N/A       Inject the issue/failure
 -----------------------------------------------------------------------------------------------------
 --prod
                        
