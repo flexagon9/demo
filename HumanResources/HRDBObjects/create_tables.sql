@@ -1,4 +1,4 @@
-CREATE TABLE HRDEMO.departments
+CREATEe TABLE HRDEMO.departments
 ( department_id number(10) NOT NULL,
   department_name varchar2(50) NOT NULL,
   CONSTRAINT departments_pk PRIMARY KEY (department_id)
