@@ -13,4 +13,3 @@ CREATE TABLE HRDEMO.employees
     FOREIGN KEY (department_id)
     REFERENCES HRDEMO.departments(department_id)
 );
-
