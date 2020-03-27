@@ -1,3 +1,8 @@
 hello
 v1.2
+<<<<<<< HEAD
 Change6
+=======
+Change5
+add line
+>>>>>>> d254bcda67dbed56df4ae7f44bb7bd557472bc57

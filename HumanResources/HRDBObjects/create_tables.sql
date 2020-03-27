@@ -1,4 +1,4 @@
-CREATEe TABLE HRDEMO.departments
+CREATE TABLE HRDEMO.departments
 ( department_id number(10) NOT NULL,
   department_name varchar2(50) NOT NULL,
   CONSTRAINT departments_pk PRIMARY KEY (department_id)
@@ -13,4 +13,3 @@ CREATE TABLE HRDEMO.employees
     FOREIGN KEY (department_id)
     REFERENCES HRDEMO.departments(department_id)
 );
-
