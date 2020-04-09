@@ -1,7 +1,7 @@
 hello
 v1.2
 <<<<<<< HEAD
-Change6
+Change7
 =======
 Change7
 add line
