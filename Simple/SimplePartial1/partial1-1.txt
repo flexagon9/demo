@@ -1,7 +1,7 @@
 hello
 v1.2
 <<<<<<< HEA
-Change7
+Change8
 =======
 Change7
 add line
