@@ -1,6 +1,5 @@
 hello
 v1.2
-<<<<<<< HEA
 Change8
 =======
 Change7
