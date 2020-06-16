@@ -3,7 +3,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --
 --            NAME:   XXHR_BIPUB_REP_PKG
 --            TYPE:   Package Specification
--- ORIGINAL AUTHOR:   Brian Badenhorst
+-- ORIGINAL AUTHOR:   Brian Badenhorst (updated)
 --            DATE:   03/10/20 
 --
 --     DESCRIPTION:
