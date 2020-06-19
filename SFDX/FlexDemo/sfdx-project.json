@@ -1,0 +1,30 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "FlexPackage",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
+        },
+        {
+            "path": "force-app2",
+            "package": "FlexPackage2",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "oauthLocalPort": "1717",
+    "sourceApiVersion": "48.0",
+    "packageAliases": {
+        "FlexPackage": "0Ho4p000000k9hBCAQ",
+        "FlexPackage@0.1.0-1": "04t4p000001liZnAAI",
+        "FlexPackage@0.1.0-2": "04t4p000001liZsAAI",
+        "FlexPackage@0.1.0-3": "04t4p000001liZxAAI",
+        "FlexPackage@0.1.0-5": "04t4p000001liaCAAQ",
+        "FlexPackage2": "0Ho4p000000k9hVCAQ"
+    }
+}
