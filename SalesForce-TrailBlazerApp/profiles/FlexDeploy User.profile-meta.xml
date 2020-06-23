@@ -42,7 +42,7 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Marketing</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
