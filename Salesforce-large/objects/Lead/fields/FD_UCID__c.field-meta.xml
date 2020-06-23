@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FD_UCID__c</fullName>
+    <description>FD&#39;s unique ID for a given person&#39;s record in their source data</description>
+    <externalId>false</externalId>
+    <label>FD UCID</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
