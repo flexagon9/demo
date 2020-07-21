@@ -27,7 +27,7 @@ prompt APPLICATION 101 - Sample Projects
 -- Application Export:
 --   Application:     101
 --   Name:            Sample Projects
---   Exported By:     NICE
+--   Exported By:     SYSTEM
 --   Flashback:       0
 --   Export Type:     Application Export
 --   Version:         19.1.0.00.15

@@ -27,7 +27,7 @@ prompt APPLICATION 102 - QC2
 -- Application Export:
 --   Application:     102
 --   Name:            QC2
---   Exported By:     NICE
+--   Exported By:     SYSTEM
 --   Flashback:       0
 --   Export Type:     Application Export
 --   Version:         19.1.0.00.15
