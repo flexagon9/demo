@@ -27,7 +27,7 @@ prompt APPLICATION 100 - Bug Tracking
 -- Application Export:
 --   Application:     100
 --   Name:            Bug Tracking
---   Exported By:     NICE
+--   Exported By:     SYSTEM
 --   Flashback:       0
 --   Export Type:     Application Export
 --   Version:         19.1.0.00.15
