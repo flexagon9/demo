@@ -117,7 +117,6 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(6308634598218508990)
 ,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CANCEL'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:t-Button--simple'
@@ -130,7 +129,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(6308634488076508990)
 ,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'DELETE'
 ,p_button_action=>'REDIRECT_URL'
 ,p_button_template_options=>'#DEFAULT#:t-Button--simple:t-Button--danger:t-Button--gapLeft:t-Button--gapRight'
@@ -148,7 +146,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(6308634383864508990)
 ,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'SAVE'
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'
@@ -165,7 +162,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(6308634292435508990)
 ,p_button_sequence=>40
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CREATE'
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#'
