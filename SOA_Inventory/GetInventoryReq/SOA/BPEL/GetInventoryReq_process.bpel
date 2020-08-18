@@ -1,0 +1,89 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Tue Aug 18 15:13:39 CDT 2020
+  Author:  mike
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="GetInventoryReq_process"
+               targetNamespace="http://xmlns.oracle.com/soa_workshop/GetInventoryReq/GetInventoryReq_process"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/soa_workshop/GetInventoryReq/GetInventoryReq_process"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ns1="http://xmlns.oracle.com/soa_workshop/GetInventoryReq/GetInventoryReq_process"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://oracle.com/sca/soapservice/soa_workshop/GetInventoryProv/Intentroy"
+         xmlns:ns3="http://xmlns.oracle.com/singleString" xmlns:ns4="http://www.flexagon.com/ns/inventory">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://xmlns.oracle.com/soa_workshop/GetInventoryReq/GetInventoryReq_process"
+          location="../WSDLs/GetInventoryReq_process.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="getinventoryreq" partnerLinkType="ns1:GetInventoryReq_process" myRole="GetInventoryReq_processProvider"/>
+    <partnerLink name="InventoryEBS" partnerLinkType="ns2:InventoryEBS" partnerRole="execute_ptt"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:requestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="ns1:replyMessage"/>
+    <variable name="GetInventoryIn" messageType="ns2:requestMessage"/>
+    <variable name="GetInventoryOut" messageType="ns2:replyMessage"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in GetInventoryReq_process.wsdl) -->
+    <receive name="receiveInput" partnerLink="getinventoryreq" portType="ns1:execute_ptt" operation="execute" variable="inputVariable" createInstance="yes"/>
+    <assign name="Assign1">
+      <copy>
+        <from>$inputVariable.input</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$GetInventoryIn.input</to>
+      </copy>
+    </assign>
+    <invoke name="InvokeInventoryEBS" bpelx:invokeAsDetail="no" partnerLink="InventoryEBS" portType="ns2:execute_ptt"
+            operation="GetInventory" inputVariable="GetInventoryIn" outputVariable="GetInventoryOut"/>
+    <assign name="XformGetInventoryOut">
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doXSLTransformForDoc("../Transformations/XformGetInventoryOut.xsl", $GetInventoryOut.output)</from>
+        <to variable="outputVariable" part="output"/>
+      </copy>
+    </assign>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="getinventoryreq" portType="ns1:execute_ptt" operation="execute" variable="outputVariable"/>
+  </sequence>
+</process>
