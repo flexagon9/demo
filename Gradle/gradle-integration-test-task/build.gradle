@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+}
+// gradle build -Dfoo='bar' --stacktrace -PvarA='variable1'
+// Pass all Tests
+
+group 'gradle-integration-test-task'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    integrationTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
+configurations {
+    integrationTestImplementation.extendsFrom implementation
+    integrationTestRuntimeOnly.extendsFrom runtimeOnly
+}
+
+dependencies {
+    integrationTestImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
+}
+
+task integrationTest(type: Test) {
+    description = 'Integration tests.'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+
+    outputs.upToDateWhen { false } // other way: inputs.upToDateWhen { false }
+    
+    mustRunAfter test
+}
+
+test{
+  systemProperties = System.getProperties()
+  systemProperties['varA'] = project.property("varA")
+}
+
+check.dependsOn integrationTest

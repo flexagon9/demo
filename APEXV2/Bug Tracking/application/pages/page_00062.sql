@@ -215,7 +215,6 @@ wwv_flow_api.create_worksheet_rpt(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(4359883334547846954)
 ,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CREATE'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#'

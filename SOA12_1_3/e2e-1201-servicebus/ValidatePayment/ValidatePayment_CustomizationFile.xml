@@ -173,4 +173,25 @@
       </xt:newRef>
     </cus:externalReferenceMap>
   </cus:customization>
+    <cus:customization xsi:type="cus:ReferenceCustomizationType">
+    <cus:description/>
+    <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+      <xt:type>ProxyService</xt:type>
+      <xt:path>Order/order_proxy</xt:path>
+    </cus:refsToBeConsidered>
+    <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+      <xt:type>Pipeline</xt:type>
+      <xt:path>Order/ps_orderPipeline</xt:path>
+    </cus:refsToBeConsidered>
+    <cus:externalReferenceMap>
+      <xt:oldRef>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Order/bs_order</xt:path>
+      </xt:oldRef>
+      <xt:newRef>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>OrderProcess/bs_order</xt:path>
+      </xt:newRef>
+    </cus:externalReferenceMap>
+  </cus:customization>
 </cus:Customizations>
