@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="25a9a1b3-882c-4b3b-9480-fc83f29ade36" name="execute_pttBinding TestSuite" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e988010c-7a94-48cc-867c-112dfd9e67d3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="execute TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="7eb69e16-078b-440a-8819-83eac069708e" name="execute"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>execute_pttBinding</con:interface><con:operation>execute</con:operation><con:request name="execute" id="3fdd2833-9e40-43cd-91f4-02357a64ec5f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://soalt05.flexagon:7003/soa-infra/services/default/GetInventoryReq!1.0*soa_d1b35390-b2f5-4510-bcc7-0c50c777b711/getinventoryreq_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sin="http://xmlns.oracle.com/singleString">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sin:singleString>100</sin:singleString>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match" id="7b53a74a-0f16-45b1-9fa7-4e320a6750c5" name="XPath Match"><con:configuration><path>declare namespace inp1='http://xmlns.oracle.com/singleString';
+declare namespace env='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace wsa='http://www.w3.org/2005/08/addressing';
+declare namespace ns0='http://www.flexagon.com/ns/inventory';
+declare namespace instra='http://xmlns.oracle.com/sca/tracking/1.0';
+declare namespace tns='http://xmlns.oracle.com/soa_workshop/GetInventoryReq/GetInventoryReq_process';
+declare namespace plnk='http://docs.oasis-open.org/wsbpel/2.0/plnktype';
+declare namespace ns1='http://www.flexagon.com/ns/inventory';
+declare namespace wsdl='http://schemas.xmlsoap.org/wsdl/';
+//env:Envelope/env:Body/ns0:Inventory/ns0:InventoryItems/ns0:ItemNumber ="100"</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="execute" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite>
