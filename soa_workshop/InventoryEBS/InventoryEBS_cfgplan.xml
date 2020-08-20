@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
+   <composite name="InventoryEBS">
+      <!--Add search and replace rules for the import section of a composite
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>-->
+      <import>
+         <searchReplace>
+            <search/>
+            <replace/>
+         </searchReplace>
+      </import>
+      <service name="InventoryEBSService">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://oracle.com/sca/soapservice/soa_workshop/GetInventoryProv/Intentroy#wsdl.endpoint(InventoryEBSService/execute_pt)</replace>
+            </attribute>
+         </binding>
+      </service>
+      <property name="productVersion">
+         <replace>12.2.1.4.0.190828</replace>
+      </property>
+      <property name="compositeID">
+         <replace>c5eb376d-8d78-43f6-801e-7891da245d72</replace>
+      </property>
+      <!--Add search and replace rules for the component properties
+	For components and service/reference bindings, you can add policy references.
+	Example:
+	<component name="*">
+		<wsp:PolicyReference orawsp:category="management" orawsp:status="enabled" URI="oracle/log_policy"/>
+	</component>-->
+      <reference name="GetInventoryProv">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://oracle.com/sca/soapservice/soa_workshop/GetInventoryProv/Intentroy#wsdl.endpoint(getinventoryprov_client_ep/execute_pt)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://soalt05.flexagon:7003/soa-infra/services/default/GetInventoryProv/getinventoryprov_client_ep?WSDL</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+   </composite>
+</SOAConfigPlan>
