@@ -73,7 +73,7 @@
     <assign name="AssignEcho">
       <copy>
         <from>$inputVariable.input</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.output + " ${{ProjectName}}"</to>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.output + " __FAKE_VALUE__"</to>
       </copy>
     </assign>
     <!-- Generate reply to synchronous request -->
