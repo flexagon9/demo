@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>13</line>
+      <col>64</col>
+      <file>C:\JDeveloper\mywork\soa_workshop\EchoTemplate\SOA\composite.xml</file>
+      <name>C:\JDeveloper\mywork\soa_workshop\EchoTemplate\SOA\composite.xml</name>
+      <fix/>
+      <msg>schema -  (Error) Invalid value 'Echo_${{ProjectName}}' for attribute: 'name'</msg>
+   </Fault>
+</Faults>
