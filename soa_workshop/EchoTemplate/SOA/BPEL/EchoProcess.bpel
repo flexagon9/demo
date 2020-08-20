@@ -72,8 +72,8 @@
     <receive name="receiveInput" partnerLink="echoprocess_client" portType="ns1:execute_ptt" operation="execute" variable="inputVariable" createInstance="yes"/>
     <assign name="AssignEcho">
       <copy>
-        <from>$inputVariable.input</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.output + " __FAKE_VALUE__"</to>
+        <from>concat($inputVariable.input," __FAKE_VALUE__")</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.output</to>
       </copy>
     </assign>
     <!-- Generate reply to synchronous request -->
