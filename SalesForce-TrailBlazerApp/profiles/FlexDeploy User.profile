@@ -146,7 +146,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Flex test</description>
+    <description>Flex user update test</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Broker__c.Email__c</field>
