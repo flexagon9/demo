@@ -146,6 +146,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
+    <description>EBS Application lead</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Broker__c.Email__c</field>
