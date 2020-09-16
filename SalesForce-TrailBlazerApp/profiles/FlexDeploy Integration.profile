@@ -146,6 +146,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
+    <description>Integration users</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Broker__c.Email__c</field>
