@@ -2,6 +2,7 @@
 <SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
    <composite name="HRSOAService">
       <!--Add search and replace rules for the import section of a composite
+	add comment
 	Example:
 	<searchReplace>
 		<search>http://my-dev-server</search>
