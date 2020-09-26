@@ -15,7 +15,7 @@
             "connPool":"SampleApp_Lite_Xml",
             "parentName":"\"Sample App Lite Data\"",
             "user":"Null",
-            "password":"aaaaaaaaaaaaa",
+            "password":"2076226811B243B415CAD1678D06FAB16C63552E9B4DC0782B12D1B4007CDDF7C9B6F59188502ADCA3FAD36A3A490C44 A886F77E060E2E17F45AD8D18CAB2E4D3EFA15B75E30D8B4BFA8C7B2D70552BD",
             "dataSource":"VALUEOF(NQ_SESSION.SERVICEINSTANCEROOT)/data/SampleAppLite",
             "appServerName":"Null"
         }
