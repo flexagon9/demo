@@ -9,6 +9,15 @@
             "password":"${{OBI_BSC_PASSWORD}}",
             "dataSource":"${{OBI_BSC_DSN}}",
             "appServerName":"Null"
+        },
+        {
+            "uid":"80ca62c5-0bd5-0000-714b-e31d00000000",
+            "connPool":"SampleApp_Lite_Xml",
+            "parentName":"\"Sample App Lite Data\"",
+            "user":"Null",
+            "password":"aaaaaaaaaaaaa",
+            "dataSource":"VALUEOF(NQ_SESSION.SERVICEINSTANCEROOT)/data/SampleAppLite",
+            "appServerName":"Null"
         }
     ],
     "Variables-In-Conn-Pool":[
