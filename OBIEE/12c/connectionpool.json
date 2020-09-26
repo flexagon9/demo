@@ -6,7 +6,7 @@
             "connPool":"BSC",
             "parentName":"\"System DB (Update me)\"",
             "user":"BSC_USER",
-            "password":"2076226811B243B415CAD1678D06FAB1241EEF6C9A7087B1884A7C85FFA83787DDA0B6B3EE5F27CF53011670C3A254EFCDF6F1E125ECD0548FAB8CD97F0048A7 825FD7D52A68079523FB7C45868A044845323780ECE446F36751CB586F3F7769",
+            "password":"welcome1",
             "dataSource":"(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = obitl02.flexagon)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = bsc)))",
             "appServerName":"Null"
         }
