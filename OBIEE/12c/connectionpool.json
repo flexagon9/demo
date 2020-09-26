@@ -6,8 +6,8 @@
             "connPool":"BSC",
             "parentName":"\"System DB (Update me)\"",
             "user":"BSC_USER",
-            "password":"welcome1",
-            "dataSource":"(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = obitl02.flexagon)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = bsc)))",
+            "password":"${{OBI_BSC_PASSWORD}}",
+            "dataSource":"${{OBI_BSC_DSN}}",
             "appServerName":"Null"
         }
     ],
