@@ -17,7 +17,8 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     VERSION  DATE          AUTHOR              LABEL     DESCRIPTION
 --     -------  -----------   ----------------    --------  --------------------------------------------
 --     1.0      03/09/20      Joe Anderson        N/A       Initial Version
---     2.0      03/11/20      Dan Goerdt          NA        Forrester Wave 1
+--     2.0      03/11/20      Dan Goerdt          N/A       Change 2
+--     3.0      09/30/20      Dan Goerdt          N/A       Change 3
 -----------------------------------------------------------------------------------------------------
 
                        
