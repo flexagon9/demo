@@ -2,7 +2,7 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>DreamHouse</application>
-        <default>true</default>
+        <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -23,7 +23,7 @@
     <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Commerce</application>
@@ -339,6 +339,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseClose-Close Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CollaborationGroup-Group Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CommunityMemberLayout-Community Member Layout</layout>
