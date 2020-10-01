@@ -146,7 +146,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Flex Deploy user update</description>
+    <description>Flex Deploy user update test</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Broker__c.Email__c</field>
