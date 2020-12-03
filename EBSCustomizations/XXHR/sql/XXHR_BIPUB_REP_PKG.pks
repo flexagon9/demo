@@ -9,7 +9,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     DESCRIPTION:
 --
 --        This package specification is to define the public pl/sql procedures and functions for
---        BI Publisher Reports. Updated for demo   8/23/2019 1:10 PM
+--        BI Publisher Reports. Updated for demo   10/07/2020 9 AM
 --
 --
 --  CHANGE HISTORY:
@@ -17,7 +17,9 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     VERSION  DATE          AUTHOR              LABEL     DESCRIPTION
 --     -------  -----------   ----------------    --------  --------------------------------------------
 --     1.0      03/09/20      Joe Anderson        N/A       Initial Version
---     2.0      03/11/20      Dan Goerdt          NA        Forrester Wave 1
+--     2.0      03/11/20      Dan Goerdt          N/A       Change 2
+--     3.0      05/29/20      Chandresh Patel     N/A       Change 3
+--     4.0      10/01/20      Dan Goerdt          N/A       Change 4 and 5
 -----------------------------------------------------------------------------------------------------
 
                        

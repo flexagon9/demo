@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ns0:Inventory xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://oracle.com/sca/soapservice/soa_workshop/GetInventoryProv/Intentroy" xmlns:ns0="http://www.flexagon.com/ns/inventory">
+   <ns0:InventoryItems>
+      <ns0:ItemNumber>102</ns0:ItemNumber>
+      <ns0:ItemDescription>Pad of Paper</ns0:ItemDescription>
+      <ns0:COGS>.5</ns0:COGS>
+      <ns0:Price>1.99</ns0:Price>
+      <ns0:Quantity>2500</ns0:Quantity>
+   </ns0:InventoryItems>
+</ns0:Inventory>

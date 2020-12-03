@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:inv="http://www.flexagon.com/ns/inventory"
+            targetNamespace="http://www.flexagon.com/ns/inventory" elementFormDefault="qualified">
+  <xsd:element name="exampleElement">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="InventoryItemType">
+    <xsd:sequence>
+      <xsd:element name="ItemNumber" type="xsd:string" />
+      <xsd:element name="ItemDescription" type="xsd:string" />
+      <xsd:element name="COGS" type="xsd:string" />
+      <xsd:element name="Price" type="xsd:string" />
+      <xsd:element name="Quantity" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InventoryType">
+    <xsd:sequence>
+      <xsd:element name="InventoryItems" type="inv:InventoryItemType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+  
+<xsd:element name="InventoryItem" type="inv:InventoryItemType" />
+<xsd:element name="Inventory" type="inv:InventoryType" />
+<xsd:element name="ItemNumber" type="xsd:string" />
+</xsd:schema>
