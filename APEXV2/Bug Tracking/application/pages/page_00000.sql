@@ -1,4 +1,4 @@
-prompt --application/pages/page_00000
+prompt --application/pages/page_00000 add
 begin
 wwv_flow_api.create_page(
  p_id=>0
