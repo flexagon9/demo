@@ -13,7 +13,7 @@
                            from XXHR.xxhr_order_items where order_id = 1 group by order_id) l
                            where o.order_id = l.order_id</ValidationSQL>
             <Environment>
-                <EnvironmentCode>QA</EnvironmentCode>
+                <EnvironmentCode>DEFAULT</EnvironmentCode>
                 <Before>
                     <Equals>0</Equals>
                 </Before>
