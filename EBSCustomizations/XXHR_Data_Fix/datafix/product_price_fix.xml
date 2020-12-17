@@ -8,7 +8,7 @@
             <Description>Make sure product_id = 47809 has a list_price of 150</Description>
             <ValidationSQL>select count(*) from xxhr.xxhr_product_list where list_price = 150 and product_id = 47809;</ValidationSQL>
             <Environment>
-                <EnvironmentCode>DEV</EnvironmentCode>
+                <EnvironmentCode>DEFAULT</EnvironmentCode>
                 <Before>
                     <Equals>0</Equals>
                 </Before>
