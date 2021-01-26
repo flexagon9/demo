@@ -1,4 +1,3 @@
-drop user "MP1" CASCADE
 -- USER SQL
 /
 CREATE USER MP1 IDENTIFIED BY welcome1 
