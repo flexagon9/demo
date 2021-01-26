@@ -1,1 +1,1 @@
-select * "MP1"."DEMO_TABLE1" ;
+SELECT * FROM "MP1"."DEMO_TABLE1" ;
