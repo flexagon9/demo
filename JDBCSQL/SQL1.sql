@@ -1,1 +1,1 @@
-select (1)  from dual;
+select * "MP1"."DEMO_TABLE1" ;
