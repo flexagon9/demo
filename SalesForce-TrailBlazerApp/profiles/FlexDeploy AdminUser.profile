@@ -61,6 +61,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
+    <description>test</description>
     <userLicense>Identity</userLicense>
     <userPermissions>
         <enabled>true</enabled>
