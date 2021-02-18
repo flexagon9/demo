@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE nice.cust_sal AS
 --            NAME:   cust_sal
 --            TYPE:   Package Specification
 --            ORIGINAL AUTHOR:   Chandresh Patel
---            DATE:   2/16/2021 04:26 PM 
+--            DATE:   2/18/2021
 --
 --     DESCRIPTION:
 --
