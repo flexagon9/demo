@@ -39,7 +39,14 @@ CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
       FND_FILE.put_line(fnd_file.output, '  <Sunday>Michael</Sunday>');
       FND_FILE.put_line(fnd_file.output, ' </Week>');
       FND_FILE.put_line(fnd_file.output, '</Roster>');
-      EXIT;
+      WHILE a < 20 LOOP 
+      	dbms_output.put_line ('value of a: ' || a); 
+      	a := a + 1; 
+      	IF a > 15 THEN 
+         -- terminate the loop using the exit statement 
+          EXIT; 
+      	END IF; 
+      END LOOP; 
   end generate_xml;
 END xxhr_bipub_rep_pkg;
 /
