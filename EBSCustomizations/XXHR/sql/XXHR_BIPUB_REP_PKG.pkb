@@ -4,6 +4,8 @@ CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
 
   PROCEDURE generate_xml( p_errbuf  OUT VARCHAR2
                         , p_retcode OUT NUMBER) IS
+  DECLARE 
+  	a number(2) := 10;
   BEGIN
       FND_FILE.put_line(fnd_file.output, '<?xml version="1.0" encoding="UTF-8"?>');
       FND_FILE.put_line(fnd_file.output, '<Roster>');
