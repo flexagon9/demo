@@ -36,6 +36,7 @@ public with sharing class LIFXController {
         req.setHeader('Content-Type', 'application/json');
         req.setBody(state);
 		try {
+		 System.debug('lightId='+lightId);
             HTTPResponse res = http.send(req);
 			return res.getBody();        	
         } catch(Exception ex){
