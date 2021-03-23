@@ -37,7 +37,6 @@
             <version>1.2.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
-        <dependency>
 	</dependencies>
 
 	<repositories>
