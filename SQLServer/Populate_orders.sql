@@ -1,0 +1,1 @@
+INSERT INTO sales.orders(customer_id, order_status, order_date, required_date, shipped_date, store_id,staff_id) VALUES(259,4,'20160101','20160103','20160103',1,2);
