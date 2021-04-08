@@ -13,6 +13,7 @@ import oracle.jbo.server.ApplicationModuleImpl;
 public class HRUIAMImpl
   extends ApplicationModuleImpl
 {
+    // demo
   /**
    * This is the default constructor (do not remove).
    */
