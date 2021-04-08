@@ -3,8 +3,8 @@ CREATE OR REPLACE PACKAGE BODY nice.cust_sal AS
 --
 --            NAME:   cust_sal
 --            TYPE:   Package Specification
--- ORIGINAL AUTHOR:   Chandresh Patel 
---            DATE:   2/11/2019
+--            ORIGINAL AUTHOR:   Chandresh Patel 
+--            DATE:   4/8/2021
 --
 --     DESCRIPTION:
 --
