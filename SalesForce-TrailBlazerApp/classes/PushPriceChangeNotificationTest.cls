@@ -1,6 +1,6 @@
 @isTest
 public class PushPriceChangeNotificationTest {
-    
+    // some change
     static testMethod void testPush() {
         Boolean success = true;
         try {
