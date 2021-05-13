@@ -1,1 +1,1 @@
-${{VAR_BLOCKS}}
+${{VAR_BLOCK}}
