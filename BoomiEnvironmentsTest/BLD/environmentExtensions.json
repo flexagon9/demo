@@ -1,0 +1,101 @@
+{
+    "@type": "EnvironmentExtensions",
+    "connections": {
+        "@type": "Connections",
+        "connection": [
+            {
+                "@type": "Connection",
+                "field": [
+                    {
+                        "@type": "Field",
+                        "id": "username",
+                        "value": "null",
+                        "encryptedValueSet": false,
+                        "usesEncryption": false,
+                        "componentOverride": false,
+                        "useDefault": false
+                    },
+                    {
+                        "@type": "Field",
+                        "id": "password",
+                        "encryptedValueSet": false,
+                        "usesEncryption": true,
+                        "componentOverride": false,
+                        "useDefault": false
+                    },
+                    {
+                        "@type": "Field",
+                        "id": "dbname",
+                        "value": false,
+                        "encryptedValueSet": false,
+                        "usesEncryption": false,
+                        "componentOverride": false,
+                        "useDefault": false
+                    }
+                ],
+                "id": "02a3bb4a-e7d9-406c-8bdd-5930fbae2059",
+                "name": "orgtrack 2"
+            }
+        ]
+    },
+    "processProperties": {
+        "@type": "OverrideProcessProperties",
+        "ProcessProperty": [
+            {
+                "@type": "OverrideProcessProperty",
+                "ProcessPropertyValue": [
+                    {
+                        "@type": "ProcessPropertyValue",
+                        "label": "Source Environment ID",
+                        "key": "6d045708-0684-4334-a72e-5cd06e86952e",
+                        "value": "sdfsdfsdf",
+                        "encryptedValueSet": false,
+                        "useDefault": false
+                    },
+                    {
+                        "@type": "ProcessPropertyValue",
+                        "label": "Target Environment ID",
+                        "key": "c3888c3a-e5ed-4f3d-9ac0-5af4774bc48f",
+                        "encryptedValueSet": false,
+                        "useDefault": true
+                    }
+                ],
+                "id": "17c12a33-d78f-4538-8b93-6dcfdb4aca6b",
+                "name": "Environment Copy Config 2"
+            }
+        ]
+    },
+    "properties": {
+        "@type": "",
+        "property": [
+            {
+                "@type": "",
+                "name": "Owner",
+                "value": "BLDvalue"
+            },
+            {
+                "@type": "",
+                "name": "testProperty1",
+				"value": "BLDvalue"
+			},
+            {
+                "@type": "",
+                "name": "testProperty2",
+                "value": "BLDvalue"
+            },
+            {
+                "@type": "",
+                "name": "testProperty3",
+                "value": "BLDvalue"
+            },
+            {
+                "@type": "",
+                "name": "testProperty4",
+                "value": ""
+            }
+        ]
+    },
+    "environmentId": "48629d11-f0aa-4e23-93ce-90c08f576d68",
+    "extensionGroupId": "",
+    "id": "48629d11-f0aa-4e23-93ce-90c08f576d68"
+}

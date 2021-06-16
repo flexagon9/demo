@@ -1,0 +1,104 @@
+{
+    "@type": "EnvironmentExtensions",
+    "connections": {
+        "@type": "Connections",
+        "connection": [
+            {
+                "@type": "Connection",
+                "field": [
+                    {
+                        "@type": "Field",
+                        "id": "directory",
+                        "value": ${{FIELD_DIRECTORY}},
+                        "encryptedValueSet": false,
+                        "usesEncryption": false,
+                        "componentOverride": false,
+                        "useDefault": false
+                    }
+                ],
+                "id": "36d4e8e7-278f-414b-a412-f28143380484",
+                "name": "Work Directory"
+            },
+            {
+                "@type": "Connection",
+                "field": [
+                    {
+                        "@type": "Field",
+                        "id": "port",
+                        "value":  ${{FIELD_PORT}},
+                        "encryptedValueSet": false,
+                        "usesEncryption": false,
+                        "componentOverride": false,
+                        "useDefault": false
+                    },
+                    {
+                        "@type": "Field",
+                        "id": "host",
+                        "value":  ${{FIELD_HOST}},
+                        "encryptedValueSet": false,
+                        "usesEncryption": false,
+                        "componentOverride": false,
+                        "useDefault": false
+                    },
+                    {
+                        "@type": "Field",
+                        "id": "user",
+                        "value":  ${{FIELD_USER}},
+                        "encryptedValueSet": false,
+                        "usesEncryption": false,
+                        "componentOverride": false,
+                        "useDefault": false
+                    }
+                ],
+                "id": "e1c2c019-6106-48fd-a71b-0109bd364f60",
+                "name": "Boomi Training (FTP)"
+            }
+        ]
+    },
+    "crossReferences": {
+        "@type": "CrossReferences",
+        "crossReference": [
+            {
+                "@type": "CrossReference",
+                "CrossReferenceRows": {
+                    "@type": "",
+                    "row": []
+                },
+                "id": "da18acf0-52b2-4c31-81f4-df800569ec12",
+                "overrideValues": false,
+                "name": "SampleTable"
+            }
+        ]
+    },
+    "processProperties": {
+        "@type": "OverrideProcessProperties",
+        "ProcessProperty": [
+            {
+                "@type": "OverrideProcessProperty",
+                "ProcessPropertyValue": [
+                    {
+                        "@type": "ProcessPropertyValue",
+                        "label": "Process Property #1",
+                        "key": "105b730d-620c-42f6-b66f-1b91eb7a89c3",
+                        "value": ${{PROCESS_PROPERTY_1}},
+                        "encryptedValueSet": false,
+                        "useDefault": false
+                    },
+                    {
+                        "@type": "ProcessPropertyValue",
+                        "label": "Process Property #2",
+                        "key": "64fe0961-c458-46f1-bb45-2c5fa82855e2",
+                        "value": ${{PROCESS_PROPERTY_1}},
+                        "encryptedValueSet": false,
+                        "useDefault": false
+                    }
+                ],
+                "id": "fe0cddc2-877b-483d-ad5f-1a50c326dfbd",
+                "name": "PROP_1"
+            }
+        ]
+    },
+    "environmentId": "85734b71-cef9-4257-b3b3-df8e5bc1f2f8",
+    "extensionGroupId": "",
+    "id": "85734b71-cef9-4257-b3b3-df8e5bc1f2f8"
+}
