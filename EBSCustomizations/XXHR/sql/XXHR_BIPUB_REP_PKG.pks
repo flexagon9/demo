@@ -19,7 +19,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     1.0      03/09/20      Joe Anderson        N/A       Initial Version
 --     2.0      03/11/20      Dan Goerdt          N/A       Change 2
 --     3.0      05/29/20      Chandresh Patel     N/A       Change 3
---     4.0      10/01/20      Dan Goerdt          N/A       Change 4 and 5
+--     4.0      07/29/20      Dan Goerdt          N/A       Change 4 and 5
 -----------------------------------------------------------------------------------------------------
 
                        
