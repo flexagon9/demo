@@ -1,6 +1,6 @@
 trigger PushNotificationTrigger on Property__c (after update) {
     
-    /*
+    /* Commented.
     for (Property__c property : Trigger.New) {
         
         if (property.Price__c != Trigger.oldMap.get(property.Id).Price__c) {

@@ -19,7 +19,7 @@
             <link rel="stylesheet" href="{!URLFOR($Resource.leaflet,'/leaflet.css')}" />
             <style>
                 .map {
-                    height: 480px;
+                    height: 490px;
                 }
                 
                 .new-view {

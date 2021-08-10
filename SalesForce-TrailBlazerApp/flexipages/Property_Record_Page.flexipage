@@ -2,9 +2,9 @@
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentName>force:highlightsPanel</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
         <name>header</name>
@@ -12,9 +12,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentName>force:relatedListContainer</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
         <name>relatedTabContent</name>
@@ -22,12 +22,14 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentName>PropertyStatus</componentName>
-            </componentInstances>
-            <componentInstances>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>force:detailPanel</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
         <name>detailTabContent</name>
@@ -35,7 +37,7 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -45,10 +47,10 @@
                     <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <itemInstances>
-             <componentInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -62,7 +64,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
         <name>maintabs</name>
@@ -70,13 +72,13 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
         <name>main</name>
@@ -84,12 +86,12 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentName>PropertyMap</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>demoMode</name>
                     <value>true</value>
@@ -99,19 +101,19 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>SmartHomeCard</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>animations</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>PictureGalleryCard</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <itemInstances>
-            <componentInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>principal</name>
                     <value>200000</value>
@@ -125,7 +127,7 @@
                     <value>30</value>
                 </componentInstanceProperties>
                 <componentName>MortgageCalculatorCard</componentName>
-            </componentInstances>
+            </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
