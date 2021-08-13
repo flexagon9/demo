@@ -1,5 +1,5 @@
 public class PostPriceChangeToSlack {
-
+	//added new logic
     @InvocableMethod(label='Post Price Change Notification to Slack')
     public static void postToSlack(List<Id> propertyId) {
 		String slackURL;
