@@ -363,6 +363,13 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>FD_Version__c</fullName>
+        <description>test</description>
+        <externalId>false</externalId>
+        <label>FD_Version</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
