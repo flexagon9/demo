@@ -37,10 +37,6 @@
                 <behavior>Edit</behavior>
                 <field>Level__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>FD_Version__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

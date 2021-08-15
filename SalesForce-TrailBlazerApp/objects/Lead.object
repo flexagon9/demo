@@ -307,18 +307,6 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>FD_UCID__c</fullName>
-        <description>FD&apos;s unique ID for a given person&apos;s record in their source data</description>
-        <externalId>false</externalId>
-        <label>FD UCID</label>
-        <length>80</length>
-        <required>false</required>
-        <securityClassification>Internal</securityClassification>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -462,16 +450,6 @@
     <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>secondary_email__c</fullName>
-        <description>secondary email</description>
-        <externalId>false</externalId>
-        <label>secondary email</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Email</type>
-        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>AllOpenLeads</fullName>
