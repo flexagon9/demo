@@ -63,8 +63,6 @@
     <reportType>screen_flows_prebuilt_crt__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
-    <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>FlowInterviewLog$CreatedDate</dateColumn>
         <interval>INTERVAL_LAST7</interval>

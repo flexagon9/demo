@@ -12,8 +12,6 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Service Console App Utility Bar</masterLabel>
-    <template>
-        <name>one:utilityBarTemplateDesktop</name>
-    </template>
+    <pageTemplate>one:utilityBarTemplateDesktop</pageTemplate>
     <type>UtilityBar</type>
 </FlexiPage>

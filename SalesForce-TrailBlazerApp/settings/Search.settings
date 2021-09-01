@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SearchSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <documentContentSearchEnabled>true</documentContentSearchEnabled>
-    <enableAdvancedSearchInAlohaSidebar>false</enableAdvancedSearchInAlohaSidebar>
-    <enablePersonalTagging>false</enablePersonalTagging>
-    <enablePublicTagging>false</enablePublicTagging>
-    <enableQuerySuggestionPigOn>false</enableQuerySuggestionPigOn>
-    <enableSalesforceGeneratedSynonyms>true</enableSalesforceGeneratedSynonyms>
-    <enableSetupSearch>true</enableSetupSearch>
-    <enableSuggestArticlesLinksOnly>false</enableSuggestArticlesLinksOnly>
     <optimizeSearchForCJKEnabled>false</optimizeSearchForCJKEnabled>
     <recentlyViewedUsersForBlankLookupEnabled>true</recentlyViewedUsersForBlankLookupEnabled>
     <searchSettingsByObject>

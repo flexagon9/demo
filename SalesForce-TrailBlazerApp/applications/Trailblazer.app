@@ -2,12 +2,10 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultLandingTab>Waypoint__c</defaultLandingTab>
     <description>test</description>
-    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
-    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Trailblazer</label>
-    <tabs>standard-Chatter</tabs>
-    <tabs>standard-File</tabs>
-    <tabs>Waypoint__c</tabs>
-    <tabs>standard-report</tabs>
-    <tabs>standard-Dashboard</tabs>
+    <tab>standard-Chatter</tab>
+    <tab>standard-File</tab>
+    <tab>Waypoint__c</tab>
+    <tab>standard-report</tab>
+    <tab>standard-Dashboard</tab>
 </CustomApplication>
