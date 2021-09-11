@@ -68,6 +68,10 @@
         <apexClass>SessionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>TestClass2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <description>Permission Set generated for access to custom object Waypoint for the Trailblazer app.</description>
     <fieldPermissions>
         <editable>false</editable>
