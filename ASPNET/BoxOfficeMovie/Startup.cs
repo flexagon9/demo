@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using BoxOfficeMovie.Data;
 
-namespace BoxOfficMoive
+namespace BoxOfficMovie
 {
     public class Startup
     {

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Flex.Email.Library" Version="1.0.10" />
+    <PackageReference Include="Flex.Email.Library" Version="1.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

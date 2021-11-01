@@ -10,19 +10,23 @@
         "projectUniqueName": "C:\\Workspace\\mvs\\source\\repos\\BoxOfficeMovie\\BoxOfficeMovie.csproj",
         "projectName": "BoxOfficeMovie",
         "projectPath": "C:\\Workspace\\mvs\\source\\repos\\BoxOfficeMovie\\BoxOfficeMovie.csproj",
-        "packagesPath": "C:\\Users\\muthu\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\flexagon\\.nuget\\packages\\",
         "outputPath": "C:\\Workspace\\mvs\\source\\repos\\BoxOfficeMovie\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\muthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\flexagon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\opt\\nuget_repo": {},
+          "c:\\opt\\nuget_repo": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,7 +47,7 @@
           "dependencies": {
             "Flex.Email.Library": {
               "target": "Package",
-              "version": "[1.0.10, )"
+              "version": "[1.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -84,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

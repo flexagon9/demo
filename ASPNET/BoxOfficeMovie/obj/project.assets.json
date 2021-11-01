@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Flex.Email.Library/1.0.10": {
+      "Flex.Email.Library/1.0.3": {
         "type": "package",
         "compile": {
           "lib/net5.0/Flex.Email.Library.dll": {}
@@ -2023,13 +2023,13 @@
     }
   },
   "libraries": {
-    "Flex.Email.Library/1.0.10": {
-      "sha512": "MYLQ+7WvFc+s83dq0+lOOtYNhaNCM7huwLmf/v5fcZtOfyGElbZIm7vDZl/+F3B2yg0521V6wtDLxy9ewsQVrQ==",
+    "Flex.Email.Library/1.0.3": {
+      "sha512": "Y/Q0G4OXiNlRyWVmcwFO4eVSD3GBPXlxFgjdUX1UsnJ8doyi13pa4K/5uamUwkZSHUSRHLOhJjz6HOXb/xjteg==",
       "type": "package",
-      "path": "flex.email.library/1.0.10",
+      "path": "flex.email.library/1.0.3",
       "files": [
         ".nupkg.metadata",
-        "flex.email.library.1.0.10.nupkg.sha512",
+        "flex.email.library.1.0.3.nupkg.sha512",
         "flex.email.library.nuspec",
         "lib/net5.0/Flex.Email.Library.dll"
       ]
@@ -7162,7 +7162,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Flex.Email.Library >= 1.0.10",
+      "Flex.Email.Library >= 1.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
@@ -7170,7 +7170,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\muthu\\.nuget\\packages\\": {}
+    "C:\\Users\\flexagon\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7178,19 +7179,23 @@
       "projectUniqueName": "C:\\Workspace\\mvs\\source\\repos\\BoxOfficeMovie\\BoxOfficeMovie.csproj",
       "projectName": "BoxOfficeMovie",
       "projectPath": "C:\\Workspace\\mvs\\source\\repos\\BoxOfficeMovie\\BoxOfficeMovie.csproj",
-      "packagesPath": "C:\\Users\\muthu\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\flexagon\\.nuget\\packages\\",
       "outputPath": "C:\\Workspace\\mvs\\source\\repos\\BoxOfficeMovie\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\muthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\flexagon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\opt\\nuget_repo": {},
+        "c:\\opt\\nuget_repo": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7211,7 +7216,7 @@
         "dependencies": {
           "Flex.Email.Library": {
             "target": "Package",
-            "version": "[1.0.10, )"
+            "version": "[1.0.3, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -7252,7 +7257,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
