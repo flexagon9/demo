@@ -1,5 +1,4 @@
 prompt --application/shared_components/navigation/lists/product_cards
-
 begin
 wwv_flow_api.create_list(
  p_id=>wwv_flow_api.id(1449123942236691361)
