@@ -5,6 +5,6 @@
     <enableICULocaleDateFormat>false</enableICULocaleDateFormat>
     <enableLocalNamesForStdObjects>false</enableLocalNamesForStdObjects>
     <enablePlatformLanguages>false</enablePlatformLanguages>
-    <enableTranslationWorkbench>false</enableTranslationWorkbench>
+    <enableTranslationWorkbench>true</enableTranslationWorkbench>
     <useLanguageFallback>false</useLanguageFallback>
 </LanguageSettings>

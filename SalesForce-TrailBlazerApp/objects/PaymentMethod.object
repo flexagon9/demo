@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>AccountId</fullName>
@@ -10,12 +11,6 @@
     </fields>
     <fields>
         <fullName>CompanyName</fullName>
-    </fields>
-    <fields>
-        <fullName>IsDeleted</fullName>
-    </fields>
-    <fields>
-        <fullName>Name</fullName>
     </fields>
     <fields>
         <fullName>NickName</fullName>
