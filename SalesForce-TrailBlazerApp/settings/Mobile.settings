@@ -5,7 +5,6 @@
     </dashboardMobile>
     <enableImportContactFromDevice>true</enableImportContactFromDevice>
     <enableNewSalesforceMobileAppForTablet>true</enableNewSalesforceMobileAppForTablet>
-    <enableNewSalesforceMobileAppForTabletWideScreen>false</enableNewSalesforceMobileAppForTabletWideScreen>
     <enableOfflineDraftsEnabled>true</enableOfflineDraftsEnabled>
     <enablePopulateNameManuallyInToday>false</enablePopulateNameManuallyInToday>
     <enableS1EncryptedStoragePref2>true</enableS1EncryptedStoragePref2>
