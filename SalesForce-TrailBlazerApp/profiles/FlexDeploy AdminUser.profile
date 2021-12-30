@@ -3,7 +3,7 @@
     <applicationVisibilities>
         <application>DreamHouse</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Trailblazer</application>
@@ -18,7 +18,7 @@
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Chatter</application>
@@ -28,7 +28,7 @@
     <applicationVisibilities>
         <application>standard__Commerce</application>
         <default>false</default>
-        <visible>true</visible>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Community</application>
@@ -722,7 +722,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>test</description>
+    <description>test1</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountNumber</field>
