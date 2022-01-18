@@ -721,6 +721,10 @@
         <apexClass>TestFlexPageController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>TestJan6</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <description>test profile updated on 03 November 2020</description>
     <fieldPermissions>

@@ -7,5 +7,7 @@
     <enableOpportunityFieldHistoryTracking>false</enableOpportunityFieldHistoryTracking>
     <enableOpportunityTeam>false</enableOpportunityTeam>
     <enableUpdateReminders>true</enableUpdateReminders>
+    <oppAmountDealMotionEnabled>true</oppAmountDealMotionEnabled>
+    <oppCloseDateDealMotionEnabled>true</oppCloseDateDealMotionEnabled>
     <promptToAddProducts>false</promptToAddProducts>
 </OpportunitySettings>

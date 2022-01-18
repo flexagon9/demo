@@ -6,5 +6,6 @@
     <enableGmailIntegration>false</enableGmailIntegration>
     <enableOutlookIntegration>false</enableOutlookIntegration>
     <isLayoutCustomizationAllowed>false</isLayoutCustomizationAllowed>
+    <orgIsSyncingEventsOutbound>false</orgIsSyncingEventsOutbound>
     <shouldUseTrustedDomainsList>true</shouldUseTrustedDomainsList>
 </EmailIntegrationSettings>

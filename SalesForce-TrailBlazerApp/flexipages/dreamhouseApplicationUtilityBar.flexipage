@@ -42,6 +42,7 @@
                     <value>30</value>
                 </componentInstanceProperties>
                 <componentName>MortgageCalculator</componentName>
+                <identifier>MortgageCalculator</identifier>
             </componentInstance>
         </itemInstances>
         <name>utilityItems</name>
