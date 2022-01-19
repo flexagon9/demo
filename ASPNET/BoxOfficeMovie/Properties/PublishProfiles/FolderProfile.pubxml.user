@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Workspace\mvs\source\repos\BoxOfficeMovie\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2021-09-13T14:58:13.2495493Z;True|2021-09-12T19:46:57.4082167+05:30;True|2021-09-11T09:38:37.1901331+05:30;True|2021-09-11T09:31:39.5610091+05:30;True|2021-09-09T21:03:13.1984278+05:30;</History>
+  </PropertyGroup>
+</Project>

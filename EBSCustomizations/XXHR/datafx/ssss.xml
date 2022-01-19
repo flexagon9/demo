@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFix xmlns="http://flexagon.com/database/datafix">
+    <Description>Drop column ATTRIBUTE1 from XXBCG_WAREHOUSE_UPDATE</Description>
+    <FixSQL>ALTER TABLE xxbcg.XXBCG_WAREHOUSE_UPDATE DROP COLUMN ATTRIBUTE1</FixSQL>
+    <BackupSQL></BackupSQL>
+    <Validations>
+        <Validation>
+            <Description>Column is dropped</Description>
+            <ValidationSQL></ValidationSQL>
+            <Environment>
+                <EnvironmentCode>default</EnvironmentCode>
+            </Environment>
+        </Validation>
+    </Validations>
+</DataFix>
