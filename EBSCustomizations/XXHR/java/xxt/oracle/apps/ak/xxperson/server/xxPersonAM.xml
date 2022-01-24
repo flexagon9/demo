@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding='windows-1252'?>
 <!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
 
-//Just added comment to check build revision
+//Just added comment to check build revision numbers
 <AppModule
    Name="xxPersonAM"
    ComponentClass="xxt.oracle.apps.ak.xxperson.server.xxPersonAMImpl"
