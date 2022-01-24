@@ -2,6 +2,7 @@
 <!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
 
 //Just added comment to check build revision numbers
+//To Committed by,on and message info"
 <AppModule
    Name="xxPersonAM"
    ComponentClass="xxt.oracle.apps.ak.xxperson.server.xxPersonAMImpl"
