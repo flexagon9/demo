@@ -64,4 +64,8 @@
         <name>standard__Commerce</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>FD</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>

@@ -2,9 +2,9 @@
 <AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignmentRule>
         <fullName>Standard</fullName>
-        <active>false</active>
+        <active>true</active>
         <ruleEntry>
-            <assignedTo>flexagon9@flexagon.com</assignedTo>
+            <assignedTo>flexagon8@flexagon.com</assignedTo>
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -23,7 +23,7 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>flexagon9@flexagon.com</assignedTo>
+            <assignedTo>flexagon8@flexagon.com</assignedTo>
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -40,10 +40,9 @@
                 <operation>contains</operation>
                 <value>Customer</value>
             </criteriaItems>
-            <template>unfiled$public/MarketingProductInquiryResponse</template>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>flexagon9@flexagon.com</assignedTo>
+            <assignedTo>flexagon8@flexagon.com</assignedTo>
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -62,7 +61,7 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>flexagon9@flexagon.com</assignedTo>
+            <assignedTo>flexagon8@flexagon.com</assignedTo>
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -81,7 +80,7 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>flexagon9@flexagon.com</assignedTo>
+            <assignedTo>flexagon8@flexagon.com</assignedTo>
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.Type</field>
