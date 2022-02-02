@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>false</custom>
+    <loginHours>
+        <fridayEnd>0</fridayEnd>
+        <fridayStart>0</fridayStart>
+        <mondayEnd>0</mondayEnd>
+        <mondayStart>0</mondayStart>
+        <saturdayEnd>0</saturdayEnd>
+        <saturdayStart>0</saturdayStart>
+        <sundayEnd>60</sundayEnd>
+        <sundayStart>0</sundayStart>
+        <thursdayEnd>60</thursdayEnd>
+        <thursdayStart>60</thursdayStart>
+        <tuesdayEnd>0</tuesdayEnd>
+        <tuesdayStart>0</tuesdayStart>
+        <wednesdayEnd>0</wednesdayEnd>
+        <wednesdayStart>0</wednesdayStart>
+    </loginHours>
     <userLicense>Analytics Cloud Integration User</userLicense>
     <userPermissions>
         <enabled>true</enabled>
@@ -32,6 +48,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>QueryAllFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>RunReports</name>
     </userPermissions>
     <userPermissions>
@@ -45,6 +65,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewAllData</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
