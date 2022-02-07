@@ -45,6 +45,10 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>DreamHouse</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>Trailblazer</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -57,15 +61,23 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>DEVHUB_96tsrnrbxisqiayajsdw</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>API</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>CLI</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>standard__AllTabSet</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
         <name>standard__Commerce</name>
         <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>FD</name>
-        <type>ConnectedApp</type>
     </appMenuItems>
 </AppMenu>
