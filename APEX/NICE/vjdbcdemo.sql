@@ -1,2 +1,2 @@
-create or replace view nice.vjdbcdemo as select 'Long live the king!' as wgo from dual
+create or replace view nice.vjdbcdemo as select 'Happy Days with FlexDeploy!' as wgo from dual
 /
