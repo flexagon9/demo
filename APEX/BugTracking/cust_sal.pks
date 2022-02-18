@@ -15,7 +15,8 @@ CREATE OR REPLACE PACKAGE nice.cust_sal AS
 --
 --     VERSION  DATE          AUTHOR              LABEL     DESCRIPTION
 --     -------  -----------   ----------------    --------  -----------------------------------------
---     1.0      2/11/2019    Chandresh Patel      N/A       Initial Versio
+--     1.0      2/11/2022    Chandresh Patel      N/A       Initial Version
+--     2.0      2/18/2022    Dan Goerdt           N/A       Made a change
 -----------------------------------------------------------------------------------------------------
 
     PROCEDURE find_sal(e_id NUMBER); 
