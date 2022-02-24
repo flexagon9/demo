@@ -3,8 +3,8 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --
 --            NAME:   XXHR_BIPUB_REP_PKG
 --            TYPE:   Package Specification
--- ORIGINAL AUTHOR:   Brian Badenhorst (updated)
---            DATE:   03/10/20 
+-- ORIGINAL AUTHOR:   Rama Rimmalapudi (updated)
+--            DATE:   03/07/20 
 --
 --     DESCRIPTION:
 --
@@ -20,6 +20,7 @@ CREATE OR REPLACE PACKAGE xxhr_bipub_rep_pkg AS
 --     2.0      03/11/20      Dan Goerdt          N/A       Change 2
 --     3.0      05/29/20      Chandresh Patel     N/A       Change 3
 --     4.0      12/28/21      Dan Goerdt          N/A       Change 4, 5, 7
+--     5.0      02/22/22      Dan Goerdt          N/A       Change 8
 -----------------------------------------------------------------------------------------------------
 
                        
