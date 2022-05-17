@@ -5,7 +5,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>FD_About_Label</shortDescription>
-        <value>FD About:</value>
+        <value>FD About2:</value>
+    </labels>
+    <labels>
+        <fullName>FD_ID</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FD ID</shortDescription>
+        <value>test custom label</value>
     </labels>
     <labels>
         <fullName>FD_Version_Label</fullName>
