@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>vivek.vanka@flexagon.com</contactEmail>
+    <label>DependencyIntegrationTest</label>
+    <oauthConfig>
+        <callbackUrl>https://flexagon9-dev-ed--devsandbox.lightning.force.com</callbackUrl>
+        <consumerKey>3MVG92DxHaawSd0n1dU0p7QiDYDHJXsmI4y_Z2TRHtvkZW9j4WCUqYoySUpDZnI107j6DE.s5sGYLtNb8ziXI</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

@@ -146,6 +146,11 @@
         <filterScope>Everything</filterScope>
         <label>All Customers</label>
     </listViews>
+    <listViews>
+        <fullName>All_Customers</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Customers</label>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>TotalLifeTimeValue</customTabListAdditionalFields>
         <searchResultsAdditionalFields>TotalLifeTimeValue</searchResultsAdditionalFields>

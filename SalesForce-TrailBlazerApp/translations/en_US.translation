@@ -113,6 +113,23 @@
         <name>Waypoint</name>
     </quickActions>
     <reportTypes>
+        <description><!-- custom account --></description>
+        <label><!-- custom account --></label>
+        <name>custom_account</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Cases --></label>
+            <name>Cases</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Screen Flows --></description>
         <label><!-- Screen Flows --></label>
         <name>screen_flows_prebuilt_crt</name>

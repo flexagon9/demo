@@ -2,10 +2,10 @@
 <UserInterfaceSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <alternateAlohaListView>true</alternateAlohaListView>
     <dynamicMruActionsOff>false</dynamicMruActionsOff>
-    <enableAsyncRelatedLists>false</enableAsyncRelatedLists>
+    <enableAsyncRelatedLists>true</enableAsyncRelatedLists>
     <enableClickjackUserPageHeaderless>false</enableClickjackUserPageHeaderless>
     <enableCollapsibleSections>true</enableCollapsibleSections>
-    <enableCollapsibleSideBar>false</enableCollapsibleSideBar>
+    <enableCollapsibleSideBar>true</enableCollapsibleSideBar>
     <enableCustomObjectTruncate>false</enableCustomObjectTruncate>
     <enableCustomeSideBarOnAllPages>false</enableCustomeSideBarOnAllPages>
     <enableDeleteFieldHistory>false</enableDeleteFieldHistory>

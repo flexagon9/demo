@@ -85,6 +85,14 @@
         <isEnabled>false</isEnabled>
     </realTimeEvents>
     <realTimeEvents>
+        <entityName>PermissionSetEventStore</entityName>
+        <isEnabled>false</isEnabled>
+    </realTimeEvents>
+    <realTimeEvents>
+        <entityName>PermissionSetEvent</entityName>
+        <isEnabled>false</isEnabled>
+    </realTimeEvents>
+    <realTimeEvents>
         <entityName>ReportEvent</entityName>
         <isEnabled>false</isEnabled>
     </realTimeEvents>
