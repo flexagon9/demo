@@ -28,7 +28,7 @@
     <applicationVisibilities>
         <application>standard__Commerce</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Community</application>
@@ -769,7 +769,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>test1</description>
+    <description>test1 test</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountNumber</field>
