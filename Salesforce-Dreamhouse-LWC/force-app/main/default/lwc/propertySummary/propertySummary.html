@@ -1,0 +1,37 @@
+<template>
+    <lightning-card icon-name="custom:custom85">
+        <template if:true={property.data}>
+            <span slot="title">{propertyName}</span>
+            <lightning-button-icon
+                icon-name="utility:expand_alt"
+                slot="actions"
+                onclick={handleNavigateToRecord}
+            ></lightning-button-icon>
+            <div class="slds-var-m-horizontal_medium">
+                <img
+                    src={pictureURL}
+                    alt="Property picture"
+                    class="slds-var-m-bottom_x-small"
+                />
+                <lightning-record-form
+                    object-api-name="Property__c"
+                    record-id={propertyId}
+                    fields={propertyFields}
+                    columns="2"
+                >
+                </lightning-record-form>
+            </div>
+        </template>
+        <template if:false={propertyId}>
+            <c-error-panel
+                friendly-message="Select a property to see details"
+            ></c-error-panel>
+        </template>
+        <template if:true={property.error}>
+            <c-error-panel
+                friendly-message="Error retrieving data"
+                errors={property.error}
+            ></c-error-panel>
+        </template>
+    </lightning-card>
+</template>
