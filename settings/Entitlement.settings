@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetLookupLimitedToActiveEntitlementsOnAccount>true</assetLookupLimitedToActiveEntitlementsOnAccount>
+    <assetLookupLimitedToActiveEntitlementsOnContact>true</assetLookupLimitedToActiveEntitlementsOnContact>
+    <assetLookupLimitedToSameAccount>true</assetLookupLimitedToSameAccount>
+    <assetLookupLimitedToSameContact>true</assetLookupLimitedToSameContact>
+    <enableEntitlementVersioning>true</enableEntitlementVersioning>
+    <enableEntitlements>true</enableEntitlements>
+    <enableMilestoneFeedItem>true</enableMilestoneFeedItem>
+    <enableMilestoneStoppedTime>true</enableMilestoneStoppedTime>
+    <entitlementLookupLimitedToActiveStatus>true</entitlementLookupLimitedToActiveStatus>
+    <entitlementLookupLimitedToSameAccount>true</entitlementLookupLimitedToSameAccount>
+    <entitlementLookupLimitedToSameAsset>true</entitlementLookupLimitedToSameAsset>
+    <entitlementLookupLimitedToSameContact>true</entitlementLookupLimitedToSameContact>
+    <ignoreMilestoneBusinessHours>true</ignoreMilestoneBusinessHours>
+</EntitlementSettings>

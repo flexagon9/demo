@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>test auto response rule</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Phone</value>
+            </criteriaItems>
+            <senderEmail>bhagabat.bhuyan@flexagon.com</senderEmail>
+            <senderName>bhagabat</senderName>
+            <template>test_folder_bhagabat/test</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>
