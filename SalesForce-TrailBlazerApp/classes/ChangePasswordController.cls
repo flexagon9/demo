@@ -7,7 +7,7 @@ public with sharing class ChangePasswordController {
     public String verifyNewPassword {get; set;}        
     
     public PageReference changePassword() {
-        //simple verification
+        //simple verification. Added by Rama
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
     }     
     
