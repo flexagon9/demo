@@ -12,6 +12,7 @@
                     <value>220</value>
                 </componentInstanceProperties>
                 <componentName>PropertyTileList</componentName>
+                <identifier>PropertyTileList</identifier>
             </componentInstance>
         </itemInstances>
         <name>region1</name>
@@ -21,6 +22,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>PropertyFilter</componentName>
+                <identifier>PropertyFilter</identifier>
             </componentInstance>
         </itemInstances>
         <name>region2</name>
@@ -30,11 +32,13 @@
         <itemInstances>
             <componentInstance>
                 <componentName>PropertyMap</componentName>
+                <identifier>PropertyMap</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>PropertyDaysOnMarketChart</componentName>
+                <identifier>PropertyDaysOnMarketChart</identifier>
             </componentInstance>
         </itemInstances>
         <name>region3</name>

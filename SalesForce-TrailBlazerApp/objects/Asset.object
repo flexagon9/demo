@@ -106,6 +106,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Address</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>AssetLevel</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -118,6 +122,11 @@
         <fullName>AssetServicedById</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ConsequenceOfFailure</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>ContactId</fullName>
@@ -176,6 +185,11 @@
     <fields>
         <fullName>LifecycleStartDate</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LocationId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>ManufactureDate</fullName>

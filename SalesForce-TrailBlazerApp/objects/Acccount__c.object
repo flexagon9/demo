@@ -154,6 +154,14 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>sample_date__c</fullName>
+        <externalId>false</externalId>
+        <label>sample date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
     <label>Acccount</label>
     <nameField>
         <label>Acccount Name</label>

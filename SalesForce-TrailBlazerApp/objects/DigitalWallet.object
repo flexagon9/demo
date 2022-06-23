@@ -146,6 +146,9 @@
         <fullName>IpAddress</fullName>
     </fields>
     <fields>
+        <fullName>IsAutoPayEnabled</fullName>
+    </fields>
+    <fields>
         <fullName>MacAddress</fullName>
     </fields>
     <fields>
@@ -164,6 +167,11 @@
     <fields>
         <fullName>Status</fullName>
     </fields>
+    <listViews>
+        <fullName>DigitalWallet</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <listViews>
         <fullName>DigitalWallet</fullName>
         <filterScope>Everything</filterScope>

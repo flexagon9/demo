@@ -129,6 +129,11 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>BusinessBrandId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>CommSubscriptionChannelTypeId</fullName>
         <inlineHelpText>The communication subscription channel type record associated with the communication subscription consent.</inlineHelpText>
         <trackHistory>false</trackHistory>
@@ -172,6 +177,11 @@
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PartyRoleId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>

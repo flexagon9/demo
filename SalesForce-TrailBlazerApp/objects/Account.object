@@ -238,6 +238,7 @@
     </fields>
     <fields>
         <fullName>Active__c</fullName>
+        <description>test description</description>
         <externalId>false</externalId>
         <label>Active</label>
         <required>false</required>

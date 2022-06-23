@@ -8,6 +8,10 @@
         <plural>true</plural>
         <value>Accounts</value>
     </caseValues>
+    <fields>
+        <label><!-- sample date --></label>
+        <name>sample_date__c</name>
+    </fields>
     <layouts>
         <layout>Acc Layout</layout>
         <sections>
