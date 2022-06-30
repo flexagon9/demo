@@ -222,30 +222,6 @@
         <fullName>HierarchyNumberSent</fullName>
     </fields>
     <fields>
-        <fullName>HierarchyTotalEmailsDelivered</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyTotalFormSubmissions</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyTotalFormViews</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyTotalLandingPageFormSubmissions</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyTotalLandingPageViews</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyUniqueEmailOpens</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyUniqueEmailTrackedLinkClicks</fullName>
-    </fields>
-    <fields>
-        <fullName>HierarchyUniqueMarketingLinkClicks</fullName>
-    </fields>
-    <fields>
         <fullName>IsActive</fullName>
     </fields>
     <fields>
@@ -288,32 +264,8 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>TotalEmailsDelivered</fullName>
-    </fields>
-    <fields>
-        <fullName>TotalFormSubmissions</fullName>
-    </fields>
-    <fields>
-        <fullName>TotalFormViews</fullName>
-    </fields>
-    <fields>
-        <fullName>TotalLandingPageFormSubmissions</fullName>
-    </fields>
-    <fields>
-        <fullName>TotalLandingPageViews</fullName>
-    </fields>
-    <fields>
         <fullName>Type</fullName>
         <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>UniqueEmailOpens</fullName>
-    </fields>
-    <fields>
-        <fullName>UniqueEmailTrackedLinkClicks</fullName>
-    </fields>
-    <fields>
-        <fullName>UniqueMarketingLinkClicks</fullName>
     </fields>
     <listViews>
         <fullName>AllActiveCampaigns</fullName>

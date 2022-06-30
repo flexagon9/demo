@@ -883,6 +883,13 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
+    <validationRules>
+        <fullName>CASE_DESCRIPTION_IS_NOT_BLANK</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISNULL(Description)</errorConditionFormula>
+        <errorDisplayField>Description</errorDisplayField>
+        <errorMessage>DESCRIPTION CANNOT BE NULL</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>UpsellCrosssellOpportunity</fullName>
         <availability>online</availability>

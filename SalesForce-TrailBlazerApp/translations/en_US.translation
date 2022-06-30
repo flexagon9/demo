@@ -64,6 +64,109 @@
         <flows/>
         <fullName>Price_Change_Push_Notification</fullName>
     </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <fields>
+                    <name>Case_Details_Input</name>
+                </fields>
+                <fields>
+                    <name>Case_Details_Script</name>
+                </fields>
+                <fields>
+                    <name>Case_Details_Title</name>
+                </fields>
+                <fields>
+                    <name>Case_Origin_Input</name>
+                </fields>
+                <fields>
+                    <name>Case_Subject_Input</name>
+                </fields>
+                <fields>
+                    <name>Case_Type_Input</name>
+                </fields>
+                <name>Case_Details_Screen</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>Confirm_Identity_Title</name>
+                </fields>
+                <fields>
+                    <name>Customer_Name_Script</name>
+                </fields>
+                <fields>
+                    <name>First_Name_Input</name>
+                </fields>
+                <fields>
+                    <name>Last_Name_Input</name>
+                </fields>
+                <name>Confirm_Case_Title</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>Confirm_Contact_Details_Title</name>
+                </fields>
+                <fields>
+                    <name>Contact_Details_Script</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>required</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Email_Input</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>required</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Phone_Input</name>
+                </fields>
+                <name>Confirm_Contact_Details_Screen</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>Contact_Error_Desc</name>
+                </fields>
+                <fields>
+                    <name>Contact_Error_Title</name>
+                </fields>
+                <name>Contact_Error_Screen</name>
+            </screens>
+            <stages>
+                <name>Case_Details_Stage</name>
+            </stages>
+            <stages>
+                <name>Contact_Details_Stage</name>
+            </stages>
+            <textTemplates>
+                <name>Case_Created_Script_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Case_Details_Script_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Contact_Details_Script_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Contact_Error_Title_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Customer_Name_Script_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Email_Title_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Flow_Title_Text_Template</name>
+            </textTemplates>
+            <textTemplates>
+                <name>Phone_Title_Template</name>
+            </textTemplates>
+        </flows>
+        <fullName>flexaflowv2</fullName>
+    </flowDefinitions>
     <quickActions>
         <label><!-- LogACall --></label>
         <name>LogACall</name>
@@ -112,6 +215,33 @@
         <label><!-- Waypoint --></label>
         <name>Waypoint</name>
     </quickActions>
+    <reportTypes>
+        <description><!-- Bot Metrics Daily Summer ’22 --></description>
+        <label><!-- Bot Metrics Daily Summer ’22 --></label>
+        <name>Bot_Metrics_Daily_v2</name>
+        <sections>
+            <label><!-- Conversation Definition Dialog Daily Metrics --></label>
+            <name>Conversation Definition Dialog Daily Metrics</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Bot Metrics Hourly Summer ’22 --></description>
+        <label><!-- Bot Metrics Hourly Summer ’22 --></label>
+        <name>Bot_Metrics_Hourly_v2</name>
+        <sections>
+            <label><!-- Conversation Definition Dialog Hourly Metrics --></label>
+            <name>Conversation Definition Dialog Hourly Metrics</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Session Metrics Summer ’22 --></description>
+        <label><!-- Session Metrics Summer ’22 --></label>
+        <name>Bot_Sessions_v2</name>
+        <sections>
+            <label><!-- Conversation Definition Session Metrics --></label>
+            <name>Conversation Definition Session Metrics</name>
+        </sections>
+    </reportTypes>
     <reportTypes>
         <description><!-- custom account --></description>
         <label><!-- custom account --></label>
