@@ -170,5 +170,12 @@
     <pluralLabel>Accounts</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>test_validation_v1</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISNULL(sample_date__c  )</errorConditionFormula>
+        <errorDisplayField>sample_date__c</errorDisplayField>
+        <errorMessage>this sample date field cant be cannot be blank</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
