@@ -146,7 +146,7 @@
         <label>Additional Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Product__c</field>
             </layoutItems>
             <layoutItems>

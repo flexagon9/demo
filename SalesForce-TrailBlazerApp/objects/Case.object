@@ -381,7 +381,7 @@
         <fullName>Product__c</fullName>
         <externalId>false</externalId>
         <label>Product</label>
-        <required>false</required>
+        <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
