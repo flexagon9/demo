@@ -184,11 +184,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>test_page_v1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -240,6 +243,7 @@
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>AccountId</fullName>
+        <inlineHelpText>sample help text with goutham</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -377,7 +381,7 @@
         <fullName>Product__c</fullName>
         <externalId>false</externalId>
         <label>Product</label>
-        <required>false</required>
+        <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
