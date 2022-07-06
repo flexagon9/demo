@@ -87,99 +87,52 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
-        <fullName>AdjustmentAmount</fullName>
+        <fullName>Amount</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>AdjustmentAmountWithTax</fullName>
-    </fields>
-    <fields>
-        <fullName>AdjustmentTaxAmount</fullName>
-    </fields>
-    <fields>
-        <fullName>ChargeAmount</fullName>
+        <fullName>AppliedDate</fullName>
         <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ChargeAmountWithTax</fullName>
-    </fields>
-    <fields>
-        <fullName>ChargeTaxAmount</fullName>
     </fields>
     <fields>
         <fullName>CreditMemoId</fullName>
         <trackHistory>false</trackHistory>
-        <type>MasterDetail</type>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>EndDate</fullName>
+        <fullName>EffectiveDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>LineAmount</fullName>
+        <fullName>ImpactAmount</fullName>
+        <inlineHelpText>Impact on the balance of the credit memo and invoice. Unapplied-type applications have a negative impact, while Applied-type applications have a positive impact.</inlineHelpText>
     </fields>
     <fields>
-        <fullName>Name</fullName>
+        <fullName>InvoiceId</fullName>
         <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Product2Id</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ReferenceEntityItemId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ReferenceEntityItemTypeCode</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>RelatedLineId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>StartDate</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Status</fullName>
-    </fields>
-    <fields>
-        <fullName>TaxAmount</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>TaxCode</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>TaxEffectiveDate</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>TaxName</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>TaxRate</fullName>
-        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
     </fields>
     <fields>
         <fullName>Type</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <fields>
+        <fullName>UnappliedDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
     <searchLayouts>
+        <searchResultsAdditionalFields>Amount</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Type</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>RelatedLine</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>LineAmount</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AppliedDate</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UnappliedDate</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

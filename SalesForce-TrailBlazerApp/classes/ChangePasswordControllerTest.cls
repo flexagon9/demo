@@ -8,7 +8,7 @@
         controller.oldPassword = '123456';
         controller.newPassword = 'qwerty1'; 
         controller.verifyNewPassword = 'qwerty1';                
-       // system.debug('adding a simple comment===');
-       // System.assertEquals(controller.changePassword(),null);                           
+        
+        System.assertEquals(controller.changePassword(),null);                           
     }    
 }
