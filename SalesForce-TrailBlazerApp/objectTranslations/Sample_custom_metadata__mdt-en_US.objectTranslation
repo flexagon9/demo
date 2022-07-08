@@ -9,6 +9,10 @@
         <value>Sample custom metadatas</value>
     </caseValues>
     <fields>
+        <label><!-- Sample Number --></label>
+        <name>Sample_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- sample text1 --></label>
         <name>sample_text1__c</name>
     </fields>

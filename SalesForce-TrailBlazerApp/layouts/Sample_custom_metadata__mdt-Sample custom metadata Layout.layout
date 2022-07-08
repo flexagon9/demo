@@ -18,6 +18,10 @@
                 <behavior>Edit</behavior>
                 <field>sample_text1__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sample_Number__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
