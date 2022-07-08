@@ -8,5 +8,9 @@
         <plural>true</plural>
         <value>Sample custom metadatas</value>
     </caseValues>
+    <fields>
+        <label><!-- sample text1 --></label>
+        <name>sample_text1__c</name>
+    </fields>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>
