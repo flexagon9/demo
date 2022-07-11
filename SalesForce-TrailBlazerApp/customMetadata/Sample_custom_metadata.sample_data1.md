@@ -3,6 +3,10 @@
     <label>sample data1</label>
     <protected>false</protected>
     <values>
+        <field>Sample_Number__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>sample_text1__c</field>
         <value xsi:nil="true"/>
     </values>
