@@ -258,6 +258,7 @@
     </fields>
     <fields>
         <fullName>BusinessHoursId</fullName>
+        <inlineHelpText>this is the business hour</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
