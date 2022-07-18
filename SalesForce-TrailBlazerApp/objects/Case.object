@@ -258,7 +258,7 @@
     </fields>
     <fields>
         <fullName>BusinessHoursId</fullName>
-        <inlineHelpText>this is the business hour</inlineHelpText>
+        <inlineHelpText>this is the business hour with muthu</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
