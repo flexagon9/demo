@@ -80,4 +80,8 @@
         <name>DependencyIntegrationTest</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>CustomerPortal</name>
+        <type>Network</type>
+    </appMenuItems>
 </AppMenu>

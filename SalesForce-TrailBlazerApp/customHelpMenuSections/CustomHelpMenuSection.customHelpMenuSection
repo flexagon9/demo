@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomHelpMenuSection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHelpMenuItems>
+        <linkUrl>https://help.salesforce.com/s/articleView?id=sf.action_link_group_template.htm&amp;type=5</linkUrl>
+        <masterLabel>FD action template</masterLabel>
+        <sortOrder>1</sortOrder>
+    </customHelpMenuItems>
+    <masterLabel>Sample FD Custom</masterLabel>
+</CustomHelpMenuSection>

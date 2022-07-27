@@ -128,6 +128,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>ActiveFromDate</fullName>
         <trackHistory>false</trackHistory>
@@ -200,5 +201,5 @@
         <searchResultsAdditionalFields>IsPrimary</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>IsDefault</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

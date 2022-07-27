@@ -128,6 +128,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>CommSubscriptionConsentId</fullName>
         <inlineHelpText>The communication subscription consent record associated with the communication subscription timing.</inlineHelpText>
