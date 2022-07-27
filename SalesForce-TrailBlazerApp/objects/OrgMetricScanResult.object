@@ -127,6 +127,7 @@
         <type>Default</type>
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>ItemStatus</fullName>
         <type>Picklist</type>

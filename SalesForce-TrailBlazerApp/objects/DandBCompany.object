@@ -86,6 +86,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>CompanyCurrencyIsoCode</fullName>
     </fields>

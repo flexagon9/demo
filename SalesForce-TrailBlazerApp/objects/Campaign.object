@@ -157,6 +157,7 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>FullAccess</externalSharingModel>
     <fields>
         <fullName>ActualCost</fullName>
     </fields>
@@ -168,6 +169,10 @@
     </fields>
     <fields>
         <fullName>BudgetedCost</fullName>
+    </fields>
+    <fields>
+        <fullName>CampaignImageId</fullName>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>CampaignMemberRecordTypeId</fullName>

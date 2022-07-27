@@ -128,6 +128,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>CommunicationSubscriptionId</fullName>
         <inlineHelpText>The communication subscription record associated with the communication subscription channel type.</inlineHelpText>

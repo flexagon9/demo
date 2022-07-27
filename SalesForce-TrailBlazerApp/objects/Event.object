@@ -193,6 +193,9 @@
         <fullName>IsReminderSet</fullName>
     </fields>
     <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+    </fields>
+    <fields>
         <fullName>Location</fullName>
     </fields>
     <fields>

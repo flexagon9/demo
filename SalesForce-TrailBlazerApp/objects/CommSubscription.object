@@ -128,6 +128,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>DataUsePurposeId</fullName>
         <inlineHelpText>The data use purpose record associated with the communication subscription.</inlineHelpText>
