@@ -7,6 +7,7 @@ LDRCONFIG = "xdotmpl.lct 120.6.12020000.3"
 #Source Database VIS
 
 #RELEASE_NAME 12.2.4
+# test
 
 # -- Begin Entity Definitions -- 
 
