@@ -3616,6 +3616,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Target_Object_for_Flexideploy__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Waypoint__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
