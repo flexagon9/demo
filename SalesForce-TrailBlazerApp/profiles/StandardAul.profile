@@ -3163,6 +3163,18 @@
         <layout>Acccount__c-Acc Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Account-Account %28Marketing%29 Layout</layout>
+        <recordType>Account.Customer</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account %28Sales%29 Layout</layout>
+        <recordType>Account.Digital_Ink_Solutions</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account %28Support%29 Layout</layout>
+        <recordType>Account.Global_Ecosystem</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3784,6 +3796,21 @@
         <apexPage>UnderConstruction</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Account.Customer</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Account.Digital_Ink_Solutions</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Account.Global_Ecosystem</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Case.FINANCE</recordType>
