@@ -575,7 +575,7 @@
             </values>
             <values>
                 <fullName>Web</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -593,7 +593,7 @@
             <picklist>CustomerPriority__c</picklist>
             <values>
                 <fullName>High</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Low</fullName>
