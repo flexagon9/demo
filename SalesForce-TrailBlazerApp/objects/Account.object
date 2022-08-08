@@ -575,7 +575,7 @@
             </values>
             <values>
                 <fullName>Web</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -597,7 +597,7 @@
             </values>
             <values>
                 <fullName>Low</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Medium</fullName>
