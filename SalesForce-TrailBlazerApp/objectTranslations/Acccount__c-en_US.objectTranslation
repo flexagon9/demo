@@ -24,4 +24,8 @@
         </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- this sample date field cant be cannot be blank --></errorMessage>
+        <name>test_validation_v1</name>
+    </validationRules>
 </CustomObjectTranslation>
