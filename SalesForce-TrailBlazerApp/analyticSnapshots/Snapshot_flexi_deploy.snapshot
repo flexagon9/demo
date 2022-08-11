@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Snapshot flexi deploy for git</description>
+    <mappings>
+        <sourceField>OPPORTUNITY_NAME</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Target_Object_for_Flexideploy__c.Name</targetField>
+    </mappings>
+    <name>Snapshot flexi deploy</name>
+    <runningUser>admin@flexagon.com</runningUser>
+    <sourceReport>unfiled$public/Opportunities_Report_for_snapshot_7wa</sourceReport>
+    <targetObject>Target_Object_for_Flexideploy__c</targetObject>
+</AnalyticSnapshot>
