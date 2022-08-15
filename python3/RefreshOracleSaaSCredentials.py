@@ -44,7 +44,7 @@ def getCredentials(waiter, index, level):
                     By.XPATH, "//*[@id=\"resources-table\"]/div[3]/table")))
 
     # Assuming fusion row is the 2nd row in the resources table
-    fusion_row = resources_table.find_elements(By.TAG_NAME, 'tr')[1]
+    fusion_row = resources_table.find_elements(By.TAG_NAME, 'tr')[2]
     fusion_row.click()
 
     headerElement = waiter.until(expected_conditions.visibility_of_element_located((
