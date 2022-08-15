@@ -85,12 +85,14 @@ def getCredentialInputDefId(base_url, credential_id, level):
     credential_request = requests.get(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", auth=HTTPBasicAuth('jayar', 'welcome1'))
     print(f"{' ' * (4 * level)}{credential_request}")
     print(f"{' ' * (4 * level)}{credential_request.content}")
-    credential_get_resp = json.loads(credential_request.content)
-
-    cred_store_input_def_id = credential_get_resp['credentialInputs'][0]['credentialStoreInputDefId']
-    return cred_store_input_def_id
-
-
+    if credential_request.status_code == 200:
+        credential_get_resp = json.loads(credential_request.content)
+        cred_store_input_def_id = credential_get_resp['credentialInputs'][0]['credentialStoreInputDefId']
+        return cred_store_input_def_id
+    else:
+        sys.exit(1)
+    
+    
 def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, credential_id):
         # Update the credential input
     payload = json.dumps({
@@ -117,8 +119,9 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
         print("Successfully updated SaaS Credential password for", base_url, "and credential id", credential_id)
     else:
         print("Failed updating SaaS Credential password for", base_url, "and credential id", credential_id)
+        sys.exit(1)
 
-
+        
 def update_saas_instance_passwords(level=0):
     """Attempt to update SaaS credentials in FlexDeploy based on values stored in demo.oracle.com under environments tab
     """
