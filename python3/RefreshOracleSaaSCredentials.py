@@ -2,7 +2,6 @@ import os
 import time
 import requests
 import json
-import base64
 import sys
 
 from selenium import webdriver
@@ -79,7 +78,7 @@ def navigateDeploymentsTab(waiter, level):
 
 
 def getCredentialInputDefId(base_url, credential_id, level):
-    credential_request = requests.get(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", auth=HTTPBasicAuth('jayar', 'welcome1'))
+    credential_request = requests.get(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", auth=HTTPBasicAuth("${{FD_ADMIN_USER}}", "${{FD_ADMIN_PASSWORD}}"))
     print(f"{' ' * (4 * level)}{credential_request}")
     print(f"{' ' * (4 * level)}{credential_request.content}")
     if credential_request.status_code == 200:
@@ -101,18 +100,10 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
     ]
     })
 
-    base64_bytes = base64.b64encode("fdadmin:welcome1".encode("ascii"))
-    base64_string = base64_bytes.decode("ascii")
-
-    headers = {
-    'Authorization': f"Basic {base64_string}",
-    'Content-Type': 'application/json'
-    }
-
-    credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", headers=headers, data=payload)
+    credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", headers=headers, data=payload, auth=HTTPBasicAuth("${{FD_ADMIN_USER}}", "${{FD_ADMIN_PASSWORD}}"))
 
     print(credential_patch_request.content)
-    if credential_patch_request.status_code == 201:
+    if credential_patch_request.status_code == 200:
         print(f"Successfully updated SaaS Credential password for {base_url}, credential id {credential_id} and credential store input def id {cred_store_input_def_id}")
     else:
         print(f"Failed to update SaaS Credential password for {base_url}, credential id {credential_id} and credential store input def id {cred_store_input_def_id}")
