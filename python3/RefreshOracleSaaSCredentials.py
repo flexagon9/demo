@@ -32,7 +32,7 @@ def wait_for_title(driver):
     raise Exception("No title found after 60 seconds - failed to log in")
 
 
-def getCredentials(waiter, index, level):
+def getPassword(waiter, index, level):
     waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'oj-sp-profile-card')))
 
@@ -58,12 +58,12 @@ def getCredentials(waiter, index, level):
     return password
 
 
-def getDev11Credentials(waiter, level):
-    return getCredentials(waiter, 0, level)
+def getDev11Password(waiter, level):
+    return getPassword(waiter, 0, level)
 
 
-def getDev9Credentials(waiter, level):
-    return getCredentials(waiter, 1, level)
+def getDev9Password(waiter, level):
+    return getPassword(waiter, 1, level)
 
 
 def navigateDeploymentsTab(waiter, level):
@@ -147,19 +147,25 @@ def update_saas_instance_passwords(level=0):
 
     navigateDeploymentsTab(waiter, level=level+1)
 
-    dev_11_pass = getDev11Credentials(waiter, level=level+1)
+    dev_11_pass = getDev11Password(waiter, level=level+1)
 
     navigateDeploymentsTab(waiter, level=level+1)
 
-    dev_9_pass = getDev9Credentials(waiter, level=level+1)
+    dev_9_pass = getDev9Password(waiter, level=level+1)
     driver.close()
+    
+    # Write the password as a text file
+    reports_dir = os.getcwd('../../reports')
+    with open(f"{reports_dir}/password.txt", 'wb') as fh:
+        fh.write(f"DEV_9 Password={dev_9_pass}\n")
+        fh.write(f"DEV_11 Password={dev_11_pass}\n")
 
     print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
     dev9CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'], level=level+1)
     dev11CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'], level=level+1)
     updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], dev_9_pass, dev9CredInputDefId, FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'])
     updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], dev_11_pass, dev11CredInputDefId, FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'])
-
+    
 
 if __name__ == '__main__':
     update_saas_instance_passwords()
