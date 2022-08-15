@@ -112,10 +112,10 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
     credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", headers=headers, data=payload)
 
     print(credential_patch_request.content)
-    if credential_patch_request.status_code == 200:
-        print(f"Successfully updated SaaS Credential password for {base_url}, credential id {credential_id} and credential input id {cred_store_input_def_id}")
+    if credential_patch_request.status_code == 201:
+        print(f"Successfully updated SaaS Credential password for {base_url}, credential id {credential_id} and credential store input def id {cred_store_input_def_id}")
     else:
-        print(f"Failed to update SaaS Credential password for {base_url}, credential id {credential_id} and credential input id {cred_store_input_def_id}")
+        print(f"Failed to update SaaS Credential password for {base_url}, credential id {credential_id} and credential store input def id {cred_store_input_def_id}")
         sys.exit(1)
 
         
