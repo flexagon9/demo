@@ -113,9 +113,9 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
 
     print(credential_patch_request.content)
     if credential_patch_request.status_code == 200:
-        print("Successfully updated SaaS Credential password for", base_url, "and credential id", credential_id)
+        print(f"Successfully updated SaaS Credential password for {base_url}, credential id {credential_id} and credential input id {cred_store_input_def_id}")
     else:
-        print("Failed updating SaaS Credential password for", base_url, "and credential id", credential_id)
+        print(f"Failed to update SaaS Credential password for {base_url}, credential id {credential_id} and credential input id {cred_store_input_def_id}")
         sys.exit(1)
 
         
