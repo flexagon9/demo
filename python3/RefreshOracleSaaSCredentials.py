@@ -155,7 +155,7 @@ def update_saas_instance_passwords(level=0):
     driver.close()
     
     # Write the password as a text file
-    os.chdir('../../reports')
+    os.chdir('../reports')
     reports_dir = os.path.abspath(os.curdir)
     with open(f"{reports_dir}/password.txt", 'wb') as fh:
         fh.write(f"DEV_9 Password={dev_9_pass}\n")
