@@ -99,8 +99,12 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
         }
     ]
     })
+    
+    headers = {
+        'Content-Type': 'application/json'
+    }
 
-    credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", data=payload, auth=HTTPBasicAuth("FD_ADMIN_USER_INP", "FD_ADMIN_PASSWORD_INP"))
+    credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", headers=headers, data=payload, auth=HTTPBasicAuth("FD_ADMIN_USER_INP", "FD_ADMIN_PASSWORD_INP"))
 
     print(credential_patch_request.content)
     if credential_patch_request.status_code == 200:
