@@ -51,16 +51,12 @@ def getCredentials(waiter, index, level):
                    By.TAG_NAME, 'h1')))
     header = headerElement.text
 
-    usernameElement = waiter.until(expected_conditions.visibility_of_element_located((
-                    By.ID, "credentials-table:48_1")))
-    username = usernameElement.text
-
     passwordElement = waiter.until(expected_conditions.visibility_of_element_located((
                     By.ID, "credentials-table:48_2")))
     password = passwordElement.text
 
-    print(f"{' ' * (4 * level)}Found {header} User ({username}) and password")
-    return username, password
+    print(f"{' ' * (4 * level)}Found {header} password")
+    return password
 
 
 def getDev11Credentials(waiter, level):
@@ -156,11 +152,11 @@ def update_saas_instance_passwords(level=0):
 
     navigateDeploymentsTab(waiter, level=level+1)
 
-    dev_11_user, dev_11_pass = getDev11Credentials(waiter, level=level+1)
+    dev_11_pass = getDev11Credentials(waiter, level=level+1)
 
     navigateDeploymentsTab(waiter, level=level+1)
 
-    dev_9_user, dev_9_pass = getDev9Credentials(waiter, level=level+1)
+    dev_9_pass = getDev9Credentials(waiter, level=level+1)
     driver.close()
 
     print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
