@@ -158,8 +158,10 @@ def update_saas_instance_passwords(level=0):
     os.chdir('../reports')
     reports_dir = os.path.abspath(os.curdir)
     with open(f"{reports_dir}/password.txt", 'wb') as fh:
-        fh.write(f"DEV_9 Password={str.encode(dev_9_pass)}\n")
-        fh.write(f"DEV_11 Password={str.encode(dev_11_pass)}\n")
+        encoded_dev_9 = str.encode(dev_9_pass)
+        encoded_dev_11 = str.encode(dev_11_pass)
+        fh.write(b'DEV_9 Password=' + encoded_dev_9 + b'\n')
+        fh.write(b'DEV_11 Password=' + encoded_dev_11 + b'\n')
 
     print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
     dev9CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'], level=level+1)
