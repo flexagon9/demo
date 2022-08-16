@@ -750,6 +750,11 @@
             <field>Property__c</field>
             <table>Account.Contacts.Cases</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sample_field__c</field>
+            <table>Account.Contacts.Cases</table>
+        </columns>
         <masterLabel>Cases</masterLabel>
     </sections>
 </ReportType>
