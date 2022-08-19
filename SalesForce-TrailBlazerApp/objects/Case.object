@@ -328,6 +328,7 @@
     </fields>
     <fields>
         <fullName>Origin</fullName>
+        <inlineHelpText>Please add case origin</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -455,6 +456,7 @@
     </fields>
     <fields>
         <fullName>Reason</fullName>
+        <inlineHelpText>Please add a reason for the case.</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -484,6 +486,18 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sample_field__c</fullName>
+        <externalId>false</externalId>
+        <label>Sample field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Status</fullName>
@@ -895,6 +909,13 @@
         <errorConditionFormula>ISNULL(Description)</errorConditionFormula>
         <errorDisplayField>Description</errorDisplayField>
         <errorMessage>DESCRIPTION CANNOT BE NULL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>case_origin_is_not_protals</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Origin  , &apos;PORTAL&apos;)</errorConditionFormula>
+        <errorDisplayField>Origin</errorDisplayField>
+        <errorMessage>You cannot have case origin as Portal</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>UpsellCrosssellOpportunity</fullName>
