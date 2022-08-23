@@ -78,7 +78,7 @@ def navigateDeploymentsTab(waiter, level):
 
 
 def getCredentialInputDefId(base_url, credential_id, level):
-    credential_request = requests.get(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", auth=HTTPBasicAuth("${{FD_API_USER}}", "${{FD_API_PASSWORD}}"))
+    credential_request = requests.get(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", auth=HTTPBasicAuth("${{FD_API_USER}}", "${{FD_API_PASSWORD}}"), verify=False)
     print(f"{' ' * (4 * level)}{credential_request}")
     print(f"{' ' * (4 * level)}{credential_request.content}")
     if credential_request.status_code == 200:
@@ -104,7 +104,7 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
         'Content-Type': 'application/json'
     }
 
-    credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", headers=headers, data=payload, auth=HTTPBasicAuth("${{FD_API_USER}}", "${{FD_API_PASSWORD}}"))
+    credential_patch_request = requests.patch(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", headers=headers, data=payload, auth=HTTPBasicAuth("${{FD_API_USER}}", "${{FD_API_PASSWORD}}"), verify=False)
 
     print(credential_patch_request.content)
     if credential_patch_request.status_code == 200:
