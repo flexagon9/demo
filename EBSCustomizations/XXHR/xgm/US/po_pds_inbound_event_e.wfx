@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- +======================================================================+ -->
+<!-- |    Copyright (c) 2005, 2017 Oracle and/or its affiliates.           | -->
+<!-- |                         All rights reserved.                         | -->
+<!-- |                           Version 12.0.0                             | -->
+<!-- +======================================================================+ -->
+
+<!-- $Header: po_pds_inbound_event_e.wfx 120.0.12020000.2 2017/10/25 10:45:50 inagdeo noship $ -->
+<!-- dbdrv: exec java oracle/apps/fnd/wf WFXLoad.class java &phase=daa+38 \ -->
+<!-- dbdrv: checkfile:~PROD:~PATH:~FILE \ -->
+<!-- dbdrv: -u &un_apps &pw_apps &jdbc_db_addr &jdbc_protocol US \ -->
+<!-- dbdrv: &fullpath_~PROD_~PATH_~FILE -->
+<!-- Source Database seed122 -->
+
+<oracle.apps.wf.event.all.sync><ExternalElement>
+<OraTranslatibility>
+<XlatElement Name="WF_EVENTS">
+<XlatID>
+<Key>NAME</Key>
+</XlatID>
+<XlatElement Name="DISPLAY_NAME" MaxLen="80"
+Expansion="50"/>
+<XlatID>
+<Key Type="CONSTANT">DISPLAY_NAME</Key>
+</XlatID>
+<XlatElement Name="DESCRIPTION" MaxLen="2000"
+Expansion="50"/>
+<XlatID>
+<Key Type="CONSTANT">DESCRIPTION</Key>
+</XlatID>
+</XlatElement>
+</OraTranslatibility>
+</ExternalElement>
+<WF_TABLE_DATA>
+  <WF_EVENTS>
+    <VERSION>1.0</VERSION>
+    <GUID>#NEW</GUID>
+    <NAME>oracle.apps.po.pds.inbound.complete</NAME>
+    <TYPE>EVENT</TYPE>
+    <STATUS>ENABLED</STATUS>
+    <GENERATE_FUNCTION/>
+    <OWNER_NAME>Purchasing</OWNER_NAME>
+    <OWNER_TAG>PO</OWNER_TAG>
+    <CUSTOMIZATION_LEVEL>L</CUSTOMIZATION_LEVEL>
+    <LICENSED_FLAG>Y</LICENSED_FLAG>
+    <JAVA_GENERATE_FUNC/>
+    <DISPLAY_NAME>PDS Inbound Complete</DISPLAY_NAME>
+    <DESCRIPTION>Event raised when PDS Inbound is completed</DESCRIPTION>
+    <IREP_ANNOTATION/>
+  </WF_EVENTS>
+</WF_TABLE_DATA>
+</oracle.apps.wf.event.all.sync>
