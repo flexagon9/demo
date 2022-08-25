@@ -821,6 +821,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
+    <description>test changes for browser extension</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Acccount__c.sample_date__c</field>
