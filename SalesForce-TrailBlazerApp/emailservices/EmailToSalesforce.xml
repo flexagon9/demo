@@ -4,13 +4,6 @@
     <attachmentOption>All</attachmentOption>
     <authenticationFailureAction>Discard</authenticationFailureAction>
     <authorizationFailureAction>Bounce</authorizationFailureAction>
-    <emailServicesAddresses>
-        <authorizedSenders>flexagon9@flexagon.com</authorizedSenders>
-        <developerName>emailtosalesforce</developerName>
-        <isActive>true</isActive>
-        <localPart>emailtosalesforce</localPart>
-        <runAsUser>flexagon9@flexagon.com</runAsUser>
-    </emailServicesAddresses>
     <functionInactiveAction>Bounce</functionInactiveAction>
     <functionName>EmailToSalesforce</functionName>
     <isActive>false</isActive>

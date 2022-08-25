@@ -53,10 +53,6 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__LightningInstrumentation</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>standard__SalesforceCMS</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -79,5 +75,13 @@
     <appMenuItems>
         <name>standard__Commerce</name>
         <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>DependencyIntegrationTest</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>CustomerPortal</name>
+        <type>Network</type>
     </appMenuItems>
 </AppMenu>

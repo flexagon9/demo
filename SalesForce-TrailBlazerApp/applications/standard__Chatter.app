@@ -9,4 +9,5 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>Target_Object_for_Flexideploy__c</tabs>
 </CustomApplication>

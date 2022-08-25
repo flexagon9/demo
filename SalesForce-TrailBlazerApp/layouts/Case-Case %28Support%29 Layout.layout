@@ -79,6 +79,10 @@
                 <behavior>Required</behavior>
                 <field>Type</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sample_field__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
