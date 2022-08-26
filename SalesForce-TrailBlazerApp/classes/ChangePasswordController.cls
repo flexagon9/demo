@@ -1,6 +1,6 @@
 /**
  * An apex page controller that exposes the change password functionality.
- * Added new comment for browser extension.
+ * Added new comment for browser extensions.
  */
 public with sharing class ChangePasswordController {
     public String oldPassword {get; set;}
