@@ -821,7 +821,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Flex User for UI. Updated on 8th Aug 2021.</description>
+    <description>Flex User for UI. Updated on 26th Aug 2023.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Acccount__c.sample_date__c</field>
