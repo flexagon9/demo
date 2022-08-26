@@ -12,12 +12,12 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
-        <default>true</default>
+        <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -821,7 +821,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>re-test changes for browser extension</description>
+    <description>re-test changes from extension</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Acccount__c.sample_date__c</field>
