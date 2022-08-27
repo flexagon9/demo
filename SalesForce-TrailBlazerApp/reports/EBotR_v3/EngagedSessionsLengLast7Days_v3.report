@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Average</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>ConversationDefinitionSession$SessionDuration</column>
+        </chartSummaries>
+        <chartType>LineGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>ConversationDefinitionSession$SessionStartTime</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>ConversationDefinitionSession$MasterLabel</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Engaged Session Length Last 7 Days</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>ConversationDefinitionSession$SessionDuration</field>
+    </columns>
+    <columns>
+        <field>ConversationDefinitionSession$ChannelType</field>
+    </columns>
+    <columns>
+        <field>ConversationDefinitionSession$SessionStatus</field>
+    </columns>
+    <description>The average length of all engaged sessions per bot in the last 7 days. Longer session averages can indicate higher customer engagement and bot effectiveness.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ConversationDefinitionSession$SessionStartTime</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ConversationDefinitionSession$MasterLabel</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Engaged Session Length Last 7 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Bot_Sessions_v3__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ConversationDefinitionSession$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST7</interval>
+    </timeFrameFilter>
+</Report>
