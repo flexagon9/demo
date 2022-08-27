@@ -233,6 +233,15 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- Bot Metrics Daily Winter &apos;23 --></description>
+        <label><!-- Bot Metrics Daily Winter &apos;23 --></label>
+        <name>Bot_Metrics_Daily_v3</name>
+        <sections>
+            <label><!-- Conversation Definition Dialog Daily Metrics --></label>
+            <name>Conversation Definition Dialog Daily Metrics</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Bot Metrics Hourly Summer ’22 --></description>
         <label><!-- Bot Metrics Hourly Summer ’22 --></label>
         <name>Bot_Metrics_Hourly_v2</name>
@@ -242,9 +251,27 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- Bot Metrics Hourly Winter &apos;23 --></description>
+        <label><!-- Bot Metrics Hourly Winter &apos;23 --></label>
+        <name>Bot_Metrics_Hourly_v3</name>
+        <sections>
+            <label><!-- Conversation Definition Dialog Hourly Metrics --></label>
+            <name>Conversation Definition Dialog Hourly Metrics</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Session Metrics Summer ’22 --></description>
         <label><!-- Session Metrics Summer ’22 --></label>
         <name>Bot_Sessions_v2</name>
+        <sections>
+            <label><!-- Conversation Definition Session Metrics --></label>
+            <name>Conversation Definition Session Metrics</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Session Metrics Winter &apos;23 --></description>
+        <label><!-- Session Metrics Winter &apos;23 --></label>
+        <name>Bot_Sessions_v3</name>
         <sections>
             <label><!-- Conversation Definition Session Metrics --></label>
             <name>Conversation Definition Session Metrics</name>
