@@ -821,7 +821,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Flex User for UI. Updated on 8th Aug 2021.</description>
+    <description>Flex User for UI. Updated on 26th Aug 2023.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Acccount__c.sample_date__c</field>
@@ -1392,6 +1392,9 @@
         <layout>Seller-Seller Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ServiceAppointmentGroup-Service Appointment Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1420,6 +1423,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Waypoint__c-Waypoint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkProcedure-Work Procedure Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkProcedureStep-Work Procedure Step Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>dependency__c-dependency Layout</layout>
@@ -1656,6 +1665,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ShareFilesWithNetworks</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
