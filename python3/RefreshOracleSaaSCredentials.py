@@ -12,7 +12,8 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from requests.auth import HTTPBasicAuth
-from pyvirtualdisplay import Display
+from pathlib import Path
+from stat import *
 
 
 FD_ENVIRONMENT = {
@@ -21,6 +22,25 @@ FD_ENVIRONMENT = {
                     'DEV11_CREDENTIAL_ID': "${{FD_DEV11_CREDENTIAL_ID}}"
                  }
 
+def validate():
+    # Path
+    path = '/tmp/Crashpad'
+
+    # Get the owner and group
+    # of the specified path
+    # using Path.owner() and
+    # Path.group() method
+    info = Path(path)
+    user = info.owner()
+    group = info.group()
+    permissions = oct(os.stat(path)[ST_MODE])[-3:]
+  
+    if user != 'oracle' or group != 'oinstall':
+        raise Exception("Directory '/tmp/Crashpad' should be owner and group should be 'oracle:oinstall'. Currently are " + user + ":" + group)
+        
+    if permissions != '755':
+        raise Exception("File level permissions for '/tmp/Crashpad' should be 755. Currently are " + permissions)
+  
 
 def wait_for_title(driver):
     t = 60
@@ -118,6 +138,8 @@ def update_saas_instance_passwords(level=0):
     """Attempt to update SaaS credentials in FlexDeploy based on values stored in demo.oracle.com under environments tab
     """
     global FD_ENVIRONMENT
+    
+    validate()
 
     selenium_options = Options()
     selenium_options.add_argument('--headless')
