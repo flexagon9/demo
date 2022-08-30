@@ -35,11 +35,12 @@ def validate():
     group = info.group()
     permissions = oct(os.stat(path)[ST_MODE])[-3:]
   
+    print(f"{' ' * (4 * level)}Validating directory {path}. Owner is {user}, group is {group}, and permissions are {permissions}")
     if user != 'oracle' or group != 'oinstall':
-        raise Exception("Directory '/tmp/Crashpad' should be owner and group should be 'oracle:oinstall'. Currently are " + user + ":" + group)
+        raise Exception("Directory '/tmp/Crashpad' should be owner and group should be 'oracle:oinstall')
         
     if permissions != '755':
-        raise Exception("File level permissions for '/tmp/Crashpad' should be 755. Currently are " + permissions)
+        raise Exception("File level permissions for '/tmp/Crashpad' should be 755.")
   
 
 def wait_for_title(driver):
