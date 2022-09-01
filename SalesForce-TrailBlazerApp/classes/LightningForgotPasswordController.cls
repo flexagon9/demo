@@ -1,4 +1,4 @@
-// 08/26/2022 2.0c
+// 08/26/2022 2.0b
 global class LightningForgotPasswordController {
 
     public LightningForgotPasswordController() {
