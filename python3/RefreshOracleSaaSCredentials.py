@@ -22,7 +22,7 @@ FD_ENVIRONMENT = {
                     'DEV11_CREDENTIAL_ID': "${{FD_DEV11_CREDENTIAL_ID}}"
                  }
 
-def validate():
+def validate(level):
     # Path
     path = '/tmp/Crashpad'
 
@@ -140,7 +140,7 @@ def update_saas_instance_passwords(level=0):
     """
     global FD_ENVIRONMENT
     
-    validate()
+    validate(level)
 
     selenium_options = Options()
     selenium_options.add_argument('--headless')
