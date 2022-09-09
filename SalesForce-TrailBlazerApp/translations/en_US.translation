@@ -167,10 +167,6 @@
         </flows>
         <fullName>flexaflowv2</fullName>
     </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>sample_flow_test_2</fullName>
-    </flowDefinitions>
     <quickActions>
         <label><!-- Guest Community Case --></label>
         <name>GuestCommunityCase</name>
