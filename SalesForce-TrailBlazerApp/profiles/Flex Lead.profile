@@ -430,11 +430,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SitePage12Controller</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SitePage13Controller</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SitePage14Controller</apexClass>
