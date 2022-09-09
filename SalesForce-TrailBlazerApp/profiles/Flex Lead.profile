@@ -1172,6 +1172,10 @@
         <enabled>false</enabled>
         <flow>flexaflowv2</flow>
     </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>sample_flow_test_2</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>Acccount__c-Acc Layout</layout>
     </layoutAssignments>
