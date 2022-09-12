@@ -1,4 +1,4 @@
-// 09/12/2022 demo b
+// 09/12/2022 demo c
 global class LightningForgotPasswordController {
 
     public LightningForgotPasswordController() {
