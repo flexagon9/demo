@@ -141,6 +141,9 @@
         <connector>
             <targetReference>Assign_Stage_2</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Contact_Error_Screen</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Email</field>
             <value>
@@ -460,7 +463,7 @@
             <targetReference>Assign_Stage_1</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>Case_Created_Script_Template</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

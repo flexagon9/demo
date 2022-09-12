@@ -84,4 +84,8 @@
         <name>CustomerPortal</name>
         <type>Network</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>vfpageCommunity</name>
+        <type>Network</type>
+    </appMenuItems>
 </AppMenu>
