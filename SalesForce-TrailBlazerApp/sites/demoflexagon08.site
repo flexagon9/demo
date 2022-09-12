@@ -22,9 +22,9 @@
     <redirectToCustomDomain>false</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>flexagon8@flexagon.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>flexagon8@flexagon.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>admin@flexagon.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>admin@flexagon.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>flexagon8demo-developer-edition</subdomain>
+    <subdomain>flexagon9-dev-ed--devsandbox.my.salesforce.com</subdomain>
     <urlPathPrefix>visualforce</urlPathPrefix>
 </CustomSite>
