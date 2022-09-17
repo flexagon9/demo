@@ -2,5 +2,5 @@
 <ExperienceBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>demoflexagon08</label>
     <type>ChatterNetworkPicasso</type>
-    <urlPathPrefix></urlPathPrefix>
+    <urlPathPrefix> </urlPathPrefix>
 </ExperienceBundle>
