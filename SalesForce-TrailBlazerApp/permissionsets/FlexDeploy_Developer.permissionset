@@ -7,11 +7,6 @@
     <description>Permission Set generated for access to custom object Waypoint for the app FlexDeploy</description>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Acccount__c.sample_date__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.Active__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -87,17 +82,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Product__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.Property__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.SLAViolation__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Sample_field__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -318,11 +313,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Property__c.Zip__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>dependency__c.field_dependent__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

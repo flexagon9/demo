@@ -4,7 +4,7 @@
     <label>API</label>
     <oauthConfig>
         <callbackUrl>https://.</callbackUrl>
-        <consumerKey>3MVG92DxHaawSd0luAabE5ir8xuzYeTqIAGZKD326cOumo8CwTKi7NeUGKsSge5xu171GhaueI6fUCqJZB0K2</consumerKey>
+        <consumerKey>3MVG9i1HRpGLXp.pB_VNJYhNFekli3O8U_pMkPMBqPj.hM23fXIv2tO5IkVVKfTsJyWpEXbfSI7ov.Au3KQu4</consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isConsumerSecretOptional>false</isConsumerSecretOptional>
         <isIntrospectAllTokens>false</isIntrospectAllTokens>

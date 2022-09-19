@@ -5,5 +5,4 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <tabs>standard-AppLauncher</tabs>
-    <tabs>Target_Object_for_Flexideploy__c</tabs>
 </CustomApplication>

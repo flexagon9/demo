@@ -9,12 +9,8 @@
     <tabs>standard-CmsChannel</tabs>
     <tabs>standard-CmsWorkspaces</tabs>
     <tabs>standard-CmsExperiences</tabs>
-    <tabs>Target_Object_for_Flexideploy__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
-        <mappings>
-            <tab>Target_Object_for_Flexideploy__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-CmsAuthorHome</tab>
         </mappings>

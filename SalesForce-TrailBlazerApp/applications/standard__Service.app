@@ -11,5 +11,4 @@
     <tabs>standard-Solution</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
-    <tabs>Target_Object_for_Flexideploy__c</tabs>
 </CustomApplication>

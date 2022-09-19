@@ -1,13 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata">
-    <matchingRules>
-        <fullName>Test_duplicate_rule_matching_rule</fullName>
-        <label>Test duplicate rule matching rule</label>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>AccountSource</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <ruleStatus>Active</ruleStatus>
-    </matchingRules>
-</MatchingRules>
+<MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
+
