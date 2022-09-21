@@ -214,7 +214,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Site10Cntl</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Site11Cntl</apexClass>
