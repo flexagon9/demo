@@ -5,8 +5,8 @@
   "label" : "Build Your Own (LWR)",
   "type" : "brandingSet",
   "values" : {
-    "BackgroundColor" : "#ffffff",
-    "BaseFontSize" : "16px",
+    "BackgroundColor" : "#ff8fff",
+    "BaseFontSize" : "18px",
     "BodyFont" : "Salesforce Sans",
     "BodyFontSize" : "1rem",
     "BodyFontStyle" : "normal",
