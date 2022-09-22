@@ -919,6 +919,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.tutorial_01__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.FD_Version__c</field>
         <readable>true</readable>
     </fieldPermissions>
