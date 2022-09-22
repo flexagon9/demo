@@ -86,6 +86,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>ChangePasswordController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DreamHouseSampleDataController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -710,7 +714,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Flex User for UI. Updated on 22 Sept 2022</description>
+    <description>Flex User for UI. Updated on 22 Sept 2022.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Active__c</field>
