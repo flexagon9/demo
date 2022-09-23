@@ -28,7 +28,7 @@
     <applicationVisibilities>
         <application>standard__Commerce</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Community</application>
@@ -63,7 +63,7 @@
     <applicationVisibilities>
         <application>standard__Sales</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__SalesforceCMS</application>
