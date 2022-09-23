@@ -33,7 +33,7 @@
     <applicationVisibilities>
         <application>standard__Community</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Content</application>
@@ -714,7 +714,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Flex User for UI. Updated on 22 Sept 2022.</description>
+    <description>Flex User for UI. Updated on 23 Sept 2022.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Active__c</field>
