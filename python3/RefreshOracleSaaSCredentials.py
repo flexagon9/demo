@@ -136,7 +136,7 @@ def updatedCredentialTextValue(base_url, password, cred_store_input_def_id, cred
 
         
 def update_saas_instance_passwords(level=0):
-    """Attempt to update SaaS credentials in FlexDeploy based on values stored in demo.oracle.com under environments tab
+    """Attempt to update SaaS credentials in FlexDeploy based on values stored in https://demo.oraclecloud.com/ under environments tab
     """
     global FD_ENVIRONMENT
     
@@ -149,8 +149,8 @@ def update_saas_instance_passwords(level=0):
 
     print('Starting headless chromedriver...')
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=selenium_options)
-    print('Opening demo.oracle.com...')
-    driver.get('https://demo.oracle.com')
+    print('Opening https://demo.oraclecloud.com/...')
+    driver.get('https://demo.oraclecloud.com/')
     waiter = WebDriverWait(driver, 20)
 
     print('Looking for login form...')
