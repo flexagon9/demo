@@ -714,7 +714,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>test1</description>
+    <description>test2</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Active__c</field>
