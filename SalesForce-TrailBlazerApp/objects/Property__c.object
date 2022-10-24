@@ -293,7 +293,6 @@
     </fields>
     <fields>
         <fullName>Location__c</fullName>
-        <displayLocationInDecimal>true</displayLocationInDecimal>
         <externalId>false</externalId>
         <label>Location</label>
         <required>false</required>
