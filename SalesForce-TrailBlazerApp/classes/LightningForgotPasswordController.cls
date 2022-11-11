@@ -1,5 +1,6 @@
 global class LightningForgotPasswordController {
 
+    //added new comments
     public LightningForgotPasswordController() {
 
     }
