@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupColumn>GRAND_SUMMARY</groupColumn>
+    <mappings>
+        <sourceField>JobName</sourceField>
+        <sourceType>snapshot</sourceType>
+        <targetField>Broker__c.Name</targetField>
+    </mappings>
+    <name>sample for flexdelploy 6.0 test</name>
+    <runningUser>admin@flexagon.com</runningUser>
+    <sourceReport>unfiled$public/flow_screen_prebuilt_report</sourceReport>
+    <targetObject>Broker__c</targetObject>
+</AnalyticSnapshot>

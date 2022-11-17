@@ -1,0 +1,23 @@
+#=======================================================================
+# Program	: XX_TEST_HOST_PROG.prog 
+# Description   : Host program example to print $0 to $4 parameters
+# Author    	: Shailender Thallam
+#=======================================================================
+# 08/01/2022
+#
+#Parameters 0 to 4 are default parameters and values are 
+#passed from Concurrent manager
+#
+echo "0 Shell script name along with Path 	: " ${0}
+echo "1 Oracle Apps User Name and Password 	: " ${1}
+echo "2 Application user_id from FND_USER 	: " ${2}
+echo "3 Application user_name from FND_USER     : " ${3}
+echo "4 Concurrent Program Request ID	        : " ${4}
+#
+#Parameters from 5 are concurrent program parameter
+#
+echo " "
+echo " "
+echo "5 Concurrent Program Parameter 1 	    : " ${5}
+ 
+#End of script

@@ -12,6 +12,7 @@
                     <value>164</value>
                 </componentInstanceProperties>
                 <componentName>PropertyTileList</componentName>
+                <identifier>PropertyTileList</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

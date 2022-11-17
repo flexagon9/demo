@@ -4,6 +4,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -14,6 +15,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>force_relatedListContainer</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -24,11 +26,13 @@
         <itemInstances>
             <componentInstance>
                 <componentName>PropertyStatus</componentName>
+                <identifier>PropertyStatus</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -47,6 +51,7 @@
                     <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>relatedListsTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -64,6 +69,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>detailTab</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -78,6 +84,7 @@
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -88,6 +95,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>PropertyMap</componentName>
+                <identifier>PropertyMap</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -101,6 +109,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>SmartHomeCard</componentName>
+                <identifier>SmartHomeCard</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -110,6 +119,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>PictureGalleryCard</componentName>
+                <identifier>PictureGalleryCard</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -127,6 +137,7 @@
                     <value>30</value>
                 </componentInstanceProperties>
                 <componentName>MortgageCalculatorCard</componentName>
+                <identifier>MortgageCalculatorCard</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

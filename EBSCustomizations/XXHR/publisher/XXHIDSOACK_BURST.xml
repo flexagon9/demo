@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xapi:requestset xmlns:xapi="http://xmlns.oracle.com/oxp/xapi">
+<xapi:request select="/XXHIDISOA/G_MAIN">
+ <xapi:delivery>
+ <xapi:email server="localhost" port="25" from="ebsprod@hidglobal.com">
+  <xapi:message id="1" to="${SO_MAIL1}" cc="${SO_MAIL2}" bcc="" attachment="true" subject="Internal Sales Order ACK ORDER# (${SO_ORDER_NUMBER})"> 
+  </xapi:message>
+  </xapi:email>
+  </xapi:delivery>
+ <xapi:document output="${SO_ORDER_NUMBER}" output-type="pdf" delivery="1">
+  <xapi:template type="rtf" locale="en-US" location="xdo://XXHID.XXHIDISOA.en.US/?getSource=true" filter=""> 
+  </xapi:template>
+  </xapi:document>
+  </xapi:request>
+  </xapi:requestset>  
