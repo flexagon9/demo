@@ -2939,7 +2939,7 @@
    <fieldPermissions>
       <editable>false</editable>
       <field>Task.Type</field>
-      <readable>false</readable>
+      <readable>true</readable>
    </fieldPermissions>
    <fieldPermissions>
       <editable>true</editable>
