@@ -21,4 +21,11 @@
       <shortDescription>FD_Version_Label</shortDescription>
       <value>FD Version</value>
    </labels>
+   <labels>
+      <fullName>Test_Custom_Label</fullName>
+      <language>en_US</language>
+      <protected>true</protected>
+      <shortDescription>Test_Custom_Label</shortDescription>
+      <value>Testing sample for Custom Label</value>
+   </labels>
 </CustomLabels>
