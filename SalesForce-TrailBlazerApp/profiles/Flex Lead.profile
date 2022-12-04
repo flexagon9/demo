@@ -2287,9 +2287,9 @@
       <readable>true</readable>
    </fieldPermissions>
    <fieldPermissions>
-      <editable>false</editable>
+      <editable>true</editable>
       <field>Event.Type</field>
-      <readable>false</readable>
+      <readable>true</readable>
    </fieldPermissions>
    <fieldPermissions>
       <editable>true</editable>
