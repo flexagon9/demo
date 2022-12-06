@@ -7,6 +7,6 @@
     <packaging>pom</packaging>
     <modules>
         <!-- Add project modules. -->
-    	<module>BenefitsPaymentService</module>
+      <module>BenefitsPaymentService</module>
     </modules>
 </project>
