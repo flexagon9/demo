@@ -61,7 +61,7 @@
     </profile>
   </profiles>
   <build>
-    <plugins>
+    <plugins> 
       <plugin>
         <groupId>com.oracle.soa.plugin</groupId>
         <artifactId>oracle-soa-plugin</artifactId>
