@@ -11,7 +11,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20210218113822'
+,p_last_upd_yyyymmddhh24miss=>'20220121103116'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(89146468175352570)
@@ -62,7 +62,7 @@ wwv_flow_api.create_page_plug(
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(23569597411582931704)
-,p_name=>'Recent Project - WS'
+,p_name=>'Recent Projects'
 ,p_template=>wwv_flow_api.id(44535680543877352962)
 ,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:t-Region--noPadding:i-h480:t-Region--scrollBody'

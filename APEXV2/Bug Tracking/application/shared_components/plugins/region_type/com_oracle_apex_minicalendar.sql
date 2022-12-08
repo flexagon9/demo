@@ -1,4 +1,3 @@
--- 05/17/2020 ERJ
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_minicalendar
 begin
 wwv_flow_api.create_plugin(
