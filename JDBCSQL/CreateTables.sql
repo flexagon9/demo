@@ -1,4 +1,5 @@
   DROP TABLE "MP1"."DEMO_TABLE1";
+  DROP TABLE "MP1"."DEMO_TABLE_INVALID";
   DROP TABLE "MP1"."DEMO_TABLE2";
   
 --------------------------------------------------------
