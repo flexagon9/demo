@@ -1,6 +1,6 @@
-  -- DROP TABLE "MP1"."DEMO_TABLE1";
+   DROP TABLE "MP1"."DEMO_TABLE1";
   -- DROP TABLE "MP1"."DEMO_TABLE_INVALID";
-  DROP TABLE "DEMO_TABLE2";
+   DROP TABLE "MP1"."DEMO_TABLE2";
   
 --------------------------------------------------------
 --  DDL for Table DEMO_TABLE1
