@@ -4,7 +4,7 @@
 --  DDL for Table DEMO_TABLE1
 --------------------------------------------------------
 
-  CREATE TABLE IF NOT EXISTS "MP1"."DEMO_TABLE1" 
+  CREATE TABLE "MP1"."DEMO_TABLE1" 
    (	"CUSTOMER_ID" NUMBER(30,0), 
 	"COLUMN2" VARCHAR2(20 BYTE), 
 	"COLUMN3" VARCHAR2(20 BYTE), 
