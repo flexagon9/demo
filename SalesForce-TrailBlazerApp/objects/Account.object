@@ -270,12 +270,6 @@
       <trackFeedHistory>false</trackFeedHistory>
    </fields>
    <fields>
-      <fullName>ChannelProgramLevelName</fullName>
-   </fields>
-   <fields>
-      <fullName>ChannelProgramName</fullName>
-   </fields>
-   <fields>
       <fullName>CleanStatus</fullName>
       <trackFeedHistory>false</trackFeedHistory>
    </fields>
