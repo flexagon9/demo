@@ -61,7 +61,7 @@ def getPassword(waiter, index, level):
     environment_card.click()
 
     resources_table = waiter.until(expected_conditions.visibility_of_element_located((
-                    By.XPATH, "//*[@id=\"resources-table\"]/div[3]/table")))
+                    By.XPATH, "//*[@id=\"resources-table\"]/div[1]/table")))
 
     # Assuming fusion row is the 2nd row in the resources table
     fusion_row = resources_table.find_elements(By.TAG_NAME, 'tr')[2]
