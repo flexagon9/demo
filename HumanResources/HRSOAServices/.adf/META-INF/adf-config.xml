@@ -13,7 +13,9 @@
     <mds-config xmlns="http://xmlns.oracle.com/mds/config">
       <persistence-config>
         <metadata-namespaces>
-          <namespace path="/soa/shared" metadata-store-usage="mstore-usage_1"/>
+           <namespace metadata-store-usage="mstore-usage_1" path="/apps"/>
+           <namespace metadata-store-usage="mstore-usage_1" path="/deployed-composites"/>
+           <namespace metadata-store-usage="mstore-usage_2" path="/soa/shared"/>
         </metadata-namespaces>
         <metadata-store-usages>
           <metadata-store-usage id="mstore-usage_1">
@@ -21,9 +23,15 @@
               <property name="jdbc-userid" value="DEV2_MDS"/>
               <property name="jdbc-password" value="welcome1"/>
               <property name="jdbc-url"
-                        value="jdbc:oracle:thin:@odblt03.flexagon:1523:SOAT06"/>
+                        value="jdbc:oracle:thin:@odblt03.flexagon:1523/SOAT06"/>
               <property name="partition-name" value="soa-infra"/>
             </metadata-store>
+          </metadata-store-usage>
+		  <metadata-store-usage id="mstore-usage_2">
+             <metadata-store class-name="oracle.mds.persistence.stores.file.FileMetadataStore">
+                <property value="seed" name="partition-name"/>
+                <property value="${soa.oracle.home}/integration" name="metadata-path"/>
+             </metadata-store>
           </metadata-store-usage>
         </metadata-store-usages>
       </persistence-config>
