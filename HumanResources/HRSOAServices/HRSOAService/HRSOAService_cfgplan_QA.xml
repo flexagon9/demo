@@ -45,7 +45,7 @@
       <reference name="getPaymentInformation"/>
       <reference name="getPaymentInformation">
          <property name="jca.retry.count">
-            <replace>4</replace>
+            <replace>${{ADAPTER_RETRY_COUNT}}</replace>
          </property>
          <property name="jca.retry.interval">
             <replace>1</replace>
