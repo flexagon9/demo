@@ -17,9 +17,12 @@
         </metadata-namespaces>
         <metadata-store-usages>
           <metadata-store-usage id="mstore-usage_1">
-            <metadata-store class-name="oracle.mds.persistence.stores.file.FileMetadataStore">
-              <property name="metadata-path" value="${oracle.home}/integration"/>
-              <property name="partition-name" value="seed"/>
+            <metadata-store class-name="oracle.mds.persistence.stores.db.DBMetadataStore">
+              <property name="jdbc-userid" value="DEV2_MDS"/>
+              <property name="jdbc-password" value="welcome1"/>
+              <property name="jdbc-url"
+                        value="jdbc:oracle:thin:@odblt03.flexagon:1523:SOAT06"/>
+              <property name="partition-name" value="soa-infra"/>
             </metadata-store>
           </metadata-store-usage>
         </metadata-store-usages>
