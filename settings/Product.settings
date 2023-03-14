@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProductSettings xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <enableCascadeActivateToRelatedPrices>true</enableCascadeActivateToRelatedPrices>
+    <enableMySettings>true</enableMySettings>
+    <enableQuantitySchedule>false</enableQuantitySchedule>
+    <enableRevenueSchedule>false</enableRevenueSchedule>
+    <secureGuestUserRecordAccessForProduct2 xsi:nil="true"/>
+</ProductSettings>

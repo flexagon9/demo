@@ -6,8 +6,15 @@
         <callbackUrl>https://.</callbackUrl>
         <consumerKey>3MVG9i1HRpGLXp.pB_VNJYhNFekli3O8U_pMkPMBqPj.hM23fXIv2tO5IkVVKfTsJyWpEXbfSI7ov.Au3KQu4</consumerKey>
         <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
         <scopes>Api</scopes>
         <scopes>Web</scopes>
         <scopes>RefreshToken</scopes>
     </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <refreshTokenPolicy>zero</refreshTokenPolicy>
+    </oauthPolicy>
 </ConnectedApp>

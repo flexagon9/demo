@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ConvDefDialogHourlyMetric$Id</field>
+    </columns>
+    <columns>
+        <field>ConvDefDialogHourlyMetric$MetricType</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ConvDefDialogHourlyMetric$Value</field>
+    </columns>
+    <description>Count of dialogs with exceptions today.</description>
+    <filter>
+        <criteriaItems>
+            <column>ConvDefDialogHourlyMetric$MetricType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ConvDefDialogHourlyMetric$Hour</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ConvDefDialogHourlyMetric$BotDefinitionName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Exceptions Today</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Bot_Metrics_Hourly_v2__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ConvDefDialogHourlyMetric$MetricDateTime</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

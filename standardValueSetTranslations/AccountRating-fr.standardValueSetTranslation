@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Awesome</masterLabel>
+        <translation>La La awesomeeee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cold</masterLabel>
+        <translation><!-- Cold --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hot</masterLabel>
+        <translation><!-- Hot --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Warm</masterLabel>
+        <translation><!-- Warm --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

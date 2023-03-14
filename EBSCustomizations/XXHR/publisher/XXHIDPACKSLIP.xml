@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  $Header: XXHIDPACKSLIP.xml: Revision: 2: Author: rswarnapudi: Date: Wednesday, August 25, 2021 4:07:03 AM$ --> 
+<dataTemplate name="XXHIDPACKSLIP" defaultPackage="xxhid_wsh_shipping_util" version="1.0">
+<properties>
+  <property name="debug_mode" value="on"/>
+  <property name="scalable_mode" value="on" />
+  </properties>
+<parameters>
+<parameter name="P_DELIVERY_ID" dataType ="character"></parameter>
+</parameters>
+<dataQuery>
+<sqlStatement name="Q_1_TOP">
+      <![CDATA[
+           SELECT DISTINCT 
+		:p_delivery_id                 main_delivery_number,
+		fnd_profile.VALUE('CONC_REQUEST_ID') CONC_REQUEST_ID,
+		(select fnd_global.org_id from dual) ORGN_ID
+ FROM dual
+	      ]]>
+ </sqlStatement>
+ <sqlStatement name="Q_1">
+      <![CDATA[
+  SELECT DISTINCT 
+        wsnd.NAME                 delivery_number
+		,'*' || wsnd.name || '*' delivery_number_barcode  ---Added by Jpotnuru as per INC0034432
+         ,wddv.delivery_id     
+        ,DECODE(xoum.organization_name,'HID Shenzhen 3330','SOK_CHINA','NON_CHINA')    organization_name
+        ,xoum.organization_name    organization_name1
+        ,hl.location_code||CHR(10)|| hl.address_line_1||CHR(10)|| hl.address_line_2||CHR(10)||decode(hl.address_line_3,null,null,hl.address_line_3||CHR(10))|| hl.town_or_city||', '|| hl.region_2||DECODE(hl.region_2, NULL, hl.postal_code||' ', ' '||hl.postal_code||' ')
+          ||(SELECT DECODE(SUBSTR(xoum.organization_name,-4),'1110',ft.iso_territory_code,ft.NLS_TERRITORY) 
+          FROM fnd_territories ft
+              WHERE ft.territory_code=hl.country
+              AND ROWNUM=1
+            )   organization_address -- HRR 7/19/12 swapped hl.address_line_1 and hl.location_code
+		 ,to_char( xxhid_outfacing_util_pkg.get_attr_text(p_conc_request_id => :CONC_REQUEST_ID, p_org_id => :ORGN_ID, p_language => 'US', p_attr_name => 'XXHID_REP_OU_TEXT28')) SHANNON_ADDR --Added by Laavanyaa on 07/13/2020 version 5 for story# STRY0016199 
+         ,NVL(wsnd.gross_weight,0) ||' '||wsnd.weight_uom_code  gross_weight
+         ,'XYZ'                     org_code
+         ,( SELECT NVL(f.ship_method_code_meaning,wsnd.ship_method_code ) 
+         FROM wsh_carrier_ship_methods_v f
+         WHERE f.ship_method_code = wsnd.ship_method_code     
+         AND f.organization_id = wddv.organization_id
+        AND ROWNUM=1
+          )     ship_method
+         ,( SELECT fv.freight_terms
+             FROM oe_frght_terms_active_v fv
+            WHERE fv.freight_terms_code=wsnd.freight_terms_code 
+          AND ROWNUM=1
+          )     freight_terms_code
+         ,( SELECT fob
+             FROM oe_fobs_active_v fv
+            WHERE fv.fob_code = wsnd.fob_code
+          AND ROWNUM=1
+          )     fob_code
+         ,NVL(wsnd.number_of_lpn,0) number_of_lpn
+         ,NVL(wsnd.waybill,0)       waybill_number
+         ,TO_CHAR(wsnd.initial_pickup_date,'DD-MON-RRRR' ) ship_date -- HRR 7/17/12 TRUNC(wsnd.initial_pickup_date)  Ship_date
+         --,wddv.source_header_number sales_order_number
+         ,xxhid_pack_slip_format_pkg.get_so_number(p_delivery_id  => wddv.delivery_id) sales_order_number
+         ,xxhid_pack_slip_format_pkg.get_po_number(p_delivery_id  => wddv.delivery_id) po_number_main
+         --,wddv.cust_po_number       po_number
+         ,DECODE (wddv.org_id, 243, china_ship_to.ship_to_customer_name, -- HRR 7/18/12
+                                    DECODE ( (SELECT attribute1 drop_ship_customer FROM hz_cust_site_uses_all WHERE site_use_id = oel.ship_to_org_id), NULL, oel.ship_to_customer,
+                                             (SELECT attribute1 drop_ship_customer FROM hz_cust_site_uses_all WHERE site_use_id = oel.ship_to_org_id) ) 
+                  ) ship_to_customer_name
+         ,DECODE (wddv.org_id, 243, china_ship_to.ship_to_address1, oel.ship_to_display_address1)      ship_to_address1 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_ship_to.ship_to_address2, oel.ship_to_display_address2)      ship_to_address2 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_ship_to.ship_to_address3, oel.ship_to_display_address3)      ship_to_address3 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_ship_to.ship_to_address4, oel.ship_to_display_address4)      ship_to_address4 -- HRR 7/18/12
+         ,NULL                               ship_to_address5 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_bill_to.bill_to_customer_name, xoha.customer_name)         bill_to_customer_name -- HRR 02/04/13
+         ,DECODE (wddv.org_id, 243, china_bill_to.bill_to_address1, xoha.bill_to_display_address1)   invoice_to_address1 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_bill_to.bill_to_address2, xoha.bill_to_display_address2)   invoice_to_address2 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_bill_to.bill_to_address3, xoha.bill_to_display_address3)   invoice_to_address3 -- HRR 7/18/12
+         ,DECODE (wddv.org_id, 243, china_bill_to.bill_to_address4, xoha.bill_to_display_address4)   invoice_to_address4 -- HRR 7/18/12
+         ,NULL                             invoice_to_address5  -- HRR 7/18/12
+         ,oeh.customer_preference_set_code customer_reference_number
+        --,oeh.header_id              header_id
+        ,xoha.customer_number        customer_number
+        ,xxhid_oe.short_note('OE_ORDER_HEADERS', oeh.header_id, 'WSHRDPAK') order_attachment
+       ,'Packing Instructions: '||oeh.packing_instructions         packing_instructions
+       ,oeh.tp_attribute3 job_number
+       ,oeh.tp_attribute2 requisition_num
+       ,NULL 							---		oeh.cust_po_number||'-'||oeh.tp_attribute4 po_rel_num
+       ,(SELECT ood.organization_name 
+           FROM org_organization_definitions ood, mtl_parameters mp 
+        WHERE mp.organization_id=wsnd.organization_id 
+        AND ood.organization_code=mp.organization_code
+        AND ROWNUM=1 ) warehouse
+       ,(SELECT ltrim(rtrim(substr(hou.name,-4)))
+	 FROM org_organization_definitions ood, hr_operating_units hou 
+	 WHERE ood.organization_id= wsnd.organization_id 
+         AND ood.operating_unit = hou.organization_id ) hou_code        
+       ,DECODE(xoha.customer_number,'23359',DECODE(xoum.organization_name,'HID Irvine 1110','ADI','NON-ADI'),'NOT-ADI')  cust_adi
+       ,DECODE (xoha.order_source, 'RMA - Disp', 
+                                   SUBSTR(xoha.order_source_reference, 1, INSTR(xoha.order_source_reference, '_') -1),
+                                   NULL) reference_num 
+       ,xxhid_oe.contact_attribute (wddv.ship_to_contact_id, 'NAME') ship_to_contact -- HRR 06/28/13 WO# 88082
+       ,( select UPPER(name) from oe_order_sources where ORDER_SOURCE_ID = oeh.order_source_id ) order_source   -- Rajmohan 05/13/14 WO#100647
+       ,DECODE( ( select UPPER(name) from oe_order_sources where ORDER_SOURCE_ID = oeh.order_source_id ),'INTERNAL',oeh.orig_sys_document_ref ,NULL) internal_req_no             -- Rajmohan 05/13/14 WO#100647
+	   ,(select ppf.global_name from PO_REQUISITION_LINES_ALL rl,APPS.PER_ALL_PEOPLE_F PPF  where rl.REQUISITION_LINE_ID= oel.source_document_line_id AND ppf.person_id = rl.to_person_id AND trunc(sysdate) between trunc(NVL(ppf.effective_start_date,sysdate)) and trunc(NVL(ppf.effective_end_date ,sysdate+1))) requestor -- Added by Laavanyaa for story#STRY0011593 on 12/16/2019 
+   FROM wsh_new_deliveries_v wsnd 
+        ,wsh_dlvy_deliverables_v wddv 
+        ,oe_order_headers_all oeh 
+        ,xxhid_oe_order_lines_v oel
+       ,xxhid_operating_units_mv xoum
+       ,xxhid_oe_order_headers_v xoha
+       ,hr_locations hl
+       ,
+       (SELECT ship_ps.location_id , 
+               ship_cas.attribute16 ship_to_customer_name, 
+               ship_cas.attribute17 ship_to_address1, 
+               ship_cas.attribute18 ship_to_address2,
+               ship_cas.attribute19 ship_to_address3,
+               ship_cas.attribute20 ship_to_address4
+          FROM hz_party_sites ship_ps,
+               hz_cust_acct_sites_all ship_cas
+         WHERE ship_ps.party_site_id = ship_cas.party_site_id
+        --AND ship_ps.location_id = wddv.ship_to_location_id
+        ) china_ship_to -- HRR  7/18/12
+        ,
+        ( SELECT bill_su.site_use_id,
+                 bill_cas.attribute16 bill_to_customer_name, 
+                 bill_cas.attribute17 bill_to_address1, 
+                 bill_cas.attribute18 bill_to_address2,
+                 bill_cas.attribute19 bill_to_address3,
+                 bill_cas.attribute20 bill_to_address4
+            FROM hz_cust_site_uses_all bill_su,
+                 hz_cust_acct_sites_all bill_cas
+           WHERE bill_su.cust_acct_site_id = bill_cas.cust_acct_site_id      
+        ) china_bill_to -- HRR 7/18/12 
+   WHERE 1=1
+   AND   wddv.source_header_id=oel.header_id  
+   AND   wddv.source_line_id=oel.line_id 
+   AND   wsnd.delivery_id=wddv.delivery_id
+   AND   oeh.header_id=oel.header_id
+   AND   xoha.order_number=oeh.order_number
+   AND   xoum.organization_id=xoha.org_id
+   AND   wsnd.initial_pickup_location_id=hl.location_id
+   AND container_flag = 'N'
+   AND source_code = 'OE'
+   AND wddv.delivery_id=NVL(:main_delivery_number,wddv.delivery_id)
+   AND china_ship_to.location_id = wddv.ship_to_location_id -- HRR 7/18/12
+ AND china_bill_to.site_use_id = oeh.invoice_to_org_id    -- HRR 7/18/12     
+	          ]]>
+ </sqlStatement>
+<sqlStatement name="Q_2">
+      <![CDATA[
+SELECT wddv.cust_po_number po_number
+       ,xxhid_pack_slip_format_pkg.get_po_number(p_delivery_id  => wddv.delivery_id) po_number_main
+       ,wddv.source_line_number          line_number
+       ,wddv.source_header_id header_id
+      ,wddv.source_line_id          line_id
+       ,DECODE(XXHID_COMMON_UTIL.is_signo_item(msib.inventory_item_id) ,'N',msib.segment1,(SELECT ordered_item FROM oe_order_lines_all WHERE line_id = xxhid_oe_cominv_pkg.get_ddm_line_id (wddv.source_line_id)))  item_no -- changed for DDM
+     --  ,wddv.item_description            item_description commeted by madhu katikithala , genesis
+     ,XXHID_GET_ITEM_DESC(wddv.source_line_id,wddv.source_header_id,(select item_type_code from apps.oe_order_lines_all where 
+       line_id=wddv.source_line_id)) item_description     
+       ,NVL(xxhid_pack_slip_format_pkg.get_uom_quantity(msib.inventory_item_id, requested_quantity_uom, src_requested_quantity_uom,wddv.requested_quantity),0)   requested_quantity       ---   NVL(wddv.requested_quantity,0) Changed by Rajmohan on 09/07/14
+      ,msib.inventory_item_id           item_id
+      ,APPS.XXHID_GET_CUSTOMER_REF_#(wddv.SOURCE_LINE_ID,wddv.SOURCE_HEADER_ID ) cust_cross_ref -- added by MK Genesis
+     --  ,(SELECT customer_item_number||DECODE(customer_item_desc,NULL,NULL,'/'||customer_item_desc)  -- commeted by MK Genesis
+     --     FROM mtl_customer_item_xrefs_v cxrefs  -- commeted by MK Genesis
+     --     WHERE cxrefs.customer_id = oeh.sold_to_org_id  -- commeted by MK Genesis
+     --     AND cxrefs.inventory_item_id = msib.inventory_item_id  -- commeted by MK Genesis
+     --   AND ROWNUM=1   -- commeted by MK Genesis
+     --     ) cust_cross_ref  -- commeted by MK Genesis
+    --,xxhid_oneup_information.xxhid_serial_numbers(wddv.source_header_id,wddv.source_line_id)   serial_numbers -- HRR 7/20/12
+    --,xxhid_oneup_information.xxhid_serial_numbers(wddv.delivery_detail_id) serial_numbers -- HRR 7/20/12
+      --,xxhid_oneup_information.xxhid_serial_numbers (wddv.delivery_detail_id, wddv.source_header_id, wddv.source_line_id) serial_numbers -- HRR 9/10/12 --- Commented by Jpotnuru as per INC0034530 04/05/2016
+      ,xxhid_oneup_information.xxhid_serial_numbers_split (wddv.delivery_detail_id,wddv.delivery_id,wddv.source_header_id,wddv.source_line_id) serial_numbers -- ADDED by jpotnuru as per  INC0034530 04/05/2016 
+	 --,xxhid_oneup_information.xxhid_lot_numbers(wddv.source_line_id) lot_numbers  ---Commented by Jpotnuru as per INC0034530 04/05/2016
+	  ,xxhid_oneup_information.chk_lot_number (wddv.source_line_id) chk_lot_number  ---Added as per  INC0034530 by jpotnuru 04/05/2016
+	 ,xxhid_oneup_information.xxhid_lot_numbers(wddv.delivery_detail_id,wddv.source_line_id) lot_numbers --Added as per  INC0034530 by jpotnuru 04/05/2016
+      ,NVL(xxhid_pack_slip_format_pkg.get_uom_quantity(msib.inventory_item_id, requested_quantity_uom, src_requested_quantity_uom,wddv.shipped_quantity),0)   shipped_quantity       ---   NVL(wddv.shipped_quantity,0) Changed by Rajmohan on 09/07/14         
+      ,NVL(xxhid_pack_slip_format_pkg.get_uom_quantity(msib.inventory_item_id, requested_quantity_uom, src_requested_quantity_uom,wddv.cycle_count_quantity),0)   backordered_quantity       ---   NVL(wddv.cycle_count_quantity,0) Changed by Rajmohan on 09/07/14         
+      ,	src_requested_quantity_uom	unit_of_measure			---       requested_quantity_uom Changed by Rajmohan on 09/07/14     
+        ,xxhid_oe.short_note('OE_ORDER_LINES', wddv.source_line_id, 'WSHRDPAK') order_line_attachment,
+(select to_number(oel.line_number||'.'||oel.shipment_number) from oe_order_lines_all oel where oel.line_id=wddv.source_line_id) line_ship -- added by madhu katikithala , trevera 10/28/14
+  FROM  wsh_dlvy_deliverables_v wddv 
+      ,mtl_system_items_b msib 
+      ,oe_order_headers_all oeh
+ WHERE 1=1 
+ AND   msib.inventory_item_id =wddv.inventory_item_id
+ AND   msib.organization_id = wddv.organization_id
+ AND   oeh.header_id=wddv.source_header_id
+ AND container_flag = 'N'
+ AND source_code = 'OE'
+ AND released_status IN ('N', 'R', 'S', 'Y', 'B', 'X','C')
+ AND  delivery_id=:delivery_id
+ --AND  oeh.order_number=:sales_order_number
+ --AND  wddv.cust_po_number = :po_number
+  ORDER BY to_number (substr(wddv.source_line_number, 1,instr(wddv.source_line_number,'.')-1)), line_ship asc --MK
+          -- trunc(cast(wddv.source_line_number as number (18,5))),  -- Rajesh fixed 9/17/14 Invalid Number error
+        --  cast(substr(wddv.source_line_number, instr(wddv.source_line_number,'.')+1,7) as dec(7,0)) -- removed by madhu katikithala , trevera 10/28/14
+	          ]]>
+</sqlStatement>
+ <sqlStatement name="Q_3">
+      <![CDATA[
+	           SELECT oh.order_number
+       ,fd.description
+       ,fdstf.short_text  line_short_text 
+       ,dt.TITLE
+  FROM oe_order_headers_all oh,
+       oe_order_lines_all ol, 
+       fnd_attached_documents fad,
+       fnd_documents_vl fd
+      ,fnd_documents_short_text fdstf
+      ,fnd_documents_tl dt
+where TO_CHAR(ol.line_id)= fad.PK1_VALUE
+and fad.entity_name='OE_ORDER_LINES'
+and fad.document_id=fd.document_id
+AND fdstf.media_id(+) = fd.media_id
+AND dt.language = USERENV ('LANG')
+AND dt.document_id= fd.document_id
+AND datatype_id=1
+AND oh.header_id= ol.header_id
+AND oh.header_id=:header_id
+	          ]]>
+ </sqlStatement>
+ <sqlStatement name="Q_4">
+      <![CDATA[
+SELECT
+xxhid_oe.programming_info(:line_id) programming_info, 
+xxhid_oe.final_dcid (:line_id) final_dcid
+FROM dual
+	     ]]>
+ </sqlStatement>
+</dataQuery>
+<dataTrigger name="beforeReportTrigger" source="xxhid_wsh_shipping_util.REPORT_WAIT(fnd_global.conc_request_id)"/>
+<dataStructure>
+<group name="WG_1_TOP" source="Q_1_TOP">
+            <element name="MAIN_DELIVERY_NUMBER" value="MAIN_DELIVERY_NUMBER" />
+			<element name="CONC_REQUEST_ID" value="CONC_REQUEST_ID" />
+			<element name="ORGN_ID" value="ORGN_ID" />
+<group name="WG_1" source="Q_1">
+            		<element name="ADDRESS_LINE_1" value="ADDRESS_LINE_1" />
+			<element name="ADDRESS_LINE_2" value="ADDRESS_LINE_2" />
+			<element name="SHIP_TO_CONTACT" value="SHIP_TO_CONTACT" />			
+			<element name="SHIP_TO_ADDRESS1" value="SHIP_TO_ADDRESS1" />
+			<element name="SHIP_TO_ADDRESS2" value="SHIP_TO_ADDRESS2" />
+			<element name="SHIP_TO_ADDRESS3" value="SHIP_TO_ADDRESS3" />
+			<element name="SHIP_TO_ADDRESS4" value="SHIP_TO_ADDRESS4" />
+			<element name="SHIP_TO_ADDRESS5" value="SHIP_TO_ADDRESS5" />
+			<element name="BILL_TO_CUSTOMER_NAME" value="BILL_TO_CUSTOMER_NAME" />			
+			<element name="INVOICE_TO_ADDRESS1" value="INVOICE_TO_ADDRESS1" />
+			<element name="INVOICE_TO_ADDRESS2" value="INVOICE_TO_ADDRESS2" />
+			<element name="INVOICE_TO_ADDRESS3" value="INVOICE_TO_ADDRESS3" />
+			<element name="INVOICE_TO_ADDRESS4" value="INVOICE_TO_ADDRESS4" />
+			<element name="INVOICE_TO_ADDRESS5" value="INVOICE_TO_ADDRESS5" />
+			<element name="BILL_TO_CUSTOMER" value="BILL_TO_CUSTOMER" />
+			<element name="SHIP_TO_CUSTOMER_NAME" value="SHIP_TO_CUSTOMER_NAME" />
+			<element name="DELIVERY_NUMBER" value="DELIVERY_NUMBER" />
+			<element name="DELIVERY_NUMBER_BARCODE" datatype="varchar2" value="DELIVERY_NUMBER_BARCODE" />
+			<element name="FREIGHT_TERMS_CODE" value="FREIGHT_TERMS_CODE" />
+			<element name="FOB_CODE" value="FOB_CODE" />
+			<element name="JOB_NUMBER" value="JOB_NUMBER" />
+			<element name="REQUISITION_NUM" value="REQUISITION_NUM" />
+			<element name="PO_REL_NUM" value="PO_REL_NUM" />
+			<element name="CUST_ADI" value="CUST_ADI" />
+			<element name="REFERENCE_NUM" value="REFERENCE_NUM" />
+			<element name="GROSS_WEIGHT" value="GROSS_WEIGHT" />
+			<element name="ORG_CODE" value="ORG_CODE" />
+			<element name="WAREHOUSE" value="WAREHOUSE" />
+			<element name="HOU_CODE" value="HOU_CODE" />
+			<element name="SHIP_METHOD" value="SHIP_METHOD" />
+			<element name="NUMBER_OF_LPN" value="NUMBER_OF_LPN" />
+			<element name="WAYBILL" value="WAYBILL_NUMBER" />
+			<element name="ORDER_SOURCE" value="ORDER_SOURCE" />
+			<element name="INTERNAL_REQ_NO" value="INTERNAL_REQ_NO" />
+			<element name="REQUESTOR" value="REQUESTOR" />			
+            <element name="PO_NUMBER_MAIN" value="PO_NUMBER_MAIN" />
+            <element name="SHIP_DATE" value="SHIP_DATE" />
+			<element name="SALES_ORDER_NUMBER" value="SALES_ORDER_NUMBER" />
+			<element name="PACKING_INSTRUCTIONS" value="PACKING_INSTRUCTIONS" />
+            		<element name="ORDER_ATTACHMENT" value="ORDER_ATTACHMENT" />            		
+			<element name="CUSTOMER_NUMBER" value="CUSTOMER_NUMBER" />
+			<element name="ORGANIZATION_NAME" value="ORGANIZATION_NAME" />
+			<element name="ORGANIZATION_NAME1" value="ORGANIZATION_NAME1" />
+			<element name="ORGANIZATION_ADDRESS" value="ORGANIZATION_ADDRESS" />
+			<element name="SHANNON_ADDR" value="SHANNON_ADDR" />
+	 	<group name="WG_2" source="Q_2">	 	        
+	 	        <element name="PO_NUMBER" value="PO_NUMBER"/>
+	 	        <element name="PO_NUMBER_MAIN" value="PO_NUMBER_MAIN" />
+            		<element name="LINE_NUMBER" value="LINE_NUMBER" />
+            		<element name="HEADER_ID" value="HEADER_ID" />
+            		<element name="LINE_ID" value="LINE_ID" />
+		    	<element name="ITEM_NO" value="ITEM_NO" />
+			<element name="ITEM_ID" value="ITEM_ID" />
+			<element name="ITEM_DESCRIPTION" value="ITEM_DESCRIPTION" />
+			<element name="REQUESTED_QUANTITY" value="REQUESTED_QUANTITY" />
+			<element name="SHIPPED_QUANTITY" value="SHIPPED_QUANTITY" />
+			<element name="BACKORDERED_QUANTITY" value="BACKORDERED_QUANTITY" />
+			<element name="ORDER_LINE_ATTACHMENT" value="ORDER_LINE_ATTACHMENT" />
+			<element name="UNIT_OF_MEASURE" value="UNIT_OF_MEASURE" />
+		   	<element name="SERIAL_NUMBERS" value="SERIAL_NUMBERS" />
+		   	<element name="CUST_CROSS_REF"  value="CUST_CROSS_REF" />
+		   	<element name="LOT_NUMBERS" value="LOT_NUMBERS" />
+			 <element name="CHK_LOT_NUMBER" value="CHK_LOT_NUMBER" />
+	<group name="WG_3" source="Q_3">
+            <element name="LINE_SHORT_TEXT" value="LINE_SHORT_TEXT" />
+	  </group>	  
+	<group name="WG_4" source="Q_4"> 
+	           <element name="PROGRAMMING_INFO" value="PROGRAMMING_INFO" /> 
+	           <element name="FINAL_DCID" value="FINAL_DCID" />
+		   
+	</group>  
+</group>
+</group>
+</group>
+</dataStructure>
+</dataTemplate>

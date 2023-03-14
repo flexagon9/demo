@@ -1,6 +1,14 @@
+   DROP TABLE "MP1"."DEMO_TABLE1";
+   DROP TABLE "MP1"."DEMO_TABLE_INVALID";
+   DROP TABLE "MP1"."DEMO_TABLE2";
+  
 --------------------------------------------------------
 --  DDL for Table DEMO_TABLE1
 --------------------------------------------------------
+DROP TABLE "MP1"."DEMO_TABLE1" ;
+DROP TABLE "MP1"."DEMO_TABLE1" ;
+DROP TABLE "MP1"."DEMO_TABLE2" ;
+DROP TABLE "MP1"."DEMO_TABLE2" ;
 
   CREATE TABLE "MP1"."DEMO_TABLE1" 
    (	"CUSTOMER_ID" NUMBER(30,0), 

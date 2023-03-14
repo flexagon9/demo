@@ -1,0 +1,15 @@
+<?xml 	version="1.0"  encoding="UTF-8"?>
+<xapi:requestset xmlns:xapi="http://xmlns.oracle.com/oxp/xapi" type="bursting">
+ <xapi:globalData location="stream" />
+<xapi:request select="/RAXINV/LIST_G_ORDER_BY/G_ORDER_BY/LIST_G_INVOICE/G_INVOICE">
+<xapi:delivery>
+<xapi:email id="email123" server="mail.oracle.com" port="" from="XDOburstingTest@oracle.com" reply-to="reply@oracle.com" to="emoulds@la4001.oracleads.com" attachment="true" subject="Invoice Details for #{$TRX_NUMBER]">
+<xapi:message id="email123" to="emoulds@la4001.oracleads.com" cc="emoulds@la4001.oracleads.com" attachment="true" subject="Invoice Details for #{$TRX_NUMBER]"> Please review the attached document</xapi:message>
+</xapi:email>
+</xapi:delivery>
+<xapi:document  output-type="pdf" delivery="email123">
+ <xapi:template type="XSL-FO" location="xdo://AR.RAXINV_SEL.en.00"/>
+ </xapi:document>
+</xapi:request>
+</xapi:requestset>
+<!-- 08/01/22 -->

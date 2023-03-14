@@ -1,0 +1,166 @@
+# Unique name for this workflow
+name: Packaging on PR
+
+# Workflow starts when receiving start-packaging-pr custom event
+# Event contains the packageName of the target package for which a new version will be released
+on:
+    repository_dispatch:
+        types: [start-packaging-pr]
+
+# Jobs to be executed
+jobs:
+    release-package-version:
+        runs-on: ubuntu-latest
+        steps:
+            # Install Salesforce CLI
+            - name: 'Install Salesforce CLI'
+              run: |
+                  wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
+                  mkdir ~/sfdx
+                  tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
+                  echo "$HOME/sfdx/bin" >> $GITHUB_PATH
+                  ~/sfdx/bin/sfdx version
+
+            # Checkout the source code
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.event.client_payload.ref }}
+
+            # Store secret for dev hub
+            - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
+              shell: bash
+              run: |
+                  echo ${{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt
+                  secretFileSize=$(wc -c "./DEVHUB_SFDX_URL.txt" | awk '{print $1}')
+                  if [ $secretFileSize == 1 ]; then
+                      echo "Missing DEVHUB_SFDX_URL secret. Is this workflow running on a fork?";
+                      exit 1;
+                  fi
+
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: sfdx auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d
+
+            # Remove auth file
+            - name: 'Remove auth file'
+              run: rm -f ./DEVHUB_SFDX_URL.txt
+
+            # Create package version - ES Base Objects
+            - name: 'Create package version - ES Base Objects'
+              id: package-baseObj
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESObjects -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
+
+            # Create package version - ES Base Code
+            - name: 'Create package version - ES Base Code'
+              id: package-baseCode
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESBaseCodeLWC -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
+
+            # Create package version - ES Base Styles
+            - name: 'Create package version - ES Base Styles'
+              id: package-baseStyles
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESBaseStylesLWC -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
+
+            # Create package version - ES Space Management
+            - name: 'Create package version - ES Space Management'
+              id: package-spaceMgmt
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESSpaceMgmtLWC -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
+
+            # Wait for package replication
+            - name: 'Wait for package replication'
+              uses: maddox/actions/sleep@master
+              with:
+                  args: 300
+
+            # Update sfdx-project.json and README to use only latest package version
+            - name: 'Update sfdx-project.json and README'
+              uses: trailheadapps/github-action-sfdx-packaging-updater@1.1.0
+
+            # Create scratch org
+            - name: 'Create scratch org'
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1
+
+            # Get package version IDs
+            - name: 'Get package version IDs'
+              id: packageVersions
+              run: |
+                  versionIds=$(cat sfdx-project.json | jq -c -r '.packageAliases | map_values( select( . | startswith("04t") ) )')
+                  versionIds=$(echo "$versionIds" | sed -E 's,@[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+,,g')
+                  echo "::set-output name=ids::$versionIds"
+
+            # Install into scratch org - ES Base Objects
+            - name: 'Install into scratch org - ES Base Objects'
+              run: |
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESObjects')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
+
+            # Install into scratch org - ES Base Code
+            - name: 'Install into scratch org - ES Base Code'
+              run: |
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESBaseCodeLWC')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
+
+            # Install into scratch org - ES Base Styles
+            - name: 'Install into scratch org - ES Base Styles'
+              run: |
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESBaseStylesLWC')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
+
+            # Install into scratch org - ES Space Management
+            - name: 'Install into scratch org - ES Space Management'
+              run: |
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESSpaceMgmtLWC')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
+
+            # Housekeeping
+            - name: 'Delete scratch org'
+              if: always()
+              run: sfdx force:org:delete -p -u scratch-org

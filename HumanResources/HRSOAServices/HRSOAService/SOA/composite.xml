@@ -21,6 +21,7 @@
   </service>
   <property name="productVersion" type="xs:string" many="false">12.1.3.0.0</property>
   <property name="compositeID" type="xs:string" many="false">a8970410-30cb-43d5-801e-a2b47a0a356c</property>
+  <property name="environment" type="xs:string" many="false">${{FD_ENVIRONMENT_CODE}}</property>
   <component name="validatePaymentProcess" version="2.0">
     <implementation.bpel src="BPEL/validatePaymentProcess.bpel"/>
     <componentType>
@@ -36,7 +37,7 @@
   <reference name="getPaymentInformation" ui:wsdlLocation="WSDLs/getPaymentInformation.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/e2e-1201-composites/ValidatePayment/getPaymentInformation#wsdl.interface(getPaymentInformation_ptt)"/>
     <binding.jca config="Adapters/getPaymentInformation_db.jca"/>
-    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">${{ADAPTER_RETRY_COUNT}}</property>
     <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
     <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
     <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
