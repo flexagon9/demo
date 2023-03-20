@@ -1,0 +1,23 @@
+{
+  "requestPolicies": null,
+  "loggingPolicies": null,
+  "routes": [
+    {
+      "path": "/names/{name}",
+      "methods": [
+        "GET"
+      ],
+      "requestPolicies": null,
+      "responsePolicies": null,
+      "loggingPolicies": null,
+      "backend": {
+        "type": "STOCK_RESPONSE_BACKEND",
+        "body": null,
+        "status": 500,
+        "headers": [
+          
+        ]
+      }
+    }
+  ]
+}

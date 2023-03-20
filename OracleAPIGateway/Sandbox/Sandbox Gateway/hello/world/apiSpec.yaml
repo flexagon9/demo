@@ -1,0 +1,14 @@
+---
+routes:
+- path: "/hello"
+  methods:
+  - GET
+  backend:
+    type: HTTP_BACKEND
+    url: https://jsonplaceholder.typicode.com
+- path: "/weather"
+  methods:
+  - GET
+  backend:
+    type: HTTP_BACKEND
+    url: https://api.weather.gov

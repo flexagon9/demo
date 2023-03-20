@@ -1,0 +1,92 @@
+---
+openapi: 3.0.1
+info:
+  title: ECHO
+  version: v01
+servers:
+  - url: https://dev-oic-vbcs-poc-idzor6zhmigm-ia.integration.ocp.oraclecloud.com:443/ic/api/integration/v1/flows/rest/ECHO/1.0
+paths:
+  "/{message}":
+    get:
+      parameters:
+        - name: message
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "500":
+          description: Faults
+          content: {}
+        default:
+          description: A sample description of the Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-wrapper"
+      security:
+        - oauth2Authentication: []
+        - basicAuthentication: []
+components:
+  schemas:
+    response-wrapper:
+      required:
+        - Message
+        - Welcome
+      type: object
+      properties:
+        Message:
+          type: string
+        Welcome:
+          type: string
+    APIInvocationError:
+      required:
+        - detail
+        - errorCode
+        - errorDetails
+        - title
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        errorCode:
+          type: string
+        errorDetails:
+          minItems: 1
+          type: array
+          items:
+            required:
+              - errorCode
+              - errorPath
+              - instance
+              - title
+              - type
+            type: object
+            properties:
+              instance:
+                type: string
+              errorCode:
+                type: string
+              type:
+                type: string
+              title:
+                type: string
+              errorPath:
+                type: string
+  securitySchemes:
+    oauth2Authentication:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://idcs-75ed387a38c8444cba85ceb367ae6dff.identity.oraclecloud.com:443/oauth2/v1/authorize
+          tokenUrl: https://idcs-75ed387a38c8444cba85ceb367ae6dff.identity.oraclecloud.com:443/oauth2/v1/token
+          scopes:
+            https://dev-oic-vbcs-poc-idzor6zhmigm-ia.integration.ocp.oraclecloud.com:443urn:opc:resource:consumer::all: all
+    basicAuthentication:
+      type: http
+      scheme: basic
