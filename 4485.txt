@@ -1,0 +1,39 @@
+We observed below error in flexdeploy.0.log. Could you please look at it?
+ 
+ 
+Wed Mar 08 07:47:59 EST 2023 - 43 - SEVERE - pushvsmmeasurementcall - null - null - flexagon.ff.common.core.exceptions.FlexRestException.init() -
+flexagon.ff.common.core.exceptions.FlexRestException: HTTP_REQUEST_FAIL: Request failed: {"code":"internal error","message":"unexpected error writing points to database: [shard 47] unexpected end of JSON input"}
+        at flexagon.ff.common.core.rest.FlexRESTClient.validateResponse(FlexRESTClient.java:1064)
+       at flexagon.ff.common.core.rest.FlexRESTClient.post(FlexRESTClient.java:274)
+        at flexagon.ff.common.core.rest.FlexRESTClient.post(FlexRESTClient.java:244)
+        at flexagon.fd.services.vsm.rest.VSMRESTClient.writeDataToBucket(VSMRESTClient.java:64)
+        at flexagon.fd.model2.jdbc.PushVSMMeasurementsDBAccess.push(PushVSMMeasurementsDBAccess.java:203)
+        at flexagon.fd.model2.api.PushVSMMeasurementsAPI.retryPushMeasurement(PushVSMMeasurementsAPI.java:59)
+        at flexagon.fd.services.vsm.PushVSMMeasurementCall.pushMeasurementsToInfluxDB(PushVSMMeasurementCall.java:77)
+        at flexagon.fd.services.vsm.PushVSMMeasurementCall.invokeMethod0(PushVSMMeasurementCall.java:62)
+        at flexagon.fd.model2.api.internal.LongRunningAsyncAPICall.longRunningInvoke(LongRunningAsyncAPICall.java:129)
+        at flexagon.fd.model2.api.internal.LongRunningAsyncAPICall.invokeMethod(LongRunningAsyncAPICall.java:96)
+        at flexagon.fd.model2.api.internal.AbstractAsyncAPICall.call(AbstractAsyncAPICall.java:111)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:750)
+Wed Mar 08 07:47:59 EST 2023 - 43 - WARNING - pushvsmmeasurementcall - null - null - flexagon.fd.model2.jdbc.PushVSMMeasurementsDBAccess.push - Failed send measurement to InfluxDB for Id 122387
+flexagon.ff.common.core.exceptions.FlexRestException: HTTP_REQUEST_FAIL: Request failed: {"code":"internal error","message":"unexpected error writing points to database: [shard 47] unexpected end of JSON input"}
+        at flexagon.ff.common.core.rest.FlexRESTClient.validateResponse(FlexRESTClient.java:1064)
+        at flexagon.ff.common.core.rest.FlexRESTClient.post(FlexRESTClient.java:274)
+        at flexagon.ff.common.core.rest.FlexRESTClient.post(FlexRESTClient.java:244)
+        at flexagon.fd.services.vsm.rest.VSMRESTClient.writeDataToBucket(VSMRESTClient.java:64)
+        at flexagon.fd.model2.jdbc.PushVSMMeasurementsDBAccess.push(PushVSMMeasurementsDBAccess.java:203)
+        at flexagon.fd.model2.api.PushVSMMeasurementsAPI.retryPushMeasurement(PushVSMMeasurementsAPI.java:59)
+        at flexagon.fd.services.vsm.PushVSMMeasurementCall.pushMeasurementsToInfluxDB(PushVSMMeasurementCall.java:77)
+        at flexagon.fd.services.vsm.PushVSMMeasurementCall.invokeMethod0(PushVSMMeasurementCall.java:62)
+        at flexagon.fd.model2.api.internal.LongRunningAsyncAPICall.longRunningInvoke(LongRunningAsyncAPICall.java:129)
+        at flexagon.fd.model2.api.internal.LongRunningAsyncAPICall.invokeMethod(LongRunningAsyncAPICall.java:96)
+        at flexagon.fd.model2.api.internal.AbstractAsyncAPICall.call(AbstractAsyncAPICall.java:111)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:750)
+Wed Mar 08 07:47:59 EST 2023 - 43 - INFO - pushvsmmeasurementcall - null - null - flexagon.fd.model2.api.PushVSMMeasurementsAPI.retryPushMeasurement - Exiting [true]
+ 
