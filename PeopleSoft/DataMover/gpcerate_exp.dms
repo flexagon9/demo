@@ -1,0 +1,985 @@
+-- **************************************************************
+--                                                               
+--                                                               
+-- This software and related documentation are provided under a  
+-- license agreement containing restrictions on use and          
+-- disclosure and are protected by intellectual property         
+-- laws. Except as expressly permitted in your license agreement 
+-- or allowed by law, you may not use, copy, reproduce,          
+-- translate, broadcast, modify, license, transmit, distribute,  
+-- exhibit, perform, publish or display any part, in any form or 
+-- by any means. Reverse engineering, disassembly, or            
+-- decompilation of this software, unless required by law for    
+-- interoperability, is prohibited.                              
+-- The information contained herein is subject to change without 
+-- notice and is not warranted to be error-free. If you find any 
+-- errors, please report them to us in writing.                  
+--                                                               
+-- Copyright (C) 1988, 2013, Oracle and/or its affiliates.       
+-- All Rights Reserved.                                          
+-- **************************************************************
+
+-- **********************************************************************
+-- Global Payroll Country Extensions
+--   - This script will export HR Rate Code elements from HRDMO db 
+--     for GP CE's that have been licensed so that they can be copied
+--     over into the HRSYS db if customer wants to use.
+--   - All logic in this script is conditional based on which Country Extensions
+--   are installed (based on install flags on PS_INSTALLATION).
+-- **********************************************************************
+SET LOG gpcerate_exp.log;
+SET OUTPUT gpcerate.dat;
+
+
+-- ******************************************************************
+--   Global Payroll AUS (Australia) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'AUS'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'AUS'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'AUS'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'AUS'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'AUS'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'AUS'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'AUS'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'AUS'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_AUS = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll BRA (Brazil) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'BRA'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'BRA'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'BRA'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'BRA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'BRA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'BRA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'BRA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'BRA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_BRA = 'Y');
+
+
+
+-- ******************************************************************
+--   Global Payroll MEX (Switzerland) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MEX'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'MEX'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MEX'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MEX'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+
+
+-- ******************************************************************
+--   Global Payroll DEU (Germany) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'DEU'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'DEU'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'DEU'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'DEU'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'DEU'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'DEU'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'DEU'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'DEU'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_DEU = 'Y');
+ 
+
+-- ******************************************************************
+--   Global Payroll ESP (Spain) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ESP'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'ESP'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'ESP'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'ESP'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'ESP'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ESP'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ESP'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ESP'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ESP = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll FRA (France) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'FRA'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'FRA'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'FRA'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'FRA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'FRA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'FRA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'FRA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'FRA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_FRA = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll GBR (United Kingdom) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'GBR'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'GBR'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'GBR'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'GBR'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'GBR'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'GBR'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'GBR'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'GBR'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_UK = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll HKG (Hong Kong) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'HKG'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'HKG'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'HKG'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'HKG'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'HKG'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'HKG'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'HKG'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'HKG'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_HKG = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll IND (India) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'IND'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'IND'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'IND'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'IND'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'IND'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'IND'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'IND'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'IND'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_IND = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll ITA (Italy) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ITA'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'ITA'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'ITA'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'ITA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'ITA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ITA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ITA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'ITA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_ITA = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll JPN (Japan) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'JPN'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'JPN'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'JPN'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'JPN'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'JPN'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'JPN'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'JPN'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'JPN'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_JPN = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll MEX (Mexico) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MEX'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'MEX'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MEX'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MEX'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MEX'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MEX = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll MYS (Malaysia) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MYS'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MYS'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'MYS'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MYS'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'MYS'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MYS'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MYS'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'MYS'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_MYS = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll NLD (Netherlands) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NLD'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'NLD'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'NLD'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'NLD'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'NLD'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NLD'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NLD'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NLD'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NLD = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll NZL (New Zealand) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NZL'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'NZL'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'NZL'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'NZL'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'NZL'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NZL'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NZL'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'NZL'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_NZL = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll SGP (Singapore) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'SGP'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'SGP'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'SGP'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'SGP'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'SGP'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'SGP'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'SGP'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'SGP'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_SGP = 'Y');
+
+
+-- ******************************************************************
+--   Global Payroll USA (United States) Country Extension
+-- ******************************************************************
+EXPORT PS_COMP_RATECD_TBL WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'USA'
+                                          AND PS_COMP_RATECD_TBL.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_SEN_PAY_GROUP WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'USA'
+                                        AND PS_SEN_PAY_GROUP.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_SEN_PAY_COMPRT WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                       WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                         AND PS_GP_PIN.COUNTRY = 'USA'
+                                         AND PS_SEN_PAY_COMPRT.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                           AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'USA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_CMP_RULE_DEFN_L WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                      WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                        AND PS_GP_PIN.COUNTRY = 'USA'
+                                        AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                        AND PS_CMP_RULE_DEFN_L.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                          AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_CMP_RULE_RATECD WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'USA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_CMP_RULE_VALUES WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'USA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_VALUES.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');
+
+EXPORT PS_CMP_RULE_WHERE WHERE EXISTS (SELECT 'X' FROM PS_GP_PIN, PS_GP_RATE_CODE, PS_CMP_RULE_RATECD 
+                                        WHERE PS_GP_PIN.PIN_NUM = PS_GP_RATE_CODE.PIN_NUM
+                                          AND PS_GP_PIN.COUNTRY = 'USA'
+                                          AND PS_CMP_RULE_RATECD.COMP_RATECD = PS_GP_RATE_CODE.COMP_RATECD
+                                          AND PS_CMP_RULE_WHERE.CMP_RULE_ID = PS_CMP_RULE_RATECD.CMP_RULE_ID)
+                            AND EXISTS (SELECT 'X' FROM PS_INSTALLATION WHERE INSTALLED_GP_USA = 'Y');

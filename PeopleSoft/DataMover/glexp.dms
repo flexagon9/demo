@@ -1,0 +1,56 @@
+-- demo 04/10/2023 b
+--
+--                                                                  
+-- This software and related documentation are provided under a     
+-- license agreement containing restrictions on use and             
+-- disclosure and are protected by intellectual property            
+-- laws. Except as expressly permitted in your license agreement    
+-- or allowed by law, you may not use, copy, reproduce,             
+-- translate, broadcast, modify, license, transmit, distribute,     
+-- exhibit, perform, publish or display any part, in any form or    
+-- by any means. Reverse engineering, disassembly, or               
+-- decompilation of this software, unless required by law for       
+-- interoperability, is prohibited.                                 
+-- The information contained herein is subject to change without    
+-- notice and is not warranted to be error-free. If you find any    
+-- errors, please report them to us in writing.                     
+--                                                                  
+-- Copyright (C) 1988, 2013, Oracle and/or its affiliates.          
+-- All Rights Reserved.                                             
+-- ******************************************************************
+--
+--     $Release:  HRMS830 
+--    $Revision:  1 
+--  $Version-ID:  1
+--
+-- ******************************************************************
+-- GLEXP.DMS
+--
+-- HRMS 8 PAYROLL
+--
+-- ******************************************************************
+--
+-- Use this script to create a .DAT file of Set Control data
+-- to be used for importing GL data into the Payroll database for use
+-- by Payroll's GL interface
+
+-- Note: This DMS should be executed on the GL database.
+
+SET OUTPUT PAYROLL.DAT;
+
+-- SET CONTROL INFORMATION
+
+EXPORT SET_CNTRL_GROUP
+       WHERE REC_GROUP_ID IN ('FS_02', 'FS_05', 'FS_15');
+EXPORT SET_CNTRL_REC
+       WHERE (REC_GROUP_ID = 'FS_02'  AND
+              RECNAME      = 'CAL_DETP_TBL')
+          OR (REC_GROUP_ID = 'FS_05'  AND
+              RECNAME      = 'GL_ACCOUNT_TBL')
+          OR (REC_GROUP_ID = 'FS_05'  AND
+              RECNAME      = 'FUND_TBL')
+          OR (REC_GROUP_ID = 'FS_05'  AND
+              RECNAME      = 'PRODUCT_TBL')
+          OR (REC_GROUP_ID = 'FS_15'  AND
+              RECNAME      = 'JRNLGEN_APPL_ID');
+

@@ -1,0 +1,221 @@
+-- ******************************************************************
+--
+--
+--  This software and related documentation are provided under a
+--  license agreement containing restrictions on use and
+--  disclosure and are protected by intellectual property
+--  laws. Except as expressly permitted in your license agreement
+--  or allowed by law, you may not use, copy, reproduce,
+--  translate, broadcast, modify, license, transmit, distribute,
+--  exhibit, perform, publish or display any part, in any form or
+--  by any means. Reverse engineering, disassembly, or
+--  decompilation of this software, unless required by law for
+--  interoperability, is prohibited.
+--  The information contained herein is subject to change without
+--  notice and is not warranted to be error-free. If you find any
+--  errors, please report them to us in writing.
+--
+--  Copyright (C) 1988, 2013, Oracle and/or its affiliates.
+--  All Rights Reserved.
+-- ******************************************************************
+--
+-- UPGRADE MOVE TO PRODUCTION (AND TEST MOVE) PHASE ONLY.
+--
+-- USE THIS SCRIPT TO MOVE DATA FROM
+-- THE ORIGINAL UPGRADE TARGET TO NEW COPY OF PRODUCTION.
+-- ******************************************************************
+
+SET LOG MVAPPEXP.LOG;
+SET OUTPUT MVAPPEXP.DAT;
+-- ******************** DATA CONVERSION TABLE************************
+
+
+-- ******************** RECORD GROUPS *******************************
+
+EXPORT REC_GROUP_REC;
+EXPORT REC_GROUP_TBL;
+
+-- ******************** MESSAGES ************************************
+
+EXPORT PSMSGSETDEFN;
+EXPORT PSMSGCATDEFN;
+EXPORT PSMSGSETLANG;
+EXPORT PSMSGCATLANG;
+
+-- ******************** STORED STATEMENTS****************************
+
+EXPORT PS_SQLSTMT_TBL;
+
+-- ******************** EDI *****************************************
+
+EXPORT ECACTIONCDS;
+EXPORT ECACTIONS;
+EXPORT ECCVTPROFILE;
+EXPORT ECENTITYCDS;
+EXPORT ECEXTPARTNER;
+EXPORT ECEXTTPLINK;
+EXPORT ECGENERAL;
+EXPORT ECINMAPFILE;
+EXPORT ECINMAPFLD;
+EXPORT ECINMAPFLDCVT;
+EXPORT ECINMAPREC;
+EXPORT ECINMAPRECFLD;
+EXPORT ECINTLINK;
+EXPORT ECINTPARTNER;
+EXPORT ECMAPDEFN;
+EXPORT ECMAPPROFILE;
+EXPORT ECNAMES;
+EXPORT ECOUTMAPCVT;
+EXPORT ECOUTMAPFLD;
+EXPORT ECOUTMAPREC;
+EXPORT ECOUTMAPWHERE;
+export ECPRIEVENTCDS;
+export ECPRODFLTS;
+export ECPROMAP;
+export ECPROTRANS;
+export ECSECEVENTCDS;
+export ECTPALIAS;
+export ECTPCVT;
+export ECTPCVT_HDR;
+export ECTPCVT_LN;
+export ECTPPROFILE;
+export ECTRANS;
+export ECTRANSOPTION;
+export ECTRANSOPVAL;
+
+-- ******************** STRINGS *************************************
+
+EXPORT STRINGS_TBL;
+EXPORT STRINGS_LNG_TBL;
+
+-- ******************** MASS CHANGE *********************************
+
+EXPORT MC_ARCHIVE_DEFN;
+EXPORT MC_DATA_TBL;
+EXPORT MC_DEFN;
+EXPORT MC_DEFN_HR;
+EXPORT MC_DEFN_CRIT;
+EXPORT MC_DEFN_CRIT_VL;
+EXPORT MC_DEFN_DEFAULT;
+EXPORT MC_DEFN_DESCR;
+EXPORT MC_DEFN_LANG;
+EXPORT MC_DEFN_PT;
+EXPORT MC_DEFN_SQL;
+EXPORT MC_DEFN_SQL_LN;
+EXPORT MC_DEFN_STMNT;
+EXPORT MC_DTTM_PARMS;
+EXPORT MC_GROUP;
+EXPORT MC_GROUP_LN;
+EXPORT MC_HIST_CRIT;
+EXPORT MC_HIST_CRIT_VL;
+EXPORT MC_HIST_DEFAULT;
+EXPORT MC_HIST_STMNT;
+EXPORT MC_OPRID;
+EXPORT MC_OPR_SECURITY;
+EXPORT MC_PROMPTS;
+EXPORT MC_RUN_CNTL;
+EXPORT MC_TEMPLATE;
+EXPORT MC_TEM_CRITERIA;
+EXPORT MC_TEM_DEFAULTS;
+EXPORT MC_TEM_DESCR;
+EXPORT MC_TEM_LANG;
+EXPORT MC_TEM_STMNT;
+EXPORT MC_TYPE;
+EXPORT MC_TYPE_DESCR;
+EXPORT MC_TYPE_FIELD;
+EXPORT MC_TYPE_JOIN;
+EXPORT MC_TYPE_LANG;
+EXPORT MC_TYPE_RECORD;
+EXPORT MC_TYPE_SQL;
+EXPORT MC_TYPE_STMNT;
+EXPORT MC_TYPE_WHERE;
+
+-- ************************** VERITY BASED INDEXES ***************************
+
+EXPORT PSRGWFLDOPT;
+EXPORT PSRGWIDX;
+EXPORT PSSIDXDEFN;
+EXPORT PSSIDXLANGUAGE;
+EXPORT PS_ARCH_SECURITY;
+EXPORT PSBUSPITEMIMG;
+EXPORT PSDIAGREG;
+EXPORT PSMSFTABLES;
+EXPORT PSNODECONPROP;
+EXPORT PSNODEPROP;
+EXPORT PSRECXL;
+EXPORT PS_SET_CNTRL_TREE;
+
+-- ***************************** SETUP MANAGER *******************************
+
+EXPORT PTLT_ASSGN_FEAT;
+EXPORT PTLT_ASSGN_PRFT;
+EXPORT PTLT_ASSGN_PROD;
+EXPORT PTLT_ASSGN_TASK;
+EXPORT PTLT_BP_SELECT;
+EXPORT PTLT_BUSPRC;
+EXPORT PTLT_BUSPRC_DTL;
+EXPORT PTLT_COMP_NAV;
+EXPORT PTLT_COMP_R_STG;
+EXPORT PTLT_EXCI_LIST;
+EXPORT PTLT_EXCI_RUN;
+EXPORT PTLT_EXCI_STG;
+EXPORT PTLT_FEATURE;
+EXPORT PTLT_FEAT_LANG;
+EXPORT PTLT_FILE_ATT;
+EXPORT PTLT_INSTALL;
+EXPORT PTLT_NAV_STG1;
+EXPORT PTLT_NAV_STG2;
+EXPORT PTLT_PF_SELECT;
+EXPORT PTLT_PORTAL_STG;
+EXPORT PTLT_PORTAL_TMP;
+EXPORT PTLT_PRODUCT;
+EXPORT PTLT_PROD_LANG;
+EXPORT PTLT_PROD_SUITE;
+EXPORT PTLT_PROJ_DEFN;
+EXPORT PTLT_PROJ_RECS;
+EXPORT PTLT_PROJ_RUN;
+EXPORT PTLT_PROJ_TASK;
+EXPORT PTLT_PROJ_UPG;
+EXPORT PTLT_PSUIT_LANG;
+EXPORT PTLT_SEQ_STG;
+EXPORT PTLT_TASK;
+EXPORT PTLT_TASK_LANG;
+EXPORT PTLT_TASK_LOAD;
+EXPORT PTLT_TASK_SEQ;
+EXPORT PTLT_TASK_SEQ_U;
+EXPORT PTLT_TASK_STG;
+EXPORT PTLT_TLOAD_LANG;
+EXPORT PTLT_TSEQ_LANG;
+EXPORT PTLT_VIEW_STG;
+
+-- ******************** OPTIMIZATION MODEL *******************************
+
+EXPORT PSANALYTICREG;
+EXPORT PSOPTMDLSLVR;
+EXPORT PSOPTPTMODEL;
+EXPORT PSOPTSOLVERPARA;
+EXPORT PSOPTSOLVERCODE WHERE PROBTYPE = 'SSO';
+
+-- *************** Integration Broker Message Schema *************************
+
+EXPORT PSIBMSGSCHEMA;
+EXPORT PSIBWSDL;
+
+-- ******************** XML Publisher Report Category ************************
+EXPORT PSXPRPTCAT;
+EXPORT PSXPRPTCATAUTH;
+
+-- *********** EXPORT Enterprise Portal Content Registry Project Definition  ********
+SET LOG MVAPPEXP_PA.LOG;
+SET OUTPUT MVAPPEXP_PA.DAT;
+
+EXPORT PSPROJECTDEFN WHERE PROJECTNAME LIKE 'PORTAL%';
+EXPORT PSPROJECTITEM WHERE PROJECTNAME  LIKE 'PORTAL%';
+
+
+-- *********** EXPORT Customization Project Definition  ********
+SET LOG MVAPPEXP_CUST.LOG;
+SET OUTPUT MVAPPEXP_CUST.DAT;
+
+EXPORT PSPROJECTDEFN WHERE PROJECTNAME = 'UPGCUST';
+EXPORT PSPROJECTITEM WHERE PROJECTNAME  = 'UPGCUST';
