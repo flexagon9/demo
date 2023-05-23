@@ -1,1 +1,1 @@
-XXHR_link_test.pls
+../soa/XXHR_link_test.pls
