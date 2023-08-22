@@ -1,0 +1,12 @@
+<apex:page controller="agf.ADM_Planner_ReleaseVisualizerController" showHeader="false" showChat="false" standardStylesheets="false">
+<apex:stylesheet value="{!$Resource.agf__ADM_Planner_Worklist_CSS}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+<div id="refreshButton" onClick="window.location.href=window.location.href;">
+	<div class="fa fa-refresh"></div>
+</div>
+<div id="release-title">{!teamName}</div>
+<div id="release-info">Avg velocity is <b>{!averageVelocity}</b></div>
+
+<apex:dynamicComponent componentValue="{!SprintsToBeDisplayed}" />
+</apex:page>

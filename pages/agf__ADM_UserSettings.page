@@ -1,0 +1,54 @@
+<apex:page title="Settings" id="userWorkInterfaceSelectionPage" controller="agf.ADM_UserSettingsController" showHeader="false" sidebar="false" standardStylesheets="true">
+<apex:form id="userWorkInterfaceSelectionForm" target="_parent">
+
+<style>
+.profileOverview{margin-top: 25px;}
+.profileSection {margin-bottom: 28px;}
+.vfButtonBar{position: relative;background-color: rgba(0, 0, 0, 0);border-bottom: 1px solid #D7DBDE;line-height: 20px;margin: 0 0 7px;}
+.profileOverview h3{margin:0;}
+.profileSection .panelEmptyContent{color: #7D7D84;}
+.profileSectionBody{line-height: 17px;}
+</style>
+
+<div id="saveInfoBox" style="display:none;background:#E4F1E7;padding:10px;margin-top:15px;border-radius:10px;border:2px #18AC41 solid;color:#18AC41;font-weight:bold;font-size:11px;">Your settings have been saved.</div>
+
+	<div class="profileOverview">
+		<div class="profileSection">
+			<div class="vfButtonBar">
+				<h3>{!$ObjectType.User.fields.agf__Notification_Level__c.Label}</h3>
+			</div>
+			<div class="profileSectionBody">
+				<div class="panelEmptyContent">
+				    <apex:outputLabel value="{!$ObjectType.User.fields.agf__Notification_Level__c.inlineHelpText}" rendered="{!NOT ISBLANK($ObjectType.User.fields.agf__Notification_Level__c.inlineHelpText)}" /><br/>
+					<apex:inputField id="notificationLevel" value="{!User.agf__Notification_Level__c}"/>
+				</div>
+			</div>
+		</div>
+        <!-- Investigation SLAs begin -->
+        <div class="profileSection">
+			<div class="vfButtonBar">
+				<h3>{!$ObjectType.ADM_User_Business_Hours__c.fields.Business_Hours__c.Label}</h3>
+			</div>
+			<div class="profileSectionBody">
+				<div class="panelEmptyContent">
+				    <apex:outputLabel value="{!$ObjectType.agf__ADM_User_Business_Hours__c.fields.agf__Business_Hours__c.inlineHelpText}" rendered="{!NOT ISBLANK($ObjectType.agf__ADM_User_Business_Hours__c.fields.agf__Business_Hours__c.inlineHelpText)}" /><br/>
+					
+                    <apex:inputField id="userBusinessHours" value="{!UserBusinessHours.agf__Business_Hours__c}"/>
+				</div>
+			</div>
+		</div>
+        <!-- Investigation SLAs end -->
+	</div>
+
+<apex:commandButton action="{!save}" value="Save All" styleClass="zen-btn zen-primaryBtn zen-pas" />
+
+</apex:form>
+
+<script>
+if (parent.window.location.toString().indexOf('save=true') > 0) {
+	document.getElementById('saveInfoBox').style.display='block';
+	setTimeout(function() { document.getElementById('saveInfoBox').style.display='none'; }, 4000);
+}
+</script>
+
+</apex:page>

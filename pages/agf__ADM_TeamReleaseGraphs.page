@@ -1,0 +1,13 @@
+<apex:page standardController="agf__ADM_Team_Release__c" extensions="agf.ADM_TeamReleaseExtension">
+
+   <!-- <apex:outputPanel id="debug">
+      <pre>{!reportResultsDebug}</pre>
+   </apex:outputPanel> -->
+
+         
+ <apex:panelGrid columns="3"  width="100%">
+         <analytics:reportChart developerName="{!PackageNameSpace}Release_Burndown" cacheAge="21600000" showRefreshButton="true" size="small" filter="[{column:'CUST_ID',operator:'equals',value:'{!teamReleaseId15}'}]" />  
+         <analytics:reportChart developerName="{!PackageNameSpace}Release_Burnup" cacheAge="21600000" showRefreshButton="true" size="small" filter="[{column:'CUST_ID',operator:'equals',value:'{!teamReleaseId15}'}]" />  
+         <analytics:reportChart developerName="{!PackageNameSpace}Story_Points_Completed_Per_Sprint" cacheAge="21600000" showRefreshButton="true" size="small" filter="[{column:'{!PackageNameSpace}ADM_Work__c.{!PackageNameSpace}Scrum_Team_Name__c',operator:'equals',value:'{!scrumTeamName}'},{column:'{!PackageNameSpace}ADM_Work__c.{!PackageNameSpace}Scheduled_Build_Name__c',operator:'equals',value:'{!buildName}'}]" />
+ </apex:panelGrid> 
+</apex:page>

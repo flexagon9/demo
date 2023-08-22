@@ -1,0 +1,22 @@
+<!--
+
+Tried to set this page to use the ADM_Theme__c as the standard controller but encountered the following error
+with the component
+
+Could not resolve the entity from <apex:inputField> value binding '{!object[field]}'. <apex:inputField> can only be used with SObjects, or objects that are Visualforce field component resolvable. 
+
+-->
+<apex:page id="themeAggregatorPage" controller="agf.ADM_ThemeAggregatorController" showHeader="true" sidebar="false" docType="html-5.0" title="Theme Aggregator">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+<apex:stylesheet value="{!URLFOR($Resource.agf__jquery_ui_1_9_2_redmond, 'css/redmond/jquery-ui-1.9.2.custom.css')}" />  
+<apex:styleSheet value="{!$Resource.agf__ADM_common_css}" />
+<apex:includeScript value="{!$Resource.agf__jquery_1_8_3_min}" />
+<apex:includeScript value="{!URLFOR($Resource.agf__jquery_ui_1_9_2_redmond, 'js/jquery-ui-1.9.2.custom.min.js')}" />
+<apex:includeScript value="{!$Resource.agf__ADM_common_js}" />
+<apex:includeScript value="{!$Resource.agf__productTag_js}" />
+<apex:includeScript value="{!$Resource.agf__ADM_autocomplete2js}" />
+<apex:styleSheet value="{!$Resource.agf__ADM_work_css}" />
+<apex:includeScript value="{!$Resource.agf__ADM_Work_js}" />    
+    <c:ADM_WorkSearchLayout soslHolder="{!soslHolder}" legend="Add Work To Theme: {!theme.name}" reRender="display"/>
+    <c:ADM_ThemeAssignWorkListView id="display" soslString="{!soslHolder.theString}" theme="{!theme}" label="Search Results"/>
+</apex:page>

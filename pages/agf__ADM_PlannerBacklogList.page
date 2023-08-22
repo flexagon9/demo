@@ -1,0 +1,74 @@
+<apex:page controller="agf.ADM_PlannerBacklogListController" showHeader="false" showChat="false" standardStylesheets="false">
+<style>
+*{font-family:'Helvetica','Arial';font-size:11px;line-height:1.5;color:#555;}
+body{margin:0;padding:0;background-color:#F3F6F6;}
+#column1 > a{text-decoration:none;display:block;border-left:3px transparent solid;border-bottom:1px #E5E5E5 solid;padding:10px 20px 10px 10px;font-weight:bold;cursor:pointer;}
+#column1 > a:hover{border-left:3px #4D90F0 solid;background:#F9F9E0;}
+.icon{display:table-cell;vertical-align:middle;width:16px;height:16px;padding-right:10px;background-repeat:no-repeat;background-position-y:4px;}
+.bug{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAIAAABiEdh4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTFERUY5REIwNDRGMTFFMzkwOEFDNThDNDNBREQwMEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTFERUY5REMwNDRGMTFFMzkwOEFDNThDNDNBREQwMEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMURFRjlEOTA0NEYxMUUzOTA4QUM1OEM0M0FERDAwRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMURFRjlEQTA0NEYxMUUzOTA4QUM1OEM0M0FERDAwRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pt0eEtkAAAHQSURBVHjabFJXT8JgFG0R27JRcFRUBIMjilETDRpHjE8mvvhHjYlxRuO7xoFUxEUZDlYBgRJrB95a/Bx48j3ce3rPncVqX1AUJfn0fHJ2UeF5jSmVy8en5y/pNHxCYTrsC9kct7G1wyYSkiSBBp4kyXdRdn1zu1ypoDA9skqfLGSFCL5aBdtiNouiCOlB+Y+gs73N0drC5QuI0RLTHR0GA4VItaVoLP6cSptNprnANNaA5cU5A0Vx+TwbT9QrBJmrQvG139PXYrd5+9w6HMfgYRiMiNUwyBVkwqlMBsdxj7sXB1ZWlMjtHcyXzeaAslmtsiKrIh1efC2xsbjT6fB5Pb5+L5RSBVrpePJxc3dfs6Fp2KQgCJq7trriounvGTTkOA7ZE37/yNDgj+n5X1uKJZI39w9wNcR+rqWGXDhfoVgcHvDZbTa1wkWIgWOBjyIUFd+CHlfX00tqa++gXmF+JmAyGoX3d+Y6Apf6s1aKJKcmxyGB1phaAe5FUeQDyzZGA94EAfZhtVhcdGddAGs9C16GwpFx/yhBNP+MJklyYswPMzDhiLZPtSVJFCt8dWE20NvTDWl2D49kgCITBLGyvETT8NM405ksUHp904cAAwDDLhJXlRaMmAAAAABJRU5ErkJggg==);}
+.userstory{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAIAAABiEdh4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTFERUY5REYwNDRGMTFFMzkwOEFDNThDNDNBREQwMEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTFERUY5RTAwNDRGMTFFMzkwOEFDNThDNDNBREQwMEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMURFRjlERDA0NEYxMUUzOTA4QUM1OEM0M0FERDAwRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMURFRjlERTA0NEYxMUUzOTA4QUM1OEM0M0FERDAwRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiwBpAUAAAEKSURBVHjaYvz//z8DKYBx1sIlQIqLg4OHh1taUlJBTlZEWAgu/frt2wePHj97/uLLl6/ffvwAaZg8ay6aGUKCAuYmRkDGyTPn3r3/gG4DRENSdOSXr19fvHr14PGTx0+eQtzJyMgoJyMNtFNcVJSHm3ve0uVAQRaIPi4uTiASExXR09YC6lywbCVQMD4yDKgOzQYmTG/BFWGqxq4BPxgOGqDBCgxHQQF+YBzLSknJykhDBIGx8ejJ08dPn7159+7Dh48oEYcWrMCoQGagxPQPcAr5/uMHMLU8ffECmHJev3kLlxYVEQbGtLSEBDClcXJwgDRgptb3Hz6eOHOWkYHB3MQY6E40WYAAAwDm4mpkCDhLOgAAAABJRU5ErkJggg==);}
+.title{display:table-cell;vertical-align:middle;}
+table.list{width:100%;}
+div.fewerMore{display:none;}
+span.bFilter label{display:none;}
+span.bFilter span.fFooter{display:block;text-align:center;background:#ccc;padding:5px;}
+span.bFilter span.fFooter a{text-decoration:none;}
+span.bFilter span.fFooter a:hover{text-decoration:underline;}
+span.bFilter select{-webkit-appearance:none;border:0;padding:10px;width:100%;background:transparent;font-size:14px;font-weight:bold;outline:0;}
+div.bNext{display:none;}    
+div.pbHeader{display:none;}
+tr.headerRow{display:none;}
+td.actionColumn{display:none;}
+tr.dataRow th{display:none;}
+/*tr.dataRow td.dataCell{display:none;}*/
+tr.dataRow td{display:table-cell;font-size:13px;}
+tr.dataRow td{border-bottom:1px #E5E5E5 solid;font-weight:normal;cursor:pointer;}
+tr.dataRow td a{display:block;/*border-left:3px transparent solid;*/padding:10px 20px 10px 10px;text-decoration:none;}
+tr.dataRow td a:hover{/*border-left:3px #4D90F0 solid;*/background:#F9F9E0;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<div class="bPageBlock brandSecondaryBrd secondaryPalette">
+    <div class="pbBody">
+        <table class="list" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <apex:repeat value="{!getBacklogItems}" var="backlogItem">
+                    <tr class="dataRow even first"
+                        onblur="if (window.hiOff){hiOff(this);}"
+                        onfocus="if (window.hiOn){hiOn(this);}"
+                        onmouseout="if (window.hiOff){hiOff(this);"
+                        onmouseover="if (window.hiOn){hiOn(this);">
+                        <td class="dataCell">
+                            <a href="/{!backlogItem.Id}">{!backlogItem.Subject__c}</a>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <apex:ListViews type="ADM_Work__c" /> -->
+<script>
+$(function() {
+    $('tr.dataRow > td').each(function() {
+    	var dataRow = $(this);
+    	var secondFrame = $('.column2', window.parent.document);
+        //var workURL = dataRow.closest('tr').find('th > a').attr('href'); //+ '?planner=1';
+        var workURL = dataRow.find(' > a').attr('href'); //+ '?planner=1';
+    	//dataRow.wrapInner('<a href="' + workURL + '"></a>');
+
+        if( $('.column2 > iframe', window.parent.document).length > 0 ) {
+			dataRow.find(' > a').bind('click', function(e) {
+	    		e.preventDefault();
+                secondFrame.find('iframe').attr('src',workURL).hide();
+			    secondFrame.find('div.loader').show();
+			    secondFrame.find('div.notice').hide();
+			});
+        }
+    });
+    
+	$('span.fFooter a').attr('target','_parent');
+});
+</script>
+</apex:page>

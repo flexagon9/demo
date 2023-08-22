@@ -1,0 +1,136 @@
+<apex:page id="userStoryDetailPage" standardController="agf__ADM_Work__c" extensions="agf.ADM_UserStoryExtension,agf.ADM_WorkRemoteActionsExtension" showHeader="true" sidebar="true" docType="html-5.0" title="{!title}">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+<apex:stylesheet value="{!URLFOR($Resource.agf__SLDS091, '/assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<apex:stylesheet value="{!URLFOR($Resource.agf__jquery_ui_1_9_2_redmond, 'css/redmond/jquery-ui-1.9.2.custom.css')}" />
+<apex:styleSheet value="{!$Resource.agf__ADM_common_css}" />
+<apex:styleSheet value="{!$Resource.agf__ADM_work_css}" />
+<apex:includeScript value="{!$Resource.agf__jquery_1_8_3_min}" />
+<apex:includeScript value="{!URLFOR($Resource.agf__jquery_ui_1_9_2_redmond, 'js/jquery-ui-1.9.2.custom.min.js')}" />
+<apex:includeScript value="{!$Resource.agf__ADM_common_js}" />
+<apex:includeScript value="{!$Resource.agf__ADM_autocomplete2js}" />
+<apex:includeScript value="{!$Resource.agf__ADM_Work_js}" />
+<div class="bPageTitle">
+    <div class="ptBody">
+        <div class="content">
+            <img src="{!URLFOR($Resource.storyicon)}" alt="Work" class="pageTitleIcon" title="Work" />
+            <h1 class="pageType"><a href="/{!$ObjectType.ADM_Work__c.keyPrefix}">All Work</a> &gt;</h1>
+            <h2 class="pageDescription">{!agf__ADM_Work__c.Name}</h2>
+            <div class="blank">&nbsp;</div>
+        </div>
+    </div>
+    <div class="ptBreadcrumb"></div>
+</div>
+
+<apex:form id="userStoryWorkForm" html-autocomplete="off">
+<!--Please don't remove:- Added the below field with rendering = false to make sure VF engine will default query the field or else in package we get the Field used without querying error -->
+    <apex:outputText value="{!agf__ADM_Work__c.Name}" rendered="false" />
+    <apex:messages globalOnly="true" styleClass="message gusFormMessage"/>
+    <div class="gusFieldset gusDetailView">
+
+        <div class="gusLegend">{!agf__ADM_Work__c.RecordType.Name}<a href="/setup/ui/recordtypeselect.jsp?id={!LEFT(agf__ADM_Work__c.Id,15)}&retURL=%2Fapex%2F{!nameSpace}ADM_UserStoryDetail%3Fid%3D{!agf__ADM_Work__c.Id}" title="Change Record Type">change</a></div>
+
+
+        <div class="gusFormToolbar gusFormToolbarTop">
+            <apex:commandButton id="editButtonTop" action="{!edit}" value="Edit" rendered="{!$ObjectType.agf__ADM_Work__c.updateable}" html-onTouchStart="this.className='active';" />
+            <apex:commandButton id="cloneButtonTop" action="{!doClone}" value="Clone" rendered="{!$ObjectType.agf__ADM_Work__c.createable}" html-onTouchStart="this.className='active';" />
+            <div class="gusNoPhoneInline"><apex:commandButton id="deepCloneButtonTop" action="{!URLFOR($Action.ADM_Work__c.Deep_Clone, ADM_Work__c.Id)}" value="Deep Clone" rendered="{!$ObjectType.agf__ADM_Work__c.createable}" html-onTouchStart="this.className='active';" /></div>
+            <div class="gusPhoneOnlyInline"><input type="button" value="Feed" onTouchStart="this.className='active';" onClick="sforce.one.navigateToFeed('{!agf__ADM_Work__c.Id}', 'RECORD')" /></div>
+            <apex:commandButton id="inlineEditSaveButtonTop" styleClass="inlineEditSaveButton" action="{!save}" style="display:none;" value="Save" html-onTouchStart="this.className='active';" />
+            <apex:commandButton id="inlineEditCancelButtonTop" styleClass="inlineEditCancelButton" action="{!cancel}" style="display:none;" value="Cancel" html-onTouchStart="this.className='active';" />
+        </div>
+
+        <div class="gusForm" id="mainTop">
+            <div class="gusForm1Column">
+                <div id="gusSubject"><c:ADM_Input id="subjectInput" object="{!agf__ADM_Work__c}" inputFieldName="Subject__c" inputObjectName="ADM_Work__c" required="true" renderRow="false" readonly="true" inlineEdit="true" inputStyleClass="gusStyle" /></div>
+                <div id="chatter-follow"><chatter:follow entityId="{!agf__ADM_Work__c.Id}" /></div>
+                <div id="gusDstrContainer">
+                    <div id="gusDstrLabel">Description</div>
+                    <c:ADM_Input id="detailsInput" object="{!agf__ADM_Work__c}" inputFieldName="Details__c" inputObjectName="ADM_Work__c" required="true" renderRow="false" readonly="true" inlineEdit="true" inputStyleClass="gusStyle" />
+                </div>
+            </div>
+        </div>
+
+        <div class="gusForm" id="productTagRow">
+            <div class="gusForm1Column">
+                <div class="gusFormRow">
+                    <div class="gusFormField gusFormFieldLeft"><label><apex:outputText value="{!$ObjectType.agf__ADM_Work__c.fields.agf__Product_Tag__c.Label}" /></label></div>
+                    <div class="gusFormField gusFormFieldRight">
+                        <div id="productTagHolder">
+                            <div id="productTagLeft"><apex:outputField value="{!agf__ADM_Work__c.agf__Scrum_Team__c}" /></div>
+                            <div id="productTagRight"><apex:outputField value="{!agf__ADM_Work__c.agf__Product_Tag__c}" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gusForm" id="userStoryDetails">
+            <div id="userStoryDetailsColumn1" class="gusForm3Column">
+                <c:ADM_Input id="statusInput" object="{!agf__ADM_Work__c}" inputFieldName="Status__c" inputObjectName="ADM_Work__c" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="statusInput gusStyle" />
+                <c:ADM_Input id="sprintInput" object="{!agf__ADM_Work__c}" inputFieldName="Sprint__c" inputObjectName="ADM_Work__c" lookupObject="ADM_Sprint__c" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="sprintInput gusStyle" />
+                <c:ADM_Input id="scheduledBuildInput" object="{!agf__ADM_Work__c}" inputFieldName="Scheduled_Build__c" inputObjectName="ADM_Work__c" lookupObject="ADM_Build__c" required="true" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="scheduledBuildInput gusStyle" />
+                <c:ADM_Input id="storyPointsInput" object="{!agf__ADM_Work__c}" inputFieldName="Story_Points__c" inputObjectName="ADM_Work__c" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="storyPointsInput gusStyle" />
+            </div>
+            <div id="userStoryDetailsColumn2" class="gusForm3Column">
+                <c:ADM_Input id="assigneeInput" object="{!agf__ADM_Work__c}" inputFieldName="Assignee__c" inputObjectName="ADM_Work__c" lookupObject="User" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="assigneeInput gusStyle" />
+                <c:ADM_Input id="qaEngineerInput" object="{!agf__ADM_Work__c}" inputFieldName="QA_Engineer__c" inputObjectName="ADM_Work__c" lookupObject="User" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="qaEngineerInput gusStyle" />
+                <c:ADM_Input id="productOwnerInput" object="{!agf__ADM_Work__c}" inputFieldName="Product_Owner__c" inputObjectName="ADM_Work__c" lookupObject="User" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="productOwnerInput gusStyle" />
+                <c:ADM_Input id="techWriterInput" object="{!agf__ADM_Work__c}" inputFieldName="Tech_Writer__c" inputObjectName="ADM_Work__c" lookupObject="User" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="techWriterInput gusStyle" />
+            </div>
+            <div id="userStoryDetailsColumn3" class="gusForm3Column">
+                <c:ADM_Input id="rootCauseAnalysisInput" object="{!agf__ADM_Work__c}" inputFieldName="Root_Cause_Analysis_2__c" inputObjectName="ADM_Work__c" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="rootCauseAnalysisInput gusStyle" />
+                <c:ADM_Input id="perforceStatusInput" object="{!agf__ADM_Work__c}" inputFieldName="Perforce_Status__c" inputObjectName="ADM_Work__c" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="perforceStatusInput gusStyle" />
+                <apex:outputPanel layout="none" rendered="{!teamCapexEligibility}" id="capexPanel">
+                    <c:ADM_Input id="capexEnabledInput" object="{!agf__ADM_Work__c}" inputFieldName="Capex_Enabled__c" inputObjectName="ADM_Work__c" renderRow="true" readonly="true" inlineEdit="true" inputStyleClass="capexEnabledInput gusStyle" />
+                </apex:outputPanel>
+            </div>
+        </div>
+
+
+
+        <apex:outputPanel id="refreshPanelId">
+            <apex:outputPanel rendered="{!additionalFieldsForUserStory.size != 0}" id="myId">
+                <div class="gusForm">
+                    <div class="gusForm3Column" style="width:100%!important;display:flex;flex-wrap:wrap">
+                        <apex:repeat var="af" value="{!additionalFieldsForUserStory}">
+                            <div style="width:33%;" >
+                                <c:ADM_Input id="myId" object="{!agf__ADM_Work__c}" inputFieldName="{!af.agf__Field_API_Name__c}" inputObjectName="ADM_Work__c" readonly="true" inlineEdit="true" renderRow="true" inputStyleClass="scheduledBuildInput gusStyle" />
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </div>
+            </apex:outputPanel>
+        </apex:outputPanel>
+
+        <c:ADM_WorkHiddenPanel workObject="{!agf__ADM_Work__c}" workPanelViewPreference="{!workPanelViewPreference}" packagedOrg="{!packagedOrg}" readonly="true" />
+
+    </div>
+    <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK($CurrentPage.parameters.fromEmail))}">
+        <script>
+            if('{!JSINHTMLENCODE($CurrentPage.parameters.fromEmail)}' == '1'){
+                selectTab('chatter', 'work-{!agf__ADM_Work__c.Id}');
+                if (this.$) {
+                    $(document).ready(function() {
+                        $('#tab-chatter').get(0).scrollIntoView();
+                    });
+                }
+            }
+        </script>
+    </apex:outputPanel>
+
+    <script>
+        // This looks for inline edit changes; If found it shows the proper buttons for submitting the form
+        $(function() {
+            setTimeout(function() {
+                if($('.inlineEditModified').is(":visible")) {
+                    $('.gusFormToolbar input').hide();
+                    $('.inlineEditSaveButton,.inlineEditCancelButton').show();
+                }
+            }, 100);
+        });
+    </script>
+</apex:form>
+
+<apex:include id="workTabPanelInclude" pageName="agf__ADM_WorkTabPanel" />
+
+</apex:page>

@@ -1,0 +1,151 @@
+<apex:page showHeader="false" showChat="false" standardStylesheets="false" id="workListPage">
+<apex:stylesheet value="{!$Resource.agf__ADM_Planner_Worklist_CSS}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+
+<div id="refreshButton" onClick="window.location.href=window.location.href;">
+	<div class="fa fa-refresh"></div>
+</div>
+
+<div id="worklistPageHolder" class="pageHolder">
+<apex:ListViews id="workListView" type="agf__ADM_Work__c" />
+</div>
+
+<script>var urlTeamId = '', urlListviewId = '';</script>
+<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK($CurrentPage.parameters.teamid))}">
+<script>urlTeamId += 'teamid={!JSENCODE($CurrentPage.parameters.teamid)}&';</script>
+</apex:outputPanel>
+<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK($CurrentPage.parameters.workListPage:workListView:fcf))}">
+<script>urlListviewId += 'workListPage%3AworkListView%3Afcf={!JSENCODE($CurrentPage.parameters.workListPage:workListView:fcf)}';</script>
+</apex:outputPanel>
+<script>
+function listViewChange(el) {
+	if ($(el).val() === '0') {
+		if (self !== top) {
+			window.parent.changeHistory(urlTeamId);
+		}
+		location.href='/apex/ADM_Planner_BacklogList?' + urlTeamId;
+	} else {
+		urlListviewId = 'workListPage%3AworkListView%3Afcf=' + $(el).val();
+		if (self !== top) {
+			window.parent.changeHistory(urlTeamId + urlListviewId);
+		}
+		location.href='/apex/ADM_Planner_WorkList?workListPage%3AworkListView%3Arowsperpage=200&' + urlTeamId + urlListviewId;
+		return false;
+	}
+}
+</script>
+
+<script>if (self == top) {location.href='/apex/ADM_Planner?' + urlTeamId + urlListviewId;}</script>
+
+<script>
+$(function() {
+	var subjectIndex, workIdIndex, recordTypeIndex, dropdownValues;
+	var columnLabels = [], columnLinks = [];
+	var sortColumn = qs('lsi');
+	
+    $('tr.headerRow > th').each(function(index) {
+		//console.log('[' + index + '] Cycling thru: ' + $(this).find('a').text());
+		if ($(this).find('a').text().length > 0) {
+			columnLabels.push($(this).find('a').text());
+			columnLinks.push($(this).find('a').attr('href'));
+			if ($(this).find('a').text() == 'Subject') { subjectIndex = index; }
+			if ($(this).find('a').text() == 'Work ID') { workIdIndex = index; }
+			if ($(this).find('a').text() == 'Record Type') { recordTypeIndex = index; }
+		}
+	});
+	
+	for (i=0;i<columnLabels.length;i++){
+	   dropdownValues += '<option value="'+ columnLinks[i] + '" ';
+	   if (sortColumn == i+1 || sortColumn == -(i+1)) { dropdownValues += ' selected'; }
+	   dropdownValues += '>' + columnLabels[i] + '</option>';
+	}
+	
+	var dscLink = encodeURIComponent(window.location.href).replace('lsi=','lsi=-');
+	var ascLink = encodeURIComponent(window.location.href).replace('lsi=-','lsi=');
+	var sortDropdown = '<select id="sortOrderDropdown" onchange="location.href=$(this).val();"><option value="' + ascLink + '"';
+	if (encodeURIComponent(window.location.href).indexOf("=-") == -1) { sortDropdown += ' selected'; }
+	sortDropdown += '>Asending</option><option value="' + dscLink + '"'
+	if (encodeURIComponent(window.location.href).indexOf("=-") > 0) { sortDropdown += ' selected'; }
+	sortDropdown += '>Decending</option></select>';
+	
+	$('span.fBody select').attr('onchange','listViewChange(this)');
+
+	<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK($CurrentPage.parameters.teamid))}">
+	$('span.fBody select').prepend('<option value="0">Team Backlog</option>');
+	</apex:outputPanel>
+	
+	$('span.fBody').append('<br/><select onchange="if ($(this).val().length > 0) {location.href=$(this).val()} else {$(\'#sortOrderDropdown\').hide();};"><option value="">Sort:</option>' + dropdownValues + '</select>');
+	if (typeof(sortColumn) !== 'undefined') {
+		$('span.fBody').append(sortDropdown);
+	}
+	
+	if (typeof(subjectIndex) !== 'undefined' && typeof(workIdIndex) !== 'undefined') {
+		//------------------------------------------------------------------------------------------------------//
+		// we have subject and work id, let's do this!
+		//------------------------------------------------------------------------------------------------------//
+		var firstFrame = $('.column1', window.parent.document);
+    	var secondFrame = $('.column2', window.parent.document);
+    	var thirdFrame = $('.column3', window.parent.document);
+
+	    $('table.list tr').each(function() {
+	    	var dataRow = $(this);
+	    	var workUrl = dataRow.find(' > *:nth-child(' + (workIdIndex+1) + ') > a').attr('href');
+	    	var longId = dataRow.find(' > *:nth-child(' + (workIdIndex+1) + ') > a').attr('href').slice(dataRow.find(' > *:nth-child(' + (workIdIndex+1) + ') > a').attr('href').lastIndexOf("/")+1);
+
+			dataRow.attr('id',longId);
+		    dataRow.find(' > *').each(function(index) {
+		    	var dataCell = $(this);
+				dataCell.wrapInner('<div class="text"></div>');
+		    	if (index == subjectIndex) {
+			    	if (typeof(recordTypeIndex) !== 'undefined') {
+						var recordType = dataRow.find(' > *:nth-child(' + (recordTypeIndex+1) + ')').text();
+						if (recordType == 'Bug') { dataCell.prepend('<div class="fa fa-bug"></div>'); }
+						if (recordType == 'User Story') { dataCell.prepend('<div class="fa fa-book"></div>'); }
+					}
+					var workLink = '<a href="' + workUrl + '"></a>';
+					
+					dataCell.wrapInner(workLink).css('display','table-cell');
+					
+					if(secondFrame.length > 0 && $('.column2 > iframe', window.parent.document).attr('src').indexOf(longId) > 0) {
+						dataRow.addClass('selected');
+					}
+		    	}
+			});
+			
+	        if(secondFrame.length > 0) {
+				dataRow.find('a').bind('click', function(e) {
+		    		e.preventDefault();
+	                secondFrame.find('iframe').attr('src',workUrl).hide();
+				    secondFrame.find('div.loader').show();
+				    secondFrame.find('div.notice').hide();
+					$('tr').removeClass('selected');
+				    dataRow.addClass('selected');
+				    window.parent.location.hash='#' + dataRow.attr('id');
+					$('html,body').animate({ scrollTop: $(dataRow).offset().top}, 500);
+				});
+			} else {
+				dataRow.find('a').attr('target','_blank');
+			}
+	    });
+	} else {
+		var editLink = $('span.fFooter a:first-child').attr('href');
+		$('table.list').hide().after('<div style="padding:12px;"><b>Error loading work records:</b><br/>Cannot display list without &quot;Subject&quot; and &quot;Work ID&quot; fields selected on &quot;Step 3. Select Fields to Display&quot; when <a href="' + editLink + '" target="_parent">editing this list view</a>. Please add those fields and try again.</div>');
+	}
+
+	$('span.fFooter a').attr('target','_parent');
+});
+
+function qs(key) {
+    var vars = [], hash;
+    var hashes = encodeURIComponent(window.location.href).slice(window.location.href.indexOf('?') + 1).split(':');
+    for(var i = 0; i < hashes.length; i++) {
+		hash = hashes[i].split('=');
+		vars.push(hash[0]);
+		vars[hash[0]] = hash[1];
+    }
+    return vars[key];
+}
+</script>
+
+</apex:page>
