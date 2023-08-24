@@ -5,19 +5,19 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__Sales</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>standard__Service</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__Marketing</name>
+        <name>standard__Sales</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
         <name>standard__ServiceConsole</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>standard__Marketing</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
@@ -45,6 +45,10 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>DreamHouse</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>Trailblazer</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -57,6 +61,18 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>DEVHUB_96tsrnrbxisqiayajsdw</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>API</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>CLI</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>standard__AllTabSet</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -65,19 +81,43 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>FD</name>
+        <name>Dataloader_Bulk</name>
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>demoflexagon08</name>
-        <type>Network</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>DependencyIntegrationTest</name>
+        <name>Dataloader_Partner</name>
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>CustomerService Portal</name>
-        <type>Network</type>
+        <name>Forcecom_IDE</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Forcecom_Migration_Tool</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Salesforce_Mobile_Dashboards</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Salesforce_Touch</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Salesforce_for_Outlook</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Workbench</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>agf__Agile_Accelerator</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>agf__Agile_Accelerator_LEX</name>
+        <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>
