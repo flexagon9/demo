@@ -54,18 +54,21 @@ def wait_for_title(driver):
 
 
 def getPassword(waiter, index, level):
+    print(f"{' ' * (5 * level)}Waiting for environment card")
     waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'oj-sp-profile-card')))
 
+    print(f"{' ' * (5 * level)}Clicking on environment card")
     environment_card = waiter._driver.find_elements(By.TAG_NAME, 'oj-sp-profile-card')[index]
     environment_card.click()
 
-    resources_table = waiter.until(expected_conditions.visibility_of_element_located((
-                    By.XPATH, "//*[@id=\"resources-table\"]/div[1]/table")))
-
+    print(f"{' ' * (5 * level)}Waiting for resources table")
+    resources_table = waiter.until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"resources-table\"]/div[1]/table")))
+    
     # Assuming fusion row is the 2nd row in the resources table
-    fusion_row = resources_table.find_elements(By.TAG_NAME, 'tr')[2]
-    fusion_row.click()
+    print(f"{' ' * (5 * level)}Waiting to see rows within resources table")
+    waiter.until(expected_conditions.visibility_of_element_located((By.TAG_NAME, 'tr')))
+    resources_table.find_elements(By.TAG_NAME, 'tr')[2].click()
 
     headerElement = waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'h1')))
@@ -75,7 +78,7 @@ def getPassword(waiter, index, level):
                     By.ID, "credentials-table:48_2")))
     password = passwordElement.text
 
-    print(f"{' ' * (4 * level)}Found {header} password")
+    print(f"{' ' * (5 * level)}Found {header} password")
     return password
 
 
