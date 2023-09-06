@@ -67,7 +67,7 @@ def getPassword(waiter, index, level):
     
     # Assuming fusion row is the 2nd row in the resources table
     print(f"{' ' * (5 * level)}Waiting to see rows within resources table")
-    waiter.until(expected_conditions.visibility_of_element_located((By.TAG_NAME, 'tr')))
+    waiter.until(expected_conditions.visibility_of_element_located(resources_table.find_element(By.TAG_NAME, 'tr')))
     resources_table.find_elements(By.TAG_NAME, 'tr')[2].click()
 
     headerElement = waiter.until(expected_conditions.visibility_of_element_located((
