@@ -149,6 +149,8 @@ def update_saas_instance_passwords(level=0):
     """
     global FD_ENVIRONMENT
     
+    print(f"Starting update of SaaS instance passwords for {FD_ENVIRONMENT['BASE_URL']}")
+    
     validate(level)
 
     selenium_options = Options()
