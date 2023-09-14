@@ -215,8 +215,8 @@ def update_saas_instance_passwords(level=0):
                     dev_9_pass = password
                     
                 navigateDeploymentsTab(waiter, level=level+1)
-                str_password = password.decode()
-                fh.write(name + " Password=" + str_password + "\n")
+                line = "%s Password=%s\n" % (name, password)
+                fh.write(line)
     finally:
         if driver is not None:
             driver.close()
