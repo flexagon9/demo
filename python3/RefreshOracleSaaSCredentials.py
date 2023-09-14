@@ -19,7 +19,11 @@ from stat import *
 FD_ENVIRONMENT = {
                     'BASE_URL': "${{FD_URL}}",
                     'DEV9_CREDENTIAL_ID': "${{FD_DEV9_CREDENTIAL_ID}}",
-                    'DEV11_CREDENTIAL_ID': "${{FD_DEV11_CREDENTIAL_ID}}"
+                    'DEV11_CREDENTIAL_ID': "${{FD_DEV11_CREDENTIAL_ID}}",
+                    'EPM_25349_CREDENTIAL_ID': "${{EPM_25349_CREDENTIAL_ID}}",
+                    'EPM_25952_CREDENTIAL_ID': "${{EPM_25952_CREDENTIAL_ID}}",
+                    'EPM_26207_CREDENTIAL_ID': "${{EPM_26207_CREDENTIAL_ID}}",
+                    'EPM_26247_CREDENTIAL_ID': "${{EPM_26247_CREDENTIAL_ID}}",
                  }
 
 def validate(level):
@@ -52,43 +56,44 @@ def wait_for_title(driver):
             return
     raise Exception("No title found after 60 seconds - failed to log in")
 
-
-def getPassword(waiter, index, level):
-    print(f"{' ' * (5 * level)}Waiting for environment card")
+def getDeployments(waiter, level):
+    print(f"{' ' * (5 * level)}Waiting for environment cards")
     waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'oj-sp-profile-card')))
+                   
+    environment_cards = waiter._driver.find_elements(By.TAG_NAME, 'oj-sp-profile-card')
+    return environment_cards
 
-    print(f"{' ' * (5 * level)}Clicking on environment card")
+def getPassword(waiter, index, level):
+    print(f"{' ' * (5 * level)}Clicking on environment card iteration {index}")
     environment_card = waiter._driver.find_elements(By.TAG_NAME, 'oj-sp-profile-card')[index]
     environment_card.click()
 
     print(f"{' ' * (5 * level)}Waiting for resources table")
     resources_table = waiter.until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"resources-table\"]/div[1]/table")))
     
-    # Assuming fusion row is the 2nd row in the resources table
     print(f"{' ' * (5 * level)}Waiting to see rows within resources table")
     time.sleep(3)
-    fusion_row = resources_table.find_elements(By.TAG_NAME, 'tr')[2]
-    fusion_row.click()
-
+    
     headerElement = waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'h1')))
     header = headerElement.text
+    
+    resources_row_index = 1
+    if 'dev9' in header or 'dev11' in header:
+        # Assuming fusion row is the 2nd row in the resources table
+        # else use row 1
+        resources_row_index = 2
+    
+    resources_row = resources_table.find_elements(By.TAG_NAME, 'tr')[resources_row_index]
+    resources_row.click()
 
     passwordElement = waiter.until(expected_conditions.visibility_of_element_located((
                     By.ID, "credentials-table:48_2")))
     password = passwordElement.text
 
     print(f"{' ' * (5 * level)}Found {header} password")
-    return password
-
-
-def getDev11Password(waiter, level):
-    return getPassword(waiter, 0, level)
-
-
-def getDev9Password(waiter, level):
-    return getPassword(waiter, 1, level)
+    return header, password
 
 
 def navigateDeploymentsTab(waiter, level):
@@ -173,29 +178,66 @@ def update_saas_instance_passwords(level=0):
         waiter.until(expected_conditions.visibility_of_element_located((By.ID, "P502_ACCEPT"))).click()
 
     navigateDeploymentsTab(waiter, level=level+1)
-
-    dev_11_pass = getDev11Password(waiter, level=level+1)
-
-    navigateDeploymentsTab(waiter, level=level+1)
-
-    dev_9_pass = getDev9Password(waiter, level=level+1)
-    driver.close()
     
+    # Demo Deployments tab will contain n number of instances i.e. EPM and Fusion
+    deployment_cards = getDeployments(waiter, level=level+1)
+    num_deployments = len(deployment_cards)
+    print(f"Found {num_deployments} demo deployments")
+    
+    epm_25349_pass = None
+    epm_25952_pass = None
+    epm_26207_pass = None
+    epm_26247_pass = None
+    dev_11_pass = None
+    dev_9_pass = None
+    
+    # Iterate all the deployments under this tab and retrieve name and password for each from the screen
     # Write the password as a text file
+    
     os.chdir('../reports')
     reports_dir = os.path.abspath(os.curdir)
     with open(f"{reports_dir}/password.txt", 'wb') as fh:
-        encoded_dev_9 = str.encode(dev_9_pass)
-        encoded_dev_11 = str.encode(dev_11_pass)
-        fh.write(b'DEV_9 Password=' + encoded_dev_9 + b'\n')
-        fh.write(b'DEV_11 Password=' + encoded_dev_11 + b'\n')
+        for i in range(num_deployments):
+            name, password = getPassword(waiter, i, level)
+            if 'epm-25349' in name:
+                epm_25349_pass = password
+            elif 'epm-25952' in name:
+                epm_25952_pass = password     
+            elif 'epm-26207' in name:
+                epm_26207_pass = password
+            elif 'epm-26247' in name:
+                epm_26247_pass = password
+            elif 'dev11' in name:
+                dev_11_pass = password
+            elif 'dev9' in name:
+                dev_9_pass = password
+                
+            navigateDeploymentsTab(waiter, level=level+1)
+            encoded_password = str.encode(password)
+            fh.write(name + b' Password=' + encoded_password + b'\n')
+
+    
+    driver.close()
+        
 
     print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
     dev9CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'], level=level+1)
-    dev11CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'], level=level+1)
     updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], dev_9_pass, dev9CredInputDefId, FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'])
+
+    dev11CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'], level=level+1)
     updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], dev_11_pass, dev11CredInputDefId, FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'])
     
+    epm25349CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID'], level=level+1)
+    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_25349_pass, epm25349CredInputDefId, FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID'])
+    
+    epm25952CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID'], level=level+1)
+    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_25952_pass, epm25952CredInputDefId, FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID'])
+
+    epm26207CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID'], level=level+1)
+    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_26207_pass, epm26207CredInputDefId, FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID'])
+
+    epm26247CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID'], level=level+1)
+    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_26247_pass, epm26247CredInputDefId, FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID'])    
 
 if __name__ == '__main__':
     update_saas_instance_passwords()
