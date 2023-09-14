@@ -158,66 +158,69 @@ def update_saas_instance_passwords(level=0):
 
     print('Starting headless chromedriver...')
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=selenium_options)
-    print('Opening https://demo.oraclecloud.com/...')
-    driver.get('https://demo.oraclecloud.com/')
-    waiter = WebDriverWait(driver, 20)
-
-    print('Looking for login form...')
-    username_input = waiter.until(expected_conditions.visibility_of_element_located((By.ID, "sso_username")))
-    password_input = waiter.until(expected_conditions.visibility_of_element_located((By.ID, "ssopassword")))
-    signin_button = waiter.until(expected_conditions.visibility_of_element_located((By.ID, "signin_button")))
-
-    print("Typing email ${{ORACLE_CLOUD_EMAIL}} and password into form...")
-    username_input.send_keys("${{ORACLE_CLOUD_EMAIL}}")
-    password_input.send_keys("${{ORACLE_CLOUD_PASSWORD}}")
-    signin_button.click()
-
-    wait_for_title(driver)
-    if 'Terms of Service' in driver.title:
-        # Click Accept Button
-        waiter.until(expected_conditions.visibility_of_element_located((By.ID, "P502_ACCEPT"))).click()
-
-    navigateDeploymentsTab(waiter, level=level+1)
     
-    # Demo Deployments tab will contain n number of instances i.e. EPM and Fusion
-    deployment_cards = getDeployments(waiter, level=level+1)
-    num_deployments = len(deployment_cards)
-    print(f"Found {num_deployments} demo deployments")
-    
-    epm_25349_pass = None
-    epm_25952_pass = None
-    epm_26207_pass = None
-    epm_26247_pass = None
-    dev_11_pass = None
-    dev_9_pass = None
-    
-    # Iterate all the deployments under this tab and retrieve name and password for each from the screen
-    # Write the password as a text file
-    
-    os.chdir('../reports')
-    reports_dir = os.path.abspath(os.curdir)
-    with open(f"{reports_dir}/password.txt", 'wb') as fh:
-        for i in range(num_deployments):
-            name, password = getPassword(waiter, i, level)
-            if 'epm-25349' in name:
-                epm_25349_pass = password
-            elif 'epm-25952' in name:
-                epm_25952_pass = password     
-            elif 'epm-26207' in name:
-                epm_26207_pass = password
-            elif 'epm-26247' in name:
-                epm_26247_pass = password
-            elif 'dev11' in name:
-                dev_11_pass = password
-            elif 'dev9' in name:
-                dev_9_pass = password
-                
-            navigateDeploymentsTab(waiter, level=level+1)
-            encoded_password = str.encode(password)
-            fh.write(name + " Password=" + encoded_password + "\n")
+    try:
+        print('Opening https://demo.oraclecloud.com/...')
+        driver.get('https://demo.oraclecloud.com/')
+        waiter = WebDriverWait(driver, 20)
 
-    
-    driver.close()
+        print('Looking for login form...')
+        username_input = waiter.until(expected_conditions.visibility_of_element_located((By.ID, "sso_username")))
+        password_input = waiter.until(expected_conditions.visibility_of_element_located((By.ID, "ssopassword")))
+        signin_button = waiter.until(expected_conditions.visibility_of_element_located((By.ID, "signin_button")))
+
+        print("Typing email ${{ORACLE_CLOUD_EMAIL}} and password into form...")
+        username_input.send_keys("${{ORACLE_CLOUD_EMAIL}}")
+        password_input.send_keys("${{ORACLE_CLOUD_PASSWORD}}")
+        signin_button.click()
+
+        wait_for_title(driver)
+        if 'Terms of Service' in driver.title:
+            # Click Accept Button
+            waiter.until(expected_conditions.visibility_of_element_located((By.ID, "P502_ACCEPT"))).click()
+
+        navigateDeploymentsTab(waiter, level=level+1)
+        
+        # Demo Deployments tab will contain n number of instances i.e. EPM and Fusion
+        deployment_cards = getDeployments(waiter, level=level+1)
+        num_deployments = len(deployment_cards)
+        print(f"Found {num_deployments} demo deployments")
+        
+        epm_25349_pass = None
+        epm_25952_pass = None
+        epm_26207_pass = None
+        epm_26247_pass = None
+        dev_11_pass = None
+        dev_9_pass = None
+        
+        # Iterate all the deployments under this tab and retrieve name and password for each from the screen
+        # Write the password as a text file
+        
+        os.chdir('../reports')
+        reports_dir = os.path.abspath(os.curdir)
+        with open(f"{reports_dir}/password.txt", 'wb') as fh:
+            for i in range(num_deployments):
+                name, password = getPassword(waiter, i, level)
+                if 'epm-25349' in name:
+                    epm_25349_pass = password
+                elif 'epm-25952' in name:
+                    epm_25952_pass = password     
+                elif 'epm-26207' in name:
+                    epm_26207_pass = password
+                elif 'epm-26247' in name:
+                    epm_26247_pass = password
+                elif 'dev11' in name:
+                    dev_11_pass = password
+                elif 'dev9' in name:
+                    dev_9_pass = password
+                    
+                navigateDeploymentsTab(waiter, level=level+1)
+                str_name = name.decode()
+                str_password = password.decode()
+                fh.write(str_name + " Password=" + str_password + "\n")
+    finally:
+        if driver is not None:
+            driver.close()
         
 
     print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
