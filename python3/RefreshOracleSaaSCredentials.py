@@ -214,7 +214,7 @@ def update_saas_instance_passwords(level=0):
                 
             navigateDeploymentsTab(waiter, level=level+1)
             encoded_password = str.encode(password)
-            fh.write(name + b' Password=' + encoded_password + b'\n')
+            fh.write(name + " Password=" + encoded_password + "\n")
 
     
     driver.close()
