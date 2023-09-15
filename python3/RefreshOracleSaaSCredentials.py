@@ -231,17 +231,29 @@ def update_saas_instance_passwords(level=0):
     dev11CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'], level=level+1)
     updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], dev_11_pass, dev11CredInputDefId, FD_ENVIRONMENT['DEV11_CREDENTIAL_ID'])
     
-    epm25349CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID'], level=level+1)
-    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_25349_pass, epm25349CredInputDefId, FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID'])
+    if not FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID']:
+        print("Skipping credential update for EPM_25349_CREDENTIAL_ID because target property is not set")
+    else:
+        epm25349CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID'], level=level+1)
+        updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_25349_pass, epm25349CredInputDefId, FD_ENVIRONMENT['EPM_25349_CREDENTIAL_ID'])
     
-    epm25952CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID'], level=level+1)
-    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_25952_pass, epm25952CredInputDefId, FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID'])
+    if not FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID']:
+        print("Skipping credential update for EPM_25952_CREDENTIAL_ID because target property is not set")
+    else:
+        epm25952CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID'], level=level+1)
+        updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_25952_pass, epm25952CredInputDefId, FD_ENVIRONMENT['EPM_25952_CREDENTIAL_ID'])
 
-    epm26207CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID'], level=level+1)
-    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_26207_pass, epm26207CredInputDefId, FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID'])
+    if not FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID']:
+        print("Skipping credential update for EPM_26207_CREDENTIAL_ID because target property is not set")
+    else:
+        epm26207CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID'], level=level+1)
+        updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_26207_pass, epm26207CredInputDefId, FD_ENVIRONMENT['EPM_26207_CREDENTIAL_ID'])
 
-    epm26247CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID'], level=level+1)
-    updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_26247_pass, epm26247CredInputDefId, FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID'])    
+    if not FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID']:
+        print("Skipping credential update for EPM_26247_CREDENTIAL_ID because target property is not set")
+    else:
+        epm26247CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID'], level=level+1)
+        updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], epm_26247_pass, epm26247CredInputDefId, FD_ENVIRONMENT['EPM_26247_CREDENTIAL_ID'])    
 
 if __name__ == '__main__':
     update_saas_instance_passwords()
