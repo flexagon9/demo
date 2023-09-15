@@ -108,7 +108,9 @@ def navigateDeploymentsTab(waiter, level):
 
 
 def getCredentialInputDefId(base_url, credential_id, level):
-    credential_request = requests.get(f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}", auth=HTTPBasicAuth("${{FD_API_USER}}", "${{FD_API_PASSWORD}}"), verify=False)
+    url = f"{base_url}/flexdeploy/rest/v2/administration/security/credential/{credential_id}"
+    print(f"{' ' * (4 * level)} Executing GET Credential Input API URL {url}")
+    credential_request = requests.get(url, auth=HTTPBasicAuth("${{FD_API_USER}}", "${{FD_API_PASSWORD}}"), verify=False)
     print(f"{' ' * (4 * level)}{credential_request}")
     print(f"{' ' * (4 * level)}{credential_request.content}")
     if credential_request.status_code == 200:
