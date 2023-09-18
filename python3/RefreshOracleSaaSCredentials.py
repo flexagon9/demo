@@ -73,19 +73,19 @@ def getPassword(waiter, index, level):
     resources_table = waiter.until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"resources-table\"]/div[1]/table")))
     
     print(f"{' ' * (5 * level)}Waiting to see rows within resources table")
-    time.sleep(7)
+    time.sleep(15)
     
     headerElement = waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'h1')))
     header = headerElement.text
     
-    resources_row_index = 0
+    resources_row_index = 1
     if 'dev9' in header or 'dev11' in header:
         # Assuming fusion row is the 2nd row in the resources table
         # else use row 1
         resources_row_index = 2
 
-    print(f"{' ' * (5 * level)}resources_row_index = {resources_row_index}")
+    print(f"{' ' * (5 * level)}{header} using resources_row_index = {resources_row_index}")
     
     resources_row = resources_table.find_elements(By.TAG_NAME, 'tr')[resources_row_index]
     resources_row.click()
