@@ -84,6 +84,8 @@ def getPassword(waiter, index, level):
         # Assuming fusion row is the 2nd row in the resources table
         # else use row 1
         resources_row_index = 2
+
+    print(f"{' ' * (5 * level)}resources_row_index = {resources_row_index}")
     
     resources_row = resources_table.find_elements(By.TAG_NAME, 'tr')[resources_row_index]
     resources_row.click()
