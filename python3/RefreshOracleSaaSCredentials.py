@@ -79,7 +79,7 @@ def getPassword(waiter, index, level):
                    By.TAG_NAME, 'h1')))
     header = headerElement.text
     
-    resources_row_index = 1
+    resources_row_index = 0
     if 'dev9' in header or 'dev11' in header:
         # Assuming fusion row is the 2nd row in the resources table
         # else use row 1
