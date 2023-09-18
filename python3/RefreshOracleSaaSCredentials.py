@@ -73,7 +73,7 @@ def getPassword(waiter, index, level):
     resources_table = waiter.until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"resources-table\"]/div[1]/table")))
     
     print(f"{' ' * (5 * level)}Waiting to see rows within resources table")
-    time.sleep(3)
+    time.sleep(7)
     
     headerElement = waiter.until(expected_conditions.visibility_of_element_located((
                    By.TAG_NAME, 'h1')))
