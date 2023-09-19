@@ -104,7 +104,7 @@ def navigateDeploymentsTab(waiter, level):
                     By.XPATH, "//*[@id=\"in-app-navigation_navItem_deployments\"]/a")))
     deployments_tab.click()
     print(f"{' ' * (4 * level)}Waiting to see deployments-list")
-    time.sleep(3)
+    time.sleep(5)
     waiter.until(expected_conditions.visibility_of_element_located((By.ID, "deployments-list")))
     print(f"{' ' * (4 * level)}Found deployments-list")
 
