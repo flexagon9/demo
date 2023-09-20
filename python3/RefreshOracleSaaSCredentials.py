@@ -190,8 +190,7 @@ def update_saas_instance_passwords(level=0):
         navigateDeploymentsTab(waiter, level=level+1)
         
         # Demo Deployments tab will contain n number of instances i.e. EPM and Fusion
-        deployment_cards = getDeployments(waiter, level=level+1)
-        num_deployments = len(deployment_cards)
+        num_deployments = len(getDeployments(waiter, level=level+1))
         print(f"Found {num_deployments} demo deployments")
         
         epm_25349_pass = None
@@ -223,6 +222,8 @@ def update_saas_instance_passwords(level=0):
                     dev_9_pass = password
                     
                 navigateDeploymentsTab(waiter, level=level+1)
+                getDeployments(waiter, level=level+1)
+              
                 line = "%s Password=%s\n" % (name, password)
                 fh.write(bytes(line, 'utf-8'))
     finally:
