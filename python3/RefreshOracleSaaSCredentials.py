@@ -230,12 +230,12 @@ def update_saas_instance_passwords(level=0):
         if driver is not None:
             driver.close()
         
-
-    print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
-    # Update production credential using hard coded credential Id	
+    # Update production credential using hard coded credential Id
+    print(f"Updating credential on production with credential id 16003")
     prodDev9CredInputDefId = getCredentialInputDefId('http://172.16.0.11:8000', 16003, level=level+1)
     updatedCredentialTextValue('http://172.16.0.11:8000', dev_9_pass, prodDev9CredInputDefId, 16003)
-  
+
+    print(f"Processing credential updates for {FD_ENVIRONMENT['BASE_URL']}")
     dev9CredInputDefId = getCredentialInputDefId(FD_ENVIRONMENT['BASE_URL'], FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'], level=level+1)
     updatedCredentialTextValue(FD_ENVIRONMENT['BASE_URL'], dev_9_pass, dev9CredInputDefId, FD_ENVIRONMENT['DEV9_CREDENTIAL_ID'])
 
