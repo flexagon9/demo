@@ -1,4 +1,4 @@
-create or replace NONEDITIONABLE PACKAGE    XXPS.REP_PKG AS 
+create or replace PACKAGE    XXPS.REP_PKG AS 
 
   /* TODO enter package declarations (types, exceptions, methods etc) here */ 
 
