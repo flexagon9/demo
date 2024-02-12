@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><MigrationProcessCSVMetadataVO>
+   <MigrationProcessCSVMetadataVORow>
+      <ProcessId>-999</ProcessId>
+      <ProcessName>Manage Descriptive Flexfields</ProcessName>
+      <ProcessDescription>Manage Descriptive Flexfields</ProcessDescription>
+      <ProcessDate/>
+      <ObjectShortName>FND_MANAGE_DESCRIPTIVE_FLEXFIELDS</ObjectShortName>
+      <ObjectType>TASK</ObjectType>
+      <CreatedByFlow>TASK_CSV_SERVICE</CreatedByFlow>
+      <MigrationProcessBusinessObjectCSVMetadata1>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</MigrationProcessBusinessObjectCSVMetadataVORow>
+      </MigrationProcessBusinessObjectCSVMetadata1>
+      <MigrationProcessBatchCSVMetadata>
+         <MigrationProcessBatchCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <BatchName>4ba03c61-ab97-4b9b-a78a-c63950c86cc2/FND_APP_DESCRIPTIVE_FLEXFIELD/DescriptiveFlexfield</BatchName>
+            <ImportSequence>0</ImportSequence>
+            <ServiceName>oracle.apps.fnd.applcore.flex.webservice.DescriptiveFlexfieldWS</ServiceName>
+            <BatchSize>500</BatchSize>
+         </MigrationProcessBatchCSVMetadataVORow>
+      </MigrationProcessBatchCSVMetadata>
+      <MigrationProcessScopeValueCSVMetadata>
+         <MigrationProcessScopeValueCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <MigScopeValueSetId/>
+            <BusinessObjectShortName>FND_APP_DESCRIPTIVE_FLEXFIELD</BusinessObjectShortName>
+            <ScopeValueBoAttributeId>DescriptiveFlexfieldCode</ScopeValueBoAttributeId>
+            <ScopeValueBoAttributeValue>IRC_OFFERS_DFF</ScopeValueBoAttributeValue>
+            <ScopeValueBoAttributeValueCode>IRC_OFFERS_DFF</ScopeValueBoAttributeValueCode>
+         </MigrationProcessScopeValueCSVMetadataVORow>
+         <MigrationProcessScopeValueCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <MigScopeValueSetId/>
+            <BusinessObjectShortName>FND_APP_DESCRIPTIVE_FLEXFIELD</BusinessObjectShortName>
+            <ScopeValueBoAttributeId>mode</ScopeValueBoAttributeId>
+            <ScopeValueBoAttributeValue>search</ScopeValueBoAttributeValue>
+            <ScopeValueBoAttributeValueCode>search</ScopeValueBoAttributeValueCode>
+         </MigrationProcessScopeValueCSVMetadataVORow>
+      </MigrationProcessScopeValueCSVMetadata>
+      <MigrationProcessMigrationObjectCSVMetadata>
+         <MigrationProcessMigrationObjectCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <BusinessObjectShortName>FND_APP_DESCRIPTIVE_FLEXFIELD</BusinessObjectShortName>
+            <MigrateFlag>Y</MigrateFlag>
+            <IncludeExternalDataFlag>Y</IncludeExternalDataFlag>
+         </MigrationProcessMigrationObjectCSVMetadataVORow>
+      </MigrationProcessMigrationObjectCSVMetadata>
+      <MigrationProcessTaskCSVMetadata null="true"/>
+      <MigrationProcessServiceVersionCSVMetadata null="true"/>
+   </MigrationProcessCSVMetadataVORow>
+</MigrationProcessCSVMetadataVO>

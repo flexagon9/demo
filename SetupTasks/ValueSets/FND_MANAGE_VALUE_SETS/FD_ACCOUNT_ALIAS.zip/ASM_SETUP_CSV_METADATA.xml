@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><MigrationProcessCSVMetadataVO>
+   <MigrationProcessCSVMetadataVORow>
+      <ProcessId>-999</ProcessId>
+      <ProcessName>Manage Value Sets</ProcessName>
+      <ProcessDescription>Manage Value Sets</ProcessDescription>
+      <ProcessDate/>
+      <ObjectShortName>FND_MANAGE_VALUE_SETS</ObjectShortName>
+      <ObjectType>TASK</ObjectType>
+      <CreatedByFlow>TASK_CSV_SERVICE</CreatedByFlow>
+      <MigrationProcessBusinessObjectCSVMetadata1>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_FLEX_VALUE_SET/ValueSet</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_FLEX_VALUE_SET/ValueSet</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_FLEX_VALUE_SET/ValueSet</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_FLEX_VALUE_SET/ValueSet</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_FLEX_VALUE_SET/ValueSet</MigrationProcessBusinessObjectCSVMetadataVORow>
+         <MigrationProcessBusinessObjectCSVMetadataVORow>FND_APP_FLEX_VALUE_SET/ValueSet</MigrationProcessBusinessObjectCSVMetadataVORow>
+      </MigrationProcessBusinessObjectCSVMetadata1>
+      <MigrationProcessBatchCSVMetadata>
+         <MigrationProcessBatchCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <BatchName>82c1471c-e771-45a1-b1db-4ad7c42cefa3/FND_APP_FLEX_VALUE_SET/ValueSet</BatchName>
+            <ImportSequence>0</ImportSequence>
+            <ServiceName>oracle.apps.fnd.applcore.flex.webservice.ValueSetWS</ServiceName>
+            <BatchSize>500</BatchSize>
+         </MigrationProcessBatchCSVMetadataVORow>
+      </MigrationProcessBatchCSVMetadata>
+      <MigrationProcessScopeValueCSVMetadata>
+         <MigrationProcessScopeValueCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <MigScopeValueSetId/>
+            <BusinessObjectShortName>FND_APP_FLEX_VALUE_SET</BusinessObjectShortName>
+            <ScopeValueBoAttributeId>ValueSetCode</ScopeValueBoAttributeId>
+            <ScopeValueBoAttributeValue>FD_ACCOUNT_ALIAS</ScopeValueBoAttributeValue>
+            <ScopeValueBoAttributeValueCode>FD_ACCOUNT_ALIAS</ScopeValueBoAttributeValueCode>
+         </MigrationProcessScopeValueCSVMetadataVORow>
+         <MigrationProcessScopeValueCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <MigScopeValueSetId/>
+            <BusinessObjectShortName>FND_APP_FLEX_VALUE_SET</BusinessObjectShortName>
+            <ScopeValueBoAttributeId>mode</ScopeValueBoAttributeId>
+            <ScopeValueBoAttributeValue>search</ScopeValueBoAttributeValue>
+            <ScopeValueBoAttributeValueCode>search</ScopeValueBoAttributeValueCode>
+         </MigrationProcessScopeValueCSVMetadataVORow>
+      </MigrationProcessScopeValueCSVMetadata>
+      <MigrationProcessMigrationObjectCSVMetadata>
+         <MigrationProcessMigrationObjectCSVMetadataVORow>
+            <ProcessId>-999</ProcessId>
+            <BusinessObjectShortName>FND_APP_FLEX_VALUE_SET</BusinessObjectShortName>
+            <MigrateFlag>Y</MigrateFlag>
+            <IncludeExternalDataFlag>Y</IncludeExternalDataFlag>
+         </MigrationProcessMigrationObjectCSVMetadataVORow>
+      </MigrationProcessMigrationObjectCSVMetadata>
+      <MigrationProcessTaskCSVMetadata null="true"/>
+      <MigrationProcessServiceVersionCSVMetadata null="true"/>
+   </MigrationProcessCSVMetadataVORow>
+</MigrationProcessCSVMetadataVO>
