@@ -18,5 +18,4 @@
 -- ************************************************************  
 set log eodp_sysdata_exp.log;
 set input eodp_sysdata.dat;
-SET IGNORE_DUPS;
-IMPORT *;
+IMPORT * AS new_EODP_RECFLD_SYS;
