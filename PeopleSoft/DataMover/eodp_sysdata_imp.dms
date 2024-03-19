@@ -18,6 +18,4 @@
 -- ************************************************************  
 set log eodp_sysdata_exp.log;
 set input eodp_sysdata.dat;
-import EODP_RECFLD_SYS where EODP_SYS_LOADED='N';
-import EODP_COMP_SYS where EODP_SYS_LOADED='N';
-import EODP_COMPDETSYS where EODP_SYS_LOADED='N';
+IMPORT *;
