@@ -18,4 +18,5 @@
 -- ************************************************************  
 set log eodp_sysdata_exp.log;
 set input eodp_sysdata.dat;
-IMPORT * IGNORE_DUPS;
+SET IGNORE_DUPS;
+IMPORT *;
