@@ -18,4 +18,4 @@
 -- ************************************************************  
 set log eodp_sysdata_exp.log;
 set input eodp_sysdata.dat;
-REPLACE_ALL *;
+IMPORT * IGNORE_DUPS;
