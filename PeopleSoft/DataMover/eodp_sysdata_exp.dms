@@ -19,5 +19,3 @@
 set log eodp_sysdata_exp.log;
 set output eodp_sysdata.dat;
 export EODP_RECFLD_SYS where EODP_SYS_LOADED='N';
-export EODP_COMP_SYS where EODP_SYS_LOADED='N';
-export EODP_COMPDETSYS where EODP_SYS_LOADED='N';
