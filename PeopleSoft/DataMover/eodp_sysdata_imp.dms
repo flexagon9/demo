@@ -19,3 +19,5 @@
 set log eodp_sysdata_exp.log;
 set input eodp_sysdata.dat;
 IMPORT * AS new_EODP_RECFLD_SYS;
+IMPORT * AS new_EODP_COMP_SYS;
+IMPORT * AS new_EODP_COMPDETSYS;
