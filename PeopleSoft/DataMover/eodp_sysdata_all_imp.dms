@@ -17,5 +17,6 @@
 -- All Rights Reserved.                                          
 -- ************************************************************  
 set input eodp_sysdata.dat;
+SET LOG *.*.LOG;
 set update_dups;
 import *.*;
