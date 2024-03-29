@@ -16,7 +16,6 @@
 -- Copyright (C) 1988, 2018, Oracle and/or its affiliates.       
 -- All Rights Reserved.                                          
 -- ************************************************************  
-set log eodp_sysdata_exp.log;
 set input eodp_sysdata.dat;
 set update_dups;
 import *.*;
