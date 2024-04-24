@@ -1,0 +1,11 @@
+{
+  "integrations" :
+  [
+    {
+      "identifier" : "CITY_WEATHER",
+      "version" : "01.00.0000",
+      "status" : "CONFIGURED",
+      "stopScheduleForDeactivation" : "true"
+    }
+  ]
+}
