@@ -1,0 +1,46 @@
+---------------------
+To do 
+---------------------
+1. Multiple folders config sparse checkout
+2. flex demo git for separate for you-----ok
+3. 4 branches created for r1- r4
+3.one new file for each branche
+5.Explain ehats the outcome of populate, discover----ok
+6.version name of each starts with r1.1.0.27------ok
+7. whats other variable fields will support
+
+
+
+
+
+4464 OIC - 3962 
+
+[#4664] OIC Requesting screenshots of failure during the execution, and with that please share all files from Artifacts tab, 
+
+Along with that please share the OIC Instance connection configuration. as shown in below image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
