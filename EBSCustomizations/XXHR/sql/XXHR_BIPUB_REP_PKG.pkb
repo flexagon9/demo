@@ -1,5 +1,5 @@
 --test update 10.3
---XXHR_BIPUB_REP_PKG.pkb comment updated on 2/6/2021
+--XXHR_BIPUB_REP_PKG.pkb comment updated on 10/26/2024
 CREATE OR REPLACE PACKAGE BODY APPS.xxhr_bipub_rep_pkg IS
 
   PROCEDURE generate_xml( p_errbuf  OUT VARCHAR2
