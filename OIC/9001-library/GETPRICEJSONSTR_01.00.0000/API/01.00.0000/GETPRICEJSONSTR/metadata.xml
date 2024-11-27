@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<api-library>
+    <name>getPriceJSONSTR</name>
+    <code>GETPRICEJSONSTR</code>
+    <version>01.00.0000</version>
+    <implementationType>JAVASCRIPT</implementationType>
+    <sources>
+        <source>
+            <apiIdList>GETPRICEJSONSTR:01.00.0000:getPriceJSONSTR.js:getPriceJSONSTR:str:val</apiIdList>
+            <fileName>getPriceJSONSTR.js</fileName>
+            <apiDefinitions>
+                <api apiid="GETPRICEJSONSTR:01.00.0000:getPriceJSONSTR.js:getPriceJSONSTR:str:val">
+                    <classification>ORCHESTRATION</classification>
+                    <duplicateFnFlag>false</duplicateFnFlag>
+                    <name>getPriceJSONSTR</name>
+                    <inputParameters>
+                        <input>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>str</name>
+                            <type>string</type>
+                        </input>
+                        <input>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>val</name>
+                            <type>string</type>
+                        </input>
+                    </inputParameters>
+                    <libraryCode>GETPRICEJSONSTR</libraryCode>
+                    <classification>ORCHESTRATION</classification>
+                    <classification>XPATH</classification>
+                    <outputParameters>
+                        <output>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>xmlString</name>
+                            <type>string</type>
+                        </output>
+                    </outputParameters>
+                    <unsupportedSyntax>false</unsupportedSyntax>
+                </api>
+            </apiDefinitions>
+            <libraryCode>GETPRICEJSONSTR</libraryCode>
+            <path>/tmp/WC/getPriceJSONSTR/getPriceJSONSTR.js</path>
+        </source>
+    </sources>
+</api-library>
