@@ -1,0 +1,6 @@
+php:
+  hosts:
+    host2:
+
+nginx:
+  hosts:

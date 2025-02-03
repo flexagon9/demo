@@ -1,0 +1,3 @@
+---
+ansible_host: HOST1_HOSTNAME
+ansible_user: HOST1_USER

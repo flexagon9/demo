@@ -1,0 +1,61 @@
+---
+- name: Configure PHP With FlexDeploy And Ansible
+  hosts: php
+  # gather_facts: false
+  tasks:
+    - name: Print Environment Information
+      block:
+        - name: Print PATH
+          ansible.builtin.debug:
+            msg: "'{{ lookup('ansible.builtin.env', 'PATH') }}' is the PATH environment variable."
+
+    - name: Install PHP
+      become: true
+      block:
+        - name: Include PHP Role
+          ansible.builtin.include_role:
+            name: geerlingguy.php
+
+        - name: Import PHP Role
+          ansible.builtin.import_role:
+            name: geerlingguy.php
+
+        - name: Verify PHP Installation
+          ansible.builtin.shell: |
+            php --version
+
+- name: Configure NGNINX With FlexDeploy And Ansible
+  hosts: nginx
+  # gather_facts: false
+  tasks:
+    - name: Print Environment Information
+      block:
+        - name: Print PATH
+          ansible.builtin.debug:
+            msg: "'{{ lookup('ansible.builtin.env', 'PATH') }}' is the PATH environment variable."
+
+    - name: Install NGINX
+      become: true
+      block:
+        - name: Include NGINX Role
+          ansible.builtin.include_role:
+            name: geerlingguy.nginx
+
+        - name: Import NGINX Role
+          ansible.builtin.import_role:
+            name: geerlingguy.nginx
+
+        - name: Verify NGINX Installation
+          ansible.builtin.shell: |
+            wget -O - http://{{ ansible_host }}:80 2> /dev/null
+
+- post_tasks:
+  hosts: nginx
+  become: true
+  tasks:
+    - name: Stop NGINX
+      when: nginx_stop_finally
+      block:
+        - name: Stop NGINX Service
+          ansible.builtin.shell: |
+            systemctl stop nginx

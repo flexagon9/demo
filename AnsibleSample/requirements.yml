@@ -1,0 +1,8 @@
+# ansible-galaxy role install -r requirements.yml
+# ansible-galaxy role list
+roles:
+  - name: geerlingguy.nginx
+    version: "3.2.0"
+
+  - name: geerlingguy.php
+    version: "6.0.0"
