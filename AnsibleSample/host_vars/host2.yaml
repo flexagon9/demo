@@ -1,4 +1,4 @@
 ---
 ansible_host: ${{HOST2_HOSTNAME}}
 ansible_user: ${{HOST2_USER}}
-aansible_python_interpreter: ${{HOST2_PYTHON}}
+ansible_python_interpreter: ${{HOST2_PYTHON}}

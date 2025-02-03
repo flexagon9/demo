@@ -2,4 +2,4 @@
 ansible_host: ${{HOST1_HOSTNAME}}
 ansible_user: ${{HOST1_USER}}
 ansible_become_password: ${{HOST1_SUDO_PASSWORD}}
-aansible_python_interpreter: ${{HOST1_PYTHON}}
+ansible_python_interpreter: ${{HOST1_PYTHON}}

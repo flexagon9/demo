@@ -17,9 +17,16 @@
             name: geerlingguy.php
 
         - name: Import PHP Role
-          ansible.builtin.import_role:
-            name: geerlingguy.php
-
+          block:
+            - name: Install PHP Default
+              ansible.builtin.import_role:
+                name: geerlingguy.php
+          rescue:
+            - name: Install PHP With Defalut Python
+              ansible.builtin.import_role:
+                name: geerlingguy.php
+              vars:
+                ansible_python_interpreter: /usr/libexec/platform-python
         - name: Verify PHP Installation
           ansible.builtin.shell: |
             php --version
