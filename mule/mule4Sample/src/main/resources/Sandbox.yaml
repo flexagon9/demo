@@ -1,0 +1,4 @@
+scheduler:  
+    cronJobIn: "0 0/20 * * *  ? * " 
+    cronJobOut: "0 30 0/12 ? * * *"
+    timeZone: "CST"
