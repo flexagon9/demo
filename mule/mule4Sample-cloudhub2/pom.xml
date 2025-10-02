@@ -4,7 +4,8 @@
 
 	<groupId>${bgid}</groupId>
 	<artifactId>mule4sample</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <!-- <version>1.0.4-SNAPSHOT</version> -->
+    <version>1.0.4</version>
     <packaging>mule-application</packaging>
 
 	<name>mule4sample</name>
@@ -67,7 +68,7 @@
             <url>${exchange.url}</url>
             <layout>default</layout>
         </repository>
-        <!-- <repository>
+        <repository>
             <id>anypoint-exchange</id>
             <name>Anypoint Exchange</name>
             <url>https://maven.anypoint.mulesoft.com/api/v1/maven</url>
@@ -78,7 +79,7 @@
             <name>MuleSoft Releases Repository</name>
             <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
-        </repository> -->
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
