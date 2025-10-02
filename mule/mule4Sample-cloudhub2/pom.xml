@@ -5,7 +5,7 @@
 	<groupId>${bgid}</groupId>
 	<artifactId>mule4sample</artifactId>
     <!-- <version>1.0.4-SNAPSHOT</version> -->
-    <version>1.0.4</version>
+    <version>${execVersion}</version>
     <packaging>mule-application</packaging>
 
 	<name>mule4sample</name>
