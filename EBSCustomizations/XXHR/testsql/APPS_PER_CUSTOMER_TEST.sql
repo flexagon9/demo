@@ -9,7 +9,6 @@ create or replace package   apps_test.test_customers  AUTHID CURRENT_USER as
 end;
 /
 
-  
 create or replace package body apps_test.test_customers as
 
   procedure check_architect is
