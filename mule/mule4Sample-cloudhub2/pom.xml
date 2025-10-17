@@ -30,7 +30,7 @@
                     <classifier>mule-application</classifier>
                     <cloudhub2Deployment>
                         <uri>https://anypoint.mulesoft.com</uri>
-                        <applicationName>mule4sample</applicationName>
+                        <applicationName>mule4sample-${env}</applicationName>
                         <connectedAppClientId>${anypointclientId}</connectedAppClientId>
                         <connectedAppClientSecret>${anypointclientSecret}</connectedAppClientSecret>
                         <connectedAppGrantType>client_credentials</connectedAppGrantType>
